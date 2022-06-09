@@ -1,6 +1,7 @@
 import React from 'react';
 import { View } from 'react-native';
 import { colors } from '../../../theme';
+import { translate } from '../../translation';
 import { Button, Indent, Row, ScreenContainer, Typography } from '../../ui';
 import { ImageSource, ImageView } from '../../ui/ImageView';
 import { styles } from './styles';
@@ -15,12 +16,11 @@ export const OnboardingMainScreen = () => {
         </View>
         <View>
           <Typography.ScreenTitle textAlign="center">
-            Thanks{'\n'}for joining us!
+            {translate('onboardingMainTitle')}
           </Typography.ScreenTitle>
           <Indent height={20} />
           <Typography.BoldText textAlign="center" fontSize={17} lineHeight={24}>
-            We will tell you what you will get{'\n'}in this application{'\n'}in
-            stories format.
+            {translate('onboardingMainDescription')}
           </Typography.BoldText>
           <Indent height={160} />
         </View>
@@ -28,11 +28,13 @@ export const OnboardingMainScreen = () => {
         <View style={styles.fullWidth}>
           <Button isWhite>
             <Typography.ButtonText color={colors.totalBlack}>
-              Start
+              {translate('onboardingMainButtonOk')}
             </Typography.ButtonText>
           </Button>
           <Button>
-            <Typography.ButtonText>Skip</Typography.ButtonText>
+            <Typography.ButtonText>
+              {translate('onboardingMainButtonSkip')}
+            </Typography.ButtonText>
           </Button>
         </View>
       </Row>
