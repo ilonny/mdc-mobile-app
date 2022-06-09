@@ -1,0 +1,1 @@
+export { OnboardingMainScreen } from './OnboardingMainScreen';
