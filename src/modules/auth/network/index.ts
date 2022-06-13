@@ -1,0 +1,1 @@
+export { getConfirmCode } from './getConfirmCode';

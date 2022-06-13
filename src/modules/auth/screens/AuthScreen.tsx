@@ -11,14 +11,22 @@ import {
   Typography,
 } from '../../ui';
 import { ImageSource, ImageView } from '../../ui/ImageView';
+import { useGetVerificationCode } from '../hooks';
 import { styles } from './styles';
 
 export const AuthScreen = () => {
   const [phone, setPhone] = useState<string>('');
+  const { requestCodeResult, requestConfirmationCode, requestCodeLoading } =
+    useGetVerificationCode();
+
   return (
     <ScreenContainer
+      isLoading={requestCodeLoading}
       footer={
-        <Button isWhite disabled={phone?.length < 5}>
+        <Button
+          isWhite
+          disabled={phone?.length < 5 ? true : false}
+          onPress={() => requestConfirmationCode(phone)}>
           <Typography.ButtonText color={colors.totalBlack}>
             {translate('send')}
           </Typography.ButtonText>

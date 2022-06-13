@@ -4,12 +4,14 @@ import {
   KeyboardAvoidingView,
   SafeAreaView,
   ScrollView,
+  StyleSheet,
   View,
 } from 'react-native';
 import { ImageView, ImageSource } from '../ImageView';
 import { TImageSource } from '../ImageView/ImageSource';
 import { styles } from './styles';
 import { ScreenFooter } from './ScreenFooter';
+import { FullScreenLoader } from '../FullScreenLoader';
 
 type TProps = {
   disableScroll?: boolean;
@@ -19,10 +21,12 @@ type TProps = {
   backgroundImage?: TImageSource;
   onBoardingVideo?: boolean;
   footerPadding?: boolean;
+  isLoading?: boolean;
 };
 
 export const ScreenContainer = (props: TProps) => {
   const {
+    isLoading,
     disableScroll,
     fullscreen,
     children,
@@ -84,6 +88,11 @@ export const ScreenContainer = (props: TProps) => {
           </SafeAreaView>
         )}
       </View>
+      {isLoading && (
+        <View style={StyleSheet.absoluteFill}>
+          <FullScreenLoader />
+        </View>
+      )}
     </View>
   );
 };
