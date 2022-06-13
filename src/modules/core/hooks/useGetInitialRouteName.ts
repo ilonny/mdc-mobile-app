@@ -13,7 +13,7 @@ export const useGetInitialRouteName = () => {
     keyof RootStackParamList
   > => {
     const onboardingShowed = await Storage.getItem('onboardingShowed');
-    const pushShowed = await Storage.getItem('pushShowed');
+    const pushShowed = await Storage.getItem('onboardingPushShowed');
     if (!onboardingShowed) {
       return 'OnboardingMainScreen';
     }

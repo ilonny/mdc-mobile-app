@@ -1,13 +1,23 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { SafeAreaView, View } from 'react-native';
 import { colors } from '../../../../theme';
+import { requestUserPermission } from '../../../push';
 import { translate } from '../../../translation';
 import { Button, Indent, Typography } from '../../../ui';
 import { ImageSource, ImageView } from '../../../ui/ImageView';
-import { completeOnboarding } from '../../helpers';
+import { completeOnboarding, completeOnboardingPush } from '../../helpers';
 import { styles } from './styles';
 
 export const OnboardingPush = () => {
+  const onRequestPush = useCallback(async () => {
+    await requestUserPermission();
+    completeOnboardingPush();
+  }, []);
+
+  const onSkipPush = useCallback(async () => {
+    completeOnboardingPush();
+  }, []);
+
   return (
     <SafeAreaView style={styles.wrapper}>
       <View style={styles.content}>
@@ -33,12 +43,12 @@ export const OnboardingPush = () => {
           <Indent height={30} />
         </View>
         <View>
-          <Button isWhite>
+          <Button isWhite onPress={onRequestPush}>
             <Typography.ButtonText color={colors.totalBlack}>
               {translate('pushAllowBtn')}
             </Typography.ButtonText>
           </Button>
-          <Button>
+          <Button onPress={onSkipPush}>
             <Typography.ButtonText>{translate('notNow')}</Typography.ButtonText>
           </Button>
         </View>
