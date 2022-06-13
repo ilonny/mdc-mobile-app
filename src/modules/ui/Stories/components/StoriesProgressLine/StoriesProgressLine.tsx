@@ -53,7 +53,7 @@ export const StoriesProgressLine = (props: TProps) => {
   }, []);
 
   useEffect(() => {
-    console.log('activeIndex, localIndex', activeIndex, localIndex);
+    // console.log('activeIndex, localIndex', activeIndex, localIndex);
     if (localIndex >= activeIndex) {
       resetAnimation();
       // return;

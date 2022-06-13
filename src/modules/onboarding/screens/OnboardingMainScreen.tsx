@@ -16,7 +16,11 @@ export const OnboardingMainScreen = () => {
   }, [navigation]);
 
   return (
-    <ScreenContainer fullscreen disableScroll backgroundImage="onboarding_bg">
+    <ScreenContainer
+      fullscreen
+      disableScroll
+      backgroundImage="onboarding_gradient_mask"
+      onBoardingVideo>
       <Row column justifyContent="space-between" alignItems="center" flex={1}>
         <View>
           <Indent height={30} />

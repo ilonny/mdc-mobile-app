@@ -4,9 +4,9 @@ import { OnboardingProvider } from './modules/onboarding/context';
 import { Navigation } from './navigation';
 
 const App = () => {
-  useEffect(() => {
-    Storage.clear();
-  }, []);
+  // useEffect(() => {
+  //   Storage.clear();
+  // }, []);
   return (
     <>
       <OnboardingProvider>

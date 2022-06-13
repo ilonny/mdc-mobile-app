@@ -10,6 +10,7 @@ export const ImageSource = {
   onboarding_3: require(imageSrc + 'onboarding_3.png'),
   onboarding_hearts: require(imageSrc + 'onboarding_hearts.png'),
   onboarding_push: require(imageSrc + 'onboarding_push.png'),
+  onboarding_gradient_mask: require(imageSrc + 'onboarding_gradient_mask.png'),
 };
 
 export type TImageSource = keyof typeof ImageSource;
