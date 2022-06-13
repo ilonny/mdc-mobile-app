@@ -13,8 +13,12 @@ export const useGetInitialRouteName = () => {
     keyof RootStackParamList
   > => {
     const onboardingShowed = await Storage.getItem('onboardingShowed');
+    const pushShowed = await Storage.getItem('pushShowed');
     if (!onboardingShowed) {
       return 'OnboardingMainScreen';
+    }
+    if (!pushShowed) {
+      return 'OnboardingPushScreen';
     }
     return 'TabScreen';
   }, []);

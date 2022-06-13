@@ -5,6 +5,7 @@ import { InitialScreen } from '../modules/core/screens';
 import {
   OnboardingMainScreen,
   OnboardingStoriesScreen,
+  OnboardingPushScreen,
 } from '../modules/onboarding/screens';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -40,6 +41,11 @@ export const Routes: React.FC<{
         <Stack.Screen
           name="OnboardingStoriesScreen"
           component={OnboardingStoriesScreen}
+          options={canNotGoBackOptions}
+        />
+        <Stack.Screen
+          name="OnboardingPushScreen"
+          component={OnboardingPushScreen}
           options={canNotGoBackOptions}
         />
         {/* <Stack.Screen name="TabScreen" component={TabScreen} /> */}

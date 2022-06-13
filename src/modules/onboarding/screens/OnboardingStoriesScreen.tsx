@@ -2,6 +2,12 @@ import React, { useState } from 'react';
 import { SafeAreaView, Text, View } from 'react-native';
 import { colors } from '../../../theme';
 import { Stories } from '../../ui';
+import {
+  StoriesFirst,
+  StoriesFourth,
+  StoriesSecond,
+  StoriesThird,
+} from '../components';
 
 export const OnboardingStoriesScreen = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -9,18 +15,10 @@ export const OnboardingStoriesScreen = () => {
     <View style={{ backgroundColor: colors.totalBlack, flex: 1 }}>
       <Stories
         contentComponents={[
-          <View
-            style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-            <Text style={{ color: '#fff' }}>First component</Text>
-          </View>,
-          <View
-            style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-            <Text style={{ color: '#fff' }}>Second component</Text>
-          </View>,
-          <View
-            style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-            <Text style={{ color: '#fff' }}>Third component</Text>
-          </View>,
+          <StoriesFirst />,
+          <StoriesSecond />,
+          <StoriesThird />,
+          <StoriesFourth />,
         ]}
       />
     </View>
