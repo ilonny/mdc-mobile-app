@@ -14,11 +14,15 @@ export const useGetInitialRouteName = () => {
   > => {
     const onboardingShowed = await Storage.getItem('onboardingShowed');
     const pushShowed = await Storage.getItem('onboardingPushShowed');
+    const token = await Storage.getItem('token');
     if (!onboardingShowed) {
       return 'OnboardingMainScreen';
     }
     if (!pushShowed) {
       return 'OnboardingPushScreen';
+    }
+    if (!token) {
+      return 'AuthScreen';
     }
     return 'TabScreen';
   }, []);

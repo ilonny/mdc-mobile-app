@@ -9,6 +9,7 @@ import {
 import { ImageView, ImageSource } from '../ImageView';
 import { TImageSource } from '../ImageView/ImageSource';
 import { styles } from './styles';
+import { ScreenFooter } from './ScreenFooter';
 
 type TProps = {
   disableScroll?: boolean;
@@ -17,6 +18,7 @@ type TProps = {
   footer?: JSX.Element | JSX.Element[];
   backgroundImage?: TImageSource;
   onBoardingVideo?: boolean;
+  footerPadding?: boolean;
 };
 
 export const ScreenContainer = (props: TProps) => {
@@ -26,6 +28,8 @@ export const ScreenContainer = (props: TProps) => {
     children,
     backgroundImage,
     onBoardingVideo,
+    footer,
+    footerPadding,
   } = props;
   return (
     <View style={[styles.wrapper]}>
@@ -44,30 +48,42 @@ export const ScreenContainer = (props: TProps) => {
           resizeMode="cover"
         />
       )}
-      <SafeAreaView />
-      <KeyboardAvoidingView style={styles.areaWrapper} behavior="padding">
-        {disableScroll ? (
-          <SafeAreaView style={[styles.nonScrollWrapper]}>
-            <View
-              style={[
+      <View style={styles.areaWrapper}>
+        <SafeAreaView />
+        <KeyboardAvoidingView style={styles.areaWrapper} behavior="padding">
+          {disableScroll ? (
+            <SafeAreaView style={[styles.nonScrollWrapper]}>
+              <View
+                style={[
+                  styles.scrollContent,
+                  fullscreen && styles.scrollContentFullscreen,
+                  styles.nonScrollWrapper,
+                ]}>
+                {children}
+              </View>
+            </SafeAreaView>
+          ) : (
+            <ScrollView
+              scrollEventThrottle={100}
+              contentContainerStyle={[
                 styles.scrollContent,
                 fullscreen && styles.scrollContentFullscreen,
-                styles.nonScrollWrapper,
               ]}>
               {children}
-            </View>
+            </ScrollView>
+          )}
+        </KeyboardAvoidingView>
+        {footer && (
+          <SafeAreaView>
+            <ScreenFooter
+              // isWhite={isWhite}
+              // isBlue={isBlue}
+              footerPadding={footerPadding}>
+              {footer}
+            </ScreenFooter>
           </SafeAreaView>
-        ) : (
-          <ScrollView
-            scrollEventThrottle={100}
-            contentContainerStyle={[
-              styles.scrollContent,
-              fullscreen && styles.scrollContentFullscreen,
-            ]}>
-            {children}
-          </ScrollView>
         )}
-      </KeyboardAvoidingView>
+      </View>
     </View>
   );
 };

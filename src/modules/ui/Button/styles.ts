@@ -12,7 +12,7 @@ export const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   wrapperDisabled: {
-    // backgroundColor: colors.primaryDisabled,
+    backgroundColor: 'gray',
   },
   wrapperBlack: {
     backgroundColor: colors.totalBlack,

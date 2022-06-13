@@ -32,7 +32,7 @@ export const styles = StyleSheet.create({
   },
   footer: {
     paddingHorizontal: 16,
-    // backgroundColor: colors.backgroundGray,
+    backgroundColor: colors.totalBlack,
   },
   footerPadding: {
     paddingBottom: 16,

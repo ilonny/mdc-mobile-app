@@ -83,4 +83,16 @@ export default {
     ru: 'Не сейчас',
     en: 'Now now',
   },
+  enterPhone: {
+    ru: 'Введите телефон',
+    en: 'Enter phone',
+  },
+  enterPhoneDescription: {
+    ru: 'Зарегистируйтесь за минуту\nи автоматически станьте членом\nклуба MDC.',
+    en: 'Register in a minute\nand automatically become a member\nof the MDC club.',
+  },
+  send: {
+    ru: 'Отправить',
+    en: 'Send',
+  },
 };

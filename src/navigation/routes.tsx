@@ -7,6 +7,7 @@ import {
   OnboardingStoriesScreen,
   OnboardingPushScreen,
 } from '../modules/onboarding/screens';
+import { AuthScreen } from '../modules/auth/screens';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
@@ -46,6 +47,11 @@ export const Routes: React.FC<{
         <Stack.Screen
           name="OnboardingPushScreen"
           component={OnboardingPushScreen}
+          options={canNotGoBackOptions}
+        />
+        <Stack.Screen 
+          name="AuthScreen"
+          component={AuthScreen}
           options={canNotGoBackOptions}
         />
         {/* <Stack.Screen name="TabScreen" component={TabScreen} /> */}
