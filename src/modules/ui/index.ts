@@ -5,3 +5,4 @@ export { Indent } from './Indent';
 export { Typography } from './Typography';
 export { TouchableFeedback } from './TouchableFeedback';
 export { Button } from './Button';
+export { Stories } from './Stories';

@@ -4,6 +4,7 @@ import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 export type RootStackParamList = {
   InitialScreen: undefined;
   OnboardingMainScreen: undefined;
+  OnboardingStoriesScreen: undefined;
   TabScreen: undefined;
 };
 

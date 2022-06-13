@@ -2,7 +2,10 @@ import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { RootStackParamList } from './types';
 import { InitialScreen } from '../modules/core/screens';
-import { OnboardingMainScreen } from '../modules/onboarding/screens';
+import {
+  OnboardingMainScreen,
+  OnboardingStoriesScreen,
+} from '../modules/onboarding/screens';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
@@ -32,6 +35,11 @@ export const Routes: React.FC<{
         <Stack.Screen
           name="OnboardingMainScreen"
           component={OnboardingMainScreen}
+          options={canNotGoBackOptions}
+        />
+        <Stack.Screen
+          name="OnboardingStoriesScreen"
+          component={OnboardingStoriesScreen}
           options={canNotGoBackOptions}
         />
         {/* <Stack.Screen name="TabScreen" component={TabScreen} /> */}

@@ -1,5 +1,7 @@
-import React from 'react';
+import { useNavigation } from '@react-navigation/native';
+import React, { useCallback } from 'react';
 import { View } from 'react-native';
+import { NavigationProps } from '../../../navigation/types';
 import { colors } from '../../../theme';
 import { translate } from '../../translation';
 import { Button, Indent, Row, ScreenContainer, Typography } from '../../ui';
@@ -7,6 +9,12 @@ import { ImageSource, ImageView } from '../../ui/ImageView';
 import { styles } from './styles';
 
 export const OnboardingMainScreen = () => {
+  const navigation = useNavigation<NavigationProps>();
+
+  const onPressOk = useCallback(() => {
+    navigation.navigate('OnboardingStoriesScreen');
+  }, [navigation]);
+
   return (
     <ScreenContainer fullscreen disableScroll backgroundImage="onboarding_bg">
       <Row column justifyContent="space-between" alignItems="center" flex={1}>
@@ -26,7 +34,7 @@ export const OnboardingMainScreen = () => {
         </View>
 
         <View style={styles.fullWidth}>
-          <Button isWhite>
+          <Button isWhite onPress={onPressOk}>
             <Typography.ButtonText color={colors.totalBlack}>
               {translate('onboardingMainButtonOk')}
             </Typography.ButtonText>
