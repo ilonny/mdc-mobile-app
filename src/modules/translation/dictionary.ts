@@ -95,4 +95,24 @@ export default {
     ru: 'Отправить',
     en: 'Send',
   },
+  enterCode: {
+    ru: 'Введите код',
+    en: 'Enter code',
+  },
+  resendCode: {
+    ru: 'запросить код повторно',
+    en: 'request code again',
+  },
+  resendCodeTime1: {
+    ru: 'через',
+    en: 'after',
+  },
+  resendCodeTime2: {
+    ru: 'сек. можно',
+    en: 'sec you can',
+  },
+  incorrectCode: {
+    ru: 'Неверный код подтверждения',
+    en: 'Incorrect confirmation code',
+  },
 };

@@ -41,7 +41,7 @@ export const request = async (options: TRequestOptions) => {
   let response: any;
   try {
     response = await fetch(`${API_URL}/${path}`, requestConfig);
-    console.log('response', response);
+    // console.log('response', response);
   } catch (e) {
     if (typeof callback === 'function') {
       callback();

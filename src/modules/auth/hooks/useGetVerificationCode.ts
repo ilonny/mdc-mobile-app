@@ -23,9 +23,7 @@ export const useGetVerificationCode = (): TResponse => {
     }
     const code = await getConfirmCode(phone);
     setRequestCodeResult(code?.data);
-    setTimeout(() => {
-      setRequestCodeLoading(false);
-    }, 2000);
+    setRequestCodeLoading(false);
   }, []);
 
   return { requestCodeResult, requestConfirmationCode, requestCodeLoading };
