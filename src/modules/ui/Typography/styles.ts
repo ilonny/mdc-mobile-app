@@ -46,7 +46,7 @@ export const styles = StyleSheet.create({
     fontFamily: 'Inter-Bold',
     fontWeight: '700',
     fontSize: 14,
-    textTransform: 'capitalize',
+    // textTransform: 'capitalize',
   },
   secondaryButtonText: {
     // color: colors.primary,

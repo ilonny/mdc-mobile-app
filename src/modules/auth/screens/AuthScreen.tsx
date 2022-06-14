@@ -124,7 +124,9 @@ export const AuthScreen = () => {
         {!!requestCodeResult ? (
           <View>
             <Indent height={30} />
-            <Typography.BoldText color={'rgba(255,255,255, 0.4)'}>
+            <Typography.BoldText
+              color={'rgba(255,255,255, 0.4)'}
+              textAlign="center">
               {/* @ts-ignore */}
               {secondsToResend > 0 ? (
                 <>
@@ -138,7 +140,7 @@ export const AuthScreen = () => {
             <Indent height={10} />
             <TouchableFeedback
               onPress={() => secondsToResend <= 0 && requestCode()}>
-              <Typography.BoldText>
+              <Typography.BoldText textAlign="center">
                 {translate('resendCode')}
               </Typography.BoldText>
             </TouchableFeedback>

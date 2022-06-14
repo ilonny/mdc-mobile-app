@@ -7,3 +7,8 @@ export { TouchableFeedback } from './TouchableFeedback';
 export { Button } from './Button';
 export { Stories } from './Stories';
 export { PhoneInput } from './PhoneInput';
+export { ImageView, ImageSource } from './ImageView';
+export { TextInput } from './TextInput';
+export { FormTextInput } from './FormTextInput';
+export { SecondaryButton } from './SecondaryButton';
+export { DatePicker } from './DatePicker';

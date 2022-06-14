@@ -6,6 +6,7 @@ import { colors } from '../../../theme';
 import { translate } from '../../translation';
 import { Button, Indent, Row, ScreenContainer, Typography } from '../../ui';
 import { ImageSource, ImageView } from '../../ui/ImageView';
+import { completeOnboarding } from '../helpers';
 import { styles } from './styles';
 
 export const OnboardingMainScreen = () => {
@@ -14,6 +15,10 @@ export const OnboardingMainScreen = () => {
   const onPressOk = useCallback(() => {
     navigation.navigate('OnboardingStoriesScreen');
   }, [navigation]);
+
+  const onPressSkip = useCallback(() => {
+    completeOnboarding();
+  }, []);
 
   return (
     <ScreenContainer
@@ -43,7 +48,7 @@ export const OnboardingMainScreen = () => {
               {translate('onboardingMainButtonOk')}
             </Typography.ButtonText>
           </Button>
-          <Button>
+          <Button onPress={onPressSkip}>
             <Typography.ButtonText>
               {translate('onboardingMainButtonSkip')}
             </Typography.ButtonText>

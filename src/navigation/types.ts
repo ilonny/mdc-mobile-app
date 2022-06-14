@@ -7,6 +7,7 @@ export type RootStackParamList = {
   OnboardingStoriesScreen: undefined;
   OnboardingPushScreen: undefined;
   AuthScreen: undefined;
+  UserFilesScreen: undefined;
   TabScreen: undefined;
 };
 

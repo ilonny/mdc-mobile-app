@@ -81,7 +81,7 @@ export default {
   },
   notNow: {
     ru: 'Не сейчас',
-    en: 'Now now',
+    en: 'Not now',
   },
   enterPhone: {
     ru: 'Введите телефон',
@@ -114,5 +114,25 @@ export default {
   incorrectCode: {
     ru: 'Неверный код подтверждения',
     en: 'Incorrect confirmation code',
+  },
+  userFilesTitle: {
+    ru: 'Нам нужны ваши\nдокументы',
+    en: 'We need your\ndocuments',
+  },
+  userFilesDescription: {
+    ru: 'Для бронирования автомобилей, нам\nпонадобятся некоторые ваши\nданные и документы для проверки\nв службе безопасности',
+    en: 'For booking cars, we\nwill need some of your\ndetails and documents\nfor security checks',
+  },
+  yourNameInput: {
+    ru: 'Ваше имя *',
+    en: 'Your name *',
+  },
+  birthdayInput: {
+    ru: 'Дата рождения *',
+    en: 'Date of birth *',
+  },
+  expInput: {
+    ru: 'Стаж вождения *',
+    en: 'Drive experience *',
   },
 };
