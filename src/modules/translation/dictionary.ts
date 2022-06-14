@@ -135,4 +135,32 @@ export default {
     ru: 'Стаж вождения *',
     en: 'Drive experience *',
   },
+  Passport: {
+    ru: 'Паспорт',
+    en: 'Passport',
+  },
+  PassportPickerPlaceholder: {
+    ru: 'Фото/скан первой страницы',
+    en: 'Photo/scan of the first page',
+  },
+  PassportPickerPlaceholder2: {
+    ru: 'Фото/скан страницы с регистрацией',
+    en: 'Photo/scan of the second page',
+  },
+  DriverLicense: {
+    ru: 'Водительское\nудостоверение',
+    en: 'Driver’s license',
+  },
+  DriverLicense1: {
+    ru: 'Лицевая сторона',
+    en: 'First page',
+  },
+  DriverLicense2: {
+    ru: 'Задняя сторона',
+    en: 'Second page',
+  },
+  Selfie: {
+    ru: 'Селфи арендатора',
+    en: 'Selfie',
+  },
 };

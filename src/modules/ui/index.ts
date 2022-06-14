@@ -12,3 +12,4 @@ export { TextInput } from './TextInput';
 export { FormTextInput } from './FormTextInput';
 export { SecondaryButton } from './SecondaryButton';
 export { DatePicker } from './DatePicker';
+export { FilePicker } from './FilePicker';

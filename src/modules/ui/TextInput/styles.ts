@@ -30,7 +30,7 @@ export const styles = StyleSheet.create({
     borderColor: colors.primary,
   },
   wrapperError: {
-    borderColor: colors.danger,
+    borderColor: colors.red,
   },
   input: {
     width: '100%',

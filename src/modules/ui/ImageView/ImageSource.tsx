@@ -14,6 +14,10 @@ export const ImageSource = {
   calendar: require(imageSrc + 'calendar.png'),
   chevron_back: require(imageSrc + 'chevron-back.png'),
   chevron_forward: require(imageSrc + 'chevron-forward.png'),
+  upload: require(imageSrc + 'upload.png'),
+  x_red: require(imageSrc + 'x_red.png'),
+  retake: require(imageSrc + 'retake.png'),
+  camera: require(imageSrc + 'camera.png'),
 };
 
 export type TImageSource = keyof typeof ImageSource;
