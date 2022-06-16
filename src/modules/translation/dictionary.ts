@@ -195,4 +195,28 @@ export default {
     ru: 'Сервисы',
     en: 'Services',
   },
+  vehicleTypeOffroad: {
+    ru: 'Внедорожники',
+    en: 'Off-road',
+  },
+  vehicleTypeCabrio: {
+    ru: 'Кабриолеты',
+    en: 'Cabrio',
+  },
+  vehicleTypeSport: {
+    ru: 'Спорткары',
+    en: 'Sport-cars',
+  },
+  vehicleTypeCoupe: {
+    ru: 'Купе',
+    en: 'Coupe',
+  },
+  vehicleTypePremium: {
+    ru: 'Премиум',
+    en: 'Premium',
+  },
+  vehicleTypeBike: {
+    ru: 'Мотоциклы',
+    en: 'Bikes',
+  },
 };

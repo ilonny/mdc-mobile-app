@@ -7,6 +7,7 @@ import {
   ScreenContainer,
   Typography,
 } from '../../ui';
+import { VehicleTypeList } from '../../vehicleType/components';
 
 export const CarMainScreen = () => {
   return (
@@ -17,6 +18,9 @@ export const CarMainScreen = () => {
       <Indent height={20} />
       <PromoBanner />
       <Indent height={20} />
+      <VehicleTypeList />
+      <Indent height={20} />
+      <Indent height={80} />
     </ScreenContainer>
   );
 };

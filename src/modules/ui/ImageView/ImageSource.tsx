@@ -26,6 +26,12 @@ export const ImageSource = {
   tab_icon_trips: require(imageSrc + 'tab_icon_trips.png'),
   tab_icon_service: require(imageSrc + 'tab_icon_service.png'),
   promo_pic: require(imageSrc + 'promo_pic.png'),
+  vehicle_type_offroad: require(imageSrc + 'vehicle_type_offroad.png'),
+  vehicle_type_cabrio: require(imageSrc + 'vehicle_type_cabrio.png'),
+  vehicle_type_sport: require(imageSrc + 'vehicle_type_sport.png'),
+  vehicle_type_coupe: require(imageSrc + 'vehicle_type_coupe.png'),
+  vehicle_type_premium: require(imageSrc + 'vehicle_type_premium.png'),
+  vehicle_type_bike: require(imageSrc + 'vehicle_type_bike.png'),
 };
 
 export type TImageSource = keyof typeof ImageSource;

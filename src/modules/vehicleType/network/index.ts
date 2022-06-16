@@ -1,0 +1,1 @@
+export { getVehicleTypeList } from './getVehicleTypeList';
