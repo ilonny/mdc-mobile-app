@@ -11,6 +11,7 @@ import {
   Typography,
 } from '../../ui';
 import { VehicleTypeList } from '../../vehicleType/components';
+import { PopularList } from '../components';
 
 export const CarMainScreen = () => {
   return (
@@ -30,6 +31,8 @@ export const CarMainScreen = () => {
           </Typography.ButtonText>
         </Button>
       </View>
+      <Indent height={20} />
+      <PopularList />
       <Indent height={80} />
     </ScreenContainer>
   );

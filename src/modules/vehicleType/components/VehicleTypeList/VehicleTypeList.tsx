@@ -27,7 +27,7 @@ export const VehicleTypeList = () => {
     <Row flexWrap="wrap" marginHorizontal={-2.5}>
       {vehicleTypeList?.map((type: TVehicleType) => {
         return (
-          <TouchableFeedback style={styles.itemWrap}>
+          <TouchableFeedback style={styles.itemWrap} key={type.id}>
             <View style={styles.itemWrapInner}>
               <View style={styles.iconWrap}>
                 <ImageView
