@@ -22,6 +22,7 @@ type TProps = {
   onBoardingVideo?: boolean;
   footerPadding?: boolean;
   isLoading?: boolean;
+  noPadding?: boolean;
 };
 
 export const ScreenContainer = (props: TProps) => {
@@ -34,6 +35,7 @@ export const ScreenContainer = (props: TProps) => {
     onBoardingVideo,
     footer,
     footerPadding,
+    noPadding,
   } = props;
   return (
     <View style={[styles.wrapper]}>
@@ -62,6 +64,7 @@ export const ScreenContainer = (props: TProps) => {
                   styles.scrollContent,
                   fullscreen && styles.scrollContentFullscreen,
                   styles.nonScrollWrapper,
+                  noPadding && styles.scrollContentNoPadding,
                 ]}>
                 {children}
               </View>
@@ -72,6 +75,7 @@ export const ScreenContainer = (props: TProps) => {
               contentContainerStyle={[
                 styles.scrollContent,
                 fullscreen && styles.scrollContentFullscreen,
+                noPadding && styles.scrollContentNoPadding,
               ]}>
               {children}
             </ScrollView>

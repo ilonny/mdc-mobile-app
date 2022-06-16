@@ -25,6 +25,7 @@ export const ImageSource = {
   tab_icon_profile: require(imageSrc + 'tab_icon_profile.png'),
   tab_icon_trips: require(imageSrc + 'tab_icon_trips.png'),
   tab_icon_service: require(imageSrc + 'tab_icon_service.png'),
+  promo_pic: require(imageSrc + 'promo_pic.png'),
 };
 
 export type TImageSource = keyof typeof ImageSource;

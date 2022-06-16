@@ -15,3 +15,4 @@ export { DatePicker } from './DatePicker';
 export { FilePicker } from './FilePicker';
 export { CheckBox } from './CheckBox';
 export { FormCheckBox } from './FormCheckBox';
+export { PromoBanner } from './PromoBanner';

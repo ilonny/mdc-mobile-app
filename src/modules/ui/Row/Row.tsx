@@ -10,6 +10,7 @@ type TProps = {
   column?: boolean;
   negativeMargin?: boolean;
   flex?: FlexStyle['flex'];
+  paddingHorizontal?: number;
 };
 
 export const Row: React.FC<TProps> = ({
@@ -20,6 +21,7 @@ export const Row: React.FC<TProps> = ({
   column,
   negativeMargin,
   flex,
+  paddingHorizontal,
 }) => {
   return (
     <View
@@ -28,6 +30,7 @@ export const Row: React.FC<TProps> = ({
         justifyContent && { justifyContent },
         alignItems && { alignItems },
         flexWrap && { flexWrap },
+        paddingHorizontal ? { paddingHorizontal } : {},
         flex ? { flex } : {},
         column && styles.wrapperColumn,
         negativeMargin && styles.wrapperNegativeMargin,

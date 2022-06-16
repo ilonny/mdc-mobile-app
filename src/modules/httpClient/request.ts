@@ -59,8 +59,10 @@ export const request = async (options: TRequestOptions) => {
   };
   if (response?.status === 401) {
     Alert.alert('Authorize error, please login again');
-    // await Storage.clearToken();
-    // reset('LoginScreen');
+    await Storage.removeItem('user_id');
+    await Storage.removeItem('token');
+    reset('InitialScreen');
+    return false;
   }
   if (response?.ok) {
     try {

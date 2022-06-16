@@ -24,6 +24,9 @@ export const styles = StyleSheet.create({
     paddingTop: 87,
     paddingHorizontal: 16,
   },
+  scrollContentNoPadding: {
+    paddingHorizontal: 0,
+  },
   scrollContentFullscreen: {
     paddingTop: 0,
   },
