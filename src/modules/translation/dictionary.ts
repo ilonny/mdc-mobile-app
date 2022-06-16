@@ -179,4 +179,20 @@ export default {
     ru: 'договора оферты',
     en: 'offer',
   },
+  autoPark: {
+    ru: 'Автопарк',
+    en: 'Autopark',
+  },
+  Profile: {
+    ru: 'Профиль',
+    en: 'Profile',
+  },
+  MyTrips: {
+    ru: 'Мои поздки',
+    en: 'My trips',
+  },
+  Services: {
+    ru: 'Сервисы',
+    en: 'Services',
+  },
 };

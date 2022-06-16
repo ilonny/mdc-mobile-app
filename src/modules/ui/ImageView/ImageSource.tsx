@@ -21,6 +21,10 @@ export const ImageSource = {
   warning: require(imageSrc + 'warning.png'),
   checkbox: require(imageSrc + 'checkbox.png'),
   checkbox_checked: require(imageSrc + 'checkbox_checked.png'),
+  tab_icon_car: require(imageSrc + 'tab_icon_car.png'),
+  tab_icon_profile: require(imageSrc + 'tab_icon_profile.png'),
+  tab_icon_trips: require(imageSrc + 'tab_icon_trips.png'),
+  tab_icon_service: require(imageSrc + 'tab_icon_service.png'),
 };
 
 export type TImageSource = keyof typeof ImageSource;

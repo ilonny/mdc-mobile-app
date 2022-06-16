@@ -9,6 +9,7 @@ import {
 } from '../modules/onboarding/screens';
 import { AuthScreen } from '../modules/auth/screens';
 import { UserFilesScreen } from '../modules/user/screens';
+import { TabScreen } from './TabRoutes';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
@@ -60,7 +61,7 @@ export const Routes: React.FC<{
           component={UserFilesScreen}
           options={canNotGoBackOptions}
         />
-        {/* <Stack.Screen name="TabScreen" component={TabScreen} /> */}
+        <Stack.Screen name="TabScreen" component={TabScreen} />
       </Stack.Navigator>
     </>
   );

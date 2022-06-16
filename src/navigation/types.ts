@@ -11,13 +11,27 @@ export type RootStackParamList = {
   TabScreen: undefined;
 };
 
-export type IdentityStackParamList = {};
+export type CarStackParamList = {
+  CarMainScreen: undefined;
+};
 
-export type AccountStackParamList = {};
+export type ProfileStackParamList = {
+  ProfileMainScreen: undefined;
+};
+
+export type TripStackParamList = {
+  TripMainScreen: undefined;
+};
+
+export type ServiceStackParamList = {
+  ServiceMainScreen: undefined;
+};
 
 export type StackParamList = RootStackParamList &
-  IdentityStackParamList &
-  AccountStackParamList;
+  CarStackParamList &
+  ProfileStackParamList &
+  TripStackParamList &
+  ServiceStackParamList;
 
 export type NavigationProps = NativeStackNavigationProp<StackParamList>;
 
