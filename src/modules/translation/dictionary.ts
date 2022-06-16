@@ -219,4 +219,8 @@ export default {
     ru: 'Мотоциклы',
     en: 'Bikes',
   },
+  allCars: {
+    ru: 'Все автомобили',
+    en: 'All cars',
+  },
 };

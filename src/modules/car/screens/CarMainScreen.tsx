@@ -1,6 +1,9 @@
 import React from 'react';
+import { View } from 'react-native';
+import { colors } from '../../../theme';
 import { translate } from '../../translation';
 import {
+  Button,
   Indent,
   PromoBanner,
   Row,
@@ -20,6 +23,13 @@ export const CarMainScreen = () => {
       <Indent height={20} />
       <VehicleTypeList />
       <Indent height={20} />
+      <View style={{ paddingHorizontal: 16 }}>
+        <Button isWhite>
+          <Typography.ButtonText color={colors.totalBlack}>
+            {translate('allCars')}
+          </Typography.ButtonText>
+        </Button>
+      </View>
       <Indent height={80} />
     </ScreenContainer>
   );

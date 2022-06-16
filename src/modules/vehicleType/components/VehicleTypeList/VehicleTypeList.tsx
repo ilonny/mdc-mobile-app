@@ -35,7 +35,9 @@ export const VehicleTypeList = () => {
                   source={ImageSource[mapData[type.label].icon]}
                 />
               </View>
-              <Typography.BoldText>{type.label}</Typography.BoldText>
+              <Typography.BoldText>
+                {mapData[type.label].label}
+              </Typography.BoldText>
             </View>
           </TouchableFeedback>
         );
