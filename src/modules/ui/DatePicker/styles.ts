@@ -4,8 +4,9 @@ import { colors } from '../../../theme';
 export const styles = StyleSheet.create({
   touchableWrapper: {
     position: 'absolute',
-    width: '100%',
+    width: '20%',
     height: '100%',
+    right: 0,
   },
   modal: {
     flex: 1,

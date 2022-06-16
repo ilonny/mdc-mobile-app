@@ -18,6 +18,9 @@ export const ImageSource = {
   x_red: require(imageSrc + 'x_red.png'),
   retake: require(imageSrc + 'retake.png'),
   camera: require(imageSrc + 'camera.png'),
+  warning: require(imageSrc + 'warning.png'),
+  checkbox: require(imageSrc + 'checkbox.png'),
+  checkbox_checked: require(imageSrc + 'checkbox_checked.png'),
 };
 
 export type TImageSource = keyof typeof ImageSource;

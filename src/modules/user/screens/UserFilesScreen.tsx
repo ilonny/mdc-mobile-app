@@ -1,4 +1,6 @@
-import React from 'react';
+import { useNavigation } from '@react-navigation/native';
+import React, { useCallback, useEffect } from 'react';
+import { NavigationProps } from '../../../navigation/types';
 import { translate } from '../../translation';
 import {
   ScreenContainer,
@@ -9,11 +11,23 @@ import {
   ImageSource,
 } from '../../ui';
 import { UserFilesForm } from '../components';
+import { useSetUserData } from '../hooks';
 import { styles } from './styles';
 
 export const UserFilesScreen = () => {
+  const { userData, userDataLoading, setUserDataReq } = useSetUserData();
+  const navigation = useNavigation<NavigationProps>();
+  const onSubmit = useCallback((values: Record<string, any>) => {
+    console.log('onSubmit: ', values);
+    setUserDataReq(values);
+  }, []);
+
+  useEffect(() => {
+    console.log('userData hook', userData);
+  }, [userData]);
+
   return (
-    <ScreenContainer fullscreen>
+    <ScreenContainer fullscreen isLoading={userDataLoading}>
       <Row column alignItems="center" flex={1}>
         <Indent height={30} />
         <ImageView source={ImageSource.logo} style={styles.logo} />
@@ -30,7 +44,7 @@ export const UserFilesScreen = () => {
         </Typography.BoldText>
         <Indent height={30} />
       </Row>
-      <UserFilesForm />
+      <UserFilesForm onSubmit={onSubmit} />
       <Indent height={50} />
     </ScreenContainer>
   );

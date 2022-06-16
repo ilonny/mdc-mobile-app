@@ -1,4 +1,5 @@
 import React, { useState, useCallback, useRef } from 'react';
+import { Masks } from 'react-native-mask-input';
 import { View } from 'react-native';
 import Modal from 'react-native-modal';
 import { Field, useForm } from 'react-final-form';
@@ -75,16 +76,18 @@ export const DatePicker = (props: TProps) => {
           <View>
             <TextInput
               ref={inputRef}
+              mask={Masks.DATE_MMDDYYYY}
+              keyboardType="numeric"
               placeholder={placeholder}
               onChangeText={input.onChange}
               value={input.value}
               error={meta.touched && meta.error}
               onBlur={() => {
-                input.onBlur();
+                // input.onBlur();
               }}
               onFocus={() => {
-                input.onFocus();
-                openModalCb();
+                // input.onFocus();
+                // openModalCb();
               }}
               rightIconName="calendar"
             />

@@ -6,12 +6,13 @@ import React, {
   forwardRef,
 } from 'react';
 import {
-  TextInput as TextInputNative,
+  // TextInput as TextInputNative,
   TextInputProps,
   Animated,
   Easing,
   View,
 } from 'react-native';
+import MaskInput, { Mask } from 'react-native-mask-input';
 import { Typography, ImageSource, ImageView } from '../../ui';
 import { TImageSource } from '../../ui/ImageView/ImageSource';
 import { colors } from '../../../theme';
@@ -19,6 +20,7 @@ import { styles } from './styles';
 import isObject from 'lodash/isObject';
 
 type TProps = {
+  mask?: Mask;
   label?: string;
   isGray?: boolean;
   searchIcon?: boolean;
@@ -38,6 +40,7 @@ const SUCCESS_VALUE = 1;
 
 export const TextInput = forwardRef((props: TProps, ref) => {
   const {
+    mask,
     label,
     isGray,
     isSmall,
@@ -94,8 +97,9 @@ export const TextInput = forwardRef((props: TProps, ref) => {
           {label}
         </Typography.InputLabel>
       )}
-      <TextInputNative
+      <MaskInput
         {...props}
+        mask={mask}
         value={isObject(props.value) ? props.value?.description : props.value}
         //@ts-ignore
         ref={ref}

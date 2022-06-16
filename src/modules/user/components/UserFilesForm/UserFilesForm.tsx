@@ -1,6 +1,6 @@
 import React, { useCallback } from 'react';
 import { Form } from 'react-final-form';
-import { Text, View } from 'react-native';
+import { Linking, Text, View } from 'react-native';
 import { colors } from '../../../../theme';
 import { translate } from '../../../translation';
 import {
@@ -11,16 +11,26 @@ import {
   DatePicker,
   FilePicker,
   Button,
+  ImageView,
+  ImageSource,
+  Row,
+  CheckBox,
+  FormCheckBox,
+  TouchableFeedback,
 } from '../../../ui';
+import { useSetUserData } from '../../hooks';
+import { styles } from './styles';
 // import { validateForm } from './helpers';
 
 const required = (value: undefined | string) =>
   value ? undefined : 'Required';
 
-export const UserFilesForm = () => {
-  const onSubmit = useCallback((values: Record<string, any>) => {
-    console.log('onSubmit: ', values);
-  }, []);
+type TProps = {
+  onSubmit: (values: Record<string, any>) => void;
+};
+
+export const UserFilesForm = (props: TProps) => {
+  const { onSubmit } = props;
 
   return (
     <View>
@@ -37,7 +47,7 @@ export const UserFilesForm = () => {
               />
               <Indent height={20} />
               <DatePicker
-                name="date_of_birth"
+                name="birth_date"
                 placeholder={translate('birthdayInput')}
                 validate={required}
               />
@@ -46,6 +56,7 @@ export const UserFilesForm = () => {
                 name="driver_experience"
                 placeholder={translate('expInput')}
                 validate={required}
+                keyboardType="numeric"
               />
               <Indent height={50} />
               <Typography.BoldText fontSize={32}>
@@ -87,9 +98,59 @@ export const UserFilesForm = () => {
               <FilePicker
                 name="selfie"
                 validate={required}
-                placeholder={translate('DriverLicense2')}
+                placeholder={translate('Selfie')}
                 selfie
               />
+              <View style={styles.line} />
+              <Row justifyContent="center">
+                <ImageView source={ImageSource.warning} size={32} />
+              </Row>
+              <Indent height={20} />
+              <Typography.BoldText
+                textAlign="center"
+                fontSize={16}
+                color={'rgba(255,255,255, 0.8)'}>
+                {translate('filesSecureText')}
+              </Typography.BoldText>
+              <View style={styles.line} />
+              <Indent height={20} />
+              <FormCheckBox name="agree_with_privacy" validate={required}>
+                <Row>
+                  <Text>
+                    <Typography.BoldText color="#fff">
+                      {translate('agreeWithConditions')}{' '}
+                    </Typography.BoldText>
+                    <TouchableFeedback
+                      style={{ marginTop: -2.5 }}
+                      onPress={() =>
+                        Linking.openURL('https://www.google.com/')
+                      }>
+                      <Typography.BoldText textDecorationLine="underline">
+                        {translate('dataProcessing')}
+                      </Typography.BoldText>
+                    </TouchableFeedback>
+                  </Text>
+                </Row>
+              </FormCheckBox>
+              <Indent height={20} />
+              <FormCheckBox name="agree_with_offer" validate={required}>
+                <Row>
+                  <Text>
+                    <Typography.BoldText color="#fff">
+                      {translate('agreeWithConditions')}{' '}
+                    </Typography.BoldText>
+                    <TouchableFeedback
+                      style={{ marginTop: -2.5 }}
+                      onPress={() =>
+                        Linking.openURL('https://www.google.com/')
+                      }>
+                      <Typography.BoldText textDecorationLine="underline">
+                        {translate('offer')}
+                      </Typography.BoldText>
+                    </TouchableFeedback>
+                  </Text>
+                </Row>
+              </FormCheckBox>
               <Indent height={20} />
               <Button isWhite onPress={handleSubmit}>
                 <Typography.ButtonText color={colors.totalBlack}>

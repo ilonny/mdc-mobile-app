@@ -128,8 +128,8 @@ export default {
     en: 'Your name *',
   },
   birthdayInput: {
-    ru: 'Дата рождения *',
-    en: 'Date of birth *',
+    ru: 'Дата рождения (mm/dd/yyyy) *',
+    en: 'Date of birth (mm/dd/yyyy) *',
   },
   expInput: {
     ru: 'Стаж вождения *',
@@ -162,5 +162,21 @@ export default {
   Selfie: {
     ru: 'Селфи арендатора',
     en: 'Selfie',
+  },
+  filesSecureText: {
+    ru: 'Все данные строго конфиденциальны\nи предназначены только для службы\nбезопасности MDC',
+    en: 'All data is strictly confidential\nand is intended only for the\nMDC security service',
+  },
+  agreeWithConditions: {
+    ru: 'Согласен с условиями',
+    en: 'Agree with conditions of',
+  },
+  dataProcessing: {
+    ru: 'обработки данных',
+    en: 'data processiing',
+  },
+  offer: {
+    ru: 'договора оферты',
+    en: 'offer',
   },
 };

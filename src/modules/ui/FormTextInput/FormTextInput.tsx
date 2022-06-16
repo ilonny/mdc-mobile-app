@@ -8,10 +8,11 @@ type TProps = {
   validate?: (arg: string | undefined) => undefined | string;
   placeholder?: string;
   secureTextEntry?: TextInputProps['secureTextEntry'];
+  keyboardType?: TextInputProps['keyboardType'];
 };
 
 export const FormTextInput = (props: TProps) => {
-  const { name, validate, placeholder, secureTextEntry } = props;
+  const { name, validate, placeholder, secureTextEntry, keyboardType } = props;
   return (
     <Field name={name} validate={validate}>
       {({ input, meta }) => {
@@ -24,6 +25,7 @@ export const FormTextInput = (props: TProps) => {
             onBlur={input.onBlur}
             onFocus={input.onFocus}
             secureTextEntry={secureTextEntry}
+            keyboardType={keyboardType}
           />
         );
       }}

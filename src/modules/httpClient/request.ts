@@ -47,7 +47,7 @@ export const request = async (options: TRequestOptions) => {
       callback();
     } else {
       Alert.alert('error with fetch data');
-      console.log(e);
+      console.log(e, path);
     }
   }
   let result: TResult | 'unauthorized' = {
