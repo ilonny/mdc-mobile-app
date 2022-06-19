@@ -9,7 +9,7 @@ import {
   TripStackParamList,
 } from './types';
 import { colors } from '../theme';
-import { CarMainScreen } from '../modules/car/screens';
+import { CarListScreen, CarMainScreen } from '../modules/car/screens';
 import { translate } from '../modules/translation';
 import { ImageSource, ImageView } from '../modules/ui';
 import { ProfileMainScreen } from '../modules/profile/screens';
@@ -31,6 +31,7 @@ const CarStackComponent = () => {
   return (
     <CarStack.Navigator screenOptions={{ headerShown: false }}>
       <CarStack.Screen name="CarMainScreen" component={CarMainScreen} />
+      <CarStack.Screen name="CarListScreen" component={CarListScreen} />
     </CarStack.Navigator>
   );
 };

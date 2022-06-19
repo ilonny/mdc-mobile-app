@@ -1,0 +1,1 @@
+export { VehicleTypeFilter } from './VehicleTypeFilter';

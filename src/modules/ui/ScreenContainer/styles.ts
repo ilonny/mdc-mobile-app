@@ -44,6 +44,7 @@ export const styles = StyleSheet.create({
     position: 'absolute',
     width: '100%',
     minHeight: 94,
+    backgroundColor: colors.totalBlack,
   },
   headerWrapperBlue: {
     // backgroundColor: colors.primary,

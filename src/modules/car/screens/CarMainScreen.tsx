@@ -1,5 +1,7 @@
-import React from 'react';
+import { useNavigation } from '@react-navigation/native';
+import React, { useCallback } from 'react';
 import { View } from 'react-native';
+import { NavigationProps } from '../../../navigation/types';
 import { colors } from '../../../theme';
 import { translate } from '../../translation';
 import {
@@ -14,6 +16,11 @@ import { VehicleTypeList } from '../../vehicleType/components';
 import { PopularList } from '../components';
 
 export const CarMainScreen = () => {
+  const navigation = useNavigation<NavigationProps>();
+  const onPressAll = useCallback(() => {
+    navigation.navigate('CarListScreen');
+  }, [navigation]);
+
   return (
     <ScreenContainer fullscreen noPadding>
       <Row paddingHorizontal={16}>
@@ -25,7 +32,7 @@ export const CarMainScreen = () => {
       <VehicleTypeList />
       <Indent height={20} />
       <View style={{ paddingHorizontal: 16 }}>
-        <Button isWhite>
+        <Button isWhite onPress={onPressAll}>
           <Typography.ButtonText color={colors.totalBlack}>
             {translate('allCars')}
           </Typography.ButtonText>

@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { Storage } from './modules/asyncStorage';
+import { FilterProvider } from './modules/filter/context';
 import { OnboardingProvider } from './modules/onboarding/context';
 import { Navigation } from './navigation';
 
@@ -10,7 +11,9 @@ const App = () => {
   return (
     <>
       <OnboardingProvider>
-        <Navigation />
+        <FilterProvider>
+          <Navigation />
+        </FilterProvider>
       </OnboardingProvider>
     </>
   );

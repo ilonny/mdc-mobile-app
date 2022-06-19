@@ -10,6 +10,7 @@ import {
 import { AuthScreen } from '../modules/auth/screens';
 import { UserFilesScreen } from '../modules/user/screens';
 import { TabScreen } from './TabRoutes';
+import { SelectScreen } from '../modules/ui/Select/screens/SelectScreen';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
@@ -31,6 +32,11 @@ export const Routes: React.FC<{
         screenOptions={{
           headerShown: false,
         }}>
+        <Stack.Screen
+          name="SelectScreen"
+          component={SelectScreen}
+          options={modalScreenOptions}
+        />
         <Stack.Screen
           name="InitialScreen"
           component={InitialScreen}

@@ -12,6 +12,8 @@ import { TImageSource } from '../ImageView/ImageSource';
 import { styles } from './styles';
 import { ScreenFooter } from './ScreenFooter';
 import { FullScreenLoader } from '../FullScreenLoader';
+import { THeaderProps } from '../ScreenHeader/ScreenHeader';
+import { ScreenHeader } from '../ScreenHeader';
 
 type TProps = {
   disableScroll?: boolean;
@@ -23,6 +25,7 @@ type TProps = {
   footerPadding?: boolean;
   isLoading?: boolean;
   noPadding?: boolean;
+  headerProps?: THeaderProps;
 };
 
 export const ScreenContainer = (props: TProps) => {
@@ -36,6 +39,7 @@ export const ScreenContainer = (props: TProps) => {
     footer,
     footerPadding,
     noPadding,
+    headerProps,
   } = props;
   return (
     <View style={[styles.wrapper]}>
@@ -81,6 +85,20 @@ export const ScreenContainer = (props: TProps) => {
             </ScrollView>
           )}
         </KeyboardAvoidingView>
+        {!!headerProps && (
+          <View
+            style={[styles.headerWrapper, ]}>
+            <SafeAreaView style={styles.headerWrapperContent}>
+              <View style={styles.headerWrapperContentRow}>
+                <ScreenHeader
+                  {...headerProps}
+                  // titleOpacity={titleOpacity}
+                  // isBlue={isBlue}
+                />
+              </View>
+            </SafeAreaView>
+          </View>
+        )}
         {footer && (
           <SafeAreaView>
             <ScreenFooter

@@ -1,5 +1,6 @@
 import { RouteProp } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { TOption } from '../modules/ui/Select/Select';
 
 export type RootStackParamList = {
   InitialScreen: undefined;
@@ -9,10 +10,19 @@ export type RootStackParamList = {
   AuthScreen: undefined;
   UserFilesScreen: undefined;
   TabScreen: undefined;
+  SelectScreen: {
+    onPressOption: (option: TOption) => void;
+    title: string;
+    options?: TOption[];
+    value: any;
+    isSuggestions?: boolean;
+    suggestionsPrefix?: string;
+  };
 };
 
 export type CarStackParamList = {
   CarMainScreen: undefined;
+  CarListScreen: undefined;
 };
 
 export type ProfileStackParamList = {

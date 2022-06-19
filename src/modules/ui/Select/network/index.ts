@@ -1,0 +1,1 @@
+export { getSuggestionsRequest } from './getSuggestionsRequest';
