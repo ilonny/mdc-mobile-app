@@ -11,6 +11,7 @@ import { TCar } from '../../types';
 import { styles } from './styles';
 import { getFirstTariff, printPrice } from '../../helpers';
 import { translate } from '../../../translation';
+import { FavButton } from '../FavButton';
 
 type TProps = {
   data: TCar;
@@ -113,6 +114,7 @@ export const CarCard = (props: TProps) => {
             </>
           )}
         </View>
+        <FavButton vehicle_id={data.id} />
       </View>
     </TouchableFeedback>
   );

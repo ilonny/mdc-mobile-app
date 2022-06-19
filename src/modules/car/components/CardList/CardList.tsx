@@ -47,13 +47,11 @@ export const CardList = (props: TProps) => {
           <Row flexWrap="wrap" marginHorizontal={-2.5}>
             {otherCards?.map(car => {
               return (
-                <>
-                  <CarCard
-                    key={car.id}
-                    data={car}
-                    onPress={() => console.log('card press')}
-                  />
-                </>
+                <CarCard
+                  key={car.id}
+                  data={car}
+                  onPress={() => console.log('card press')}
+                />
               );
             })}
           </Row>

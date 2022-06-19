@@ -32,6 +32,8 @@ export const ImageSource = {
   vehicle_type_coupe: require(imageSrc + 'vehicle_type_coupe.png'),
   vehicle_type_premium: require(imageSrc + 'vehicle_type_premium.png'),
   vehicle_type_bike: require(imageSrc + 'vehicle_type_bike.png'),
+  heart: require(imageSrc + 'heart.png'),
+  heart_filled: require(imageSrc + 'heart_filled.png'),
 };
 
 export type TImageSource = keyof typeof ImageSource;

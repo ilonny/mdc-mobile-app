@@ -7,7 +7,6 @@ import { CardList } from '../CardList';
 
 export const PopularList = () => {
   const { popularCarList, popularCarListLoading } = useGetPopularCarList();
-  console.log('popularCarList', popularCarList);
   if (popularCarListLoading) {
     return (
       <Row alignItems="center" justifyContent="center">
