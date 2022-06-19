@@ -128,7 +128,7 @@ export const BoldText: React.FC<TBoldText> = ({
         !!fontSize && { fontSize },
         !!textAlign && { textAlign },
         !!lineHeight && { lineHeight },
-        textDecorationLine && { textDecorationLine: 'underline' },
+        !!textDecorationLine && { textDecorationLine },
       ]}>
       {children}
     </Text>

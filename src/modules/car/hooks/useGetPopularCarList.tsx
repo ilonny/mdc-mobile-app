@@ -9,10 +9,10 @@ export const useGetPopularCarList = () => {
     setPopularCarListLoading(true);
     const res = await getPopularCarList();
     const ids = res?.map(i => i.vehicle_id);
-    await getCarData(ids);
-    setPopularCarList(res);
+    const dataArr = await getCarData(ids);
+    setPopularCarList(dataArr);
     setPopularCarListLoading(false);
-    return res;
+    return dataArr;
   }, []);
 
   useEffect(() => {

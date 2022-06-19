@@ -1,4 +1,5 @@
 import { request } from '../../httpClient';
+import { API_URL } from '../../httpClient/constants';
 import { GET_CAR_DATA_PATH } from '../constants';
 import { getCarGallery } from './getCarGallery';
 import { getCarTariff } from './getCarTariff';
@@ -13,11 +14,11 @@ export const getCarData = async (ids: string[]) => {
   dataArr = await Promise.all(
     dataArr.map(async res => {
       const data = res?.data;
+      data.main_image = `${API_URL}/${res?.data?.main_image}`;
       data.tariffs = await getCarTariff(data.id);
       data.gallery = await getCarGallery(data.id);
       return data;
     }),
   );
-
-  console.log('dataArr', dataArr);
+  return dataArr;
 };

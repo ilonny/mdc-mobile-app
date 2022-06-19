@@ -1,5 +1,5 @@
 import dictionary from './dictionary';
-const lang = 'en';
+export const lang = 'en';
 
 // type TKey = keyof typeof dictionary;
 // type TTranslation = Record<TKey, string>;

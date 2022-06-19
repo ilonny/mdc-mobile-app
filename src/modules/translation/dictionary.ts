@@ -223,4 +223,12 @@ export default {
     ru: 'Все автомобили',
     en: 'All cars',
   },
+  popularListTitle: {
+    ru: 'Популярные',
+    en: 'Popular',
+  },
+  perDay: {
+    ru: 'в сутки',
+    en: 'day',
+  },
 };
