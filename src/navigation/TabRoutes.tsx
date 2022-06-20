@@ -30,8 +30,8 @@ const modalScreenOptions: { presentation: 'modal' } = {
 const CarStackComponent = () => {
   return (
     <CarStack.Navigator screenOptions={{ headerShown: false }}>
-      <CarStack.Screen name="CarMainScreen" component={CarMainScreen} />
       <CarStack.Screen name="CarListScreen" component={CarListScreen} />
+      <CarStack.Screen name="CarMainScreen" component={CarMainScreen} />
     </CarStack.Navigator>
   );
 };

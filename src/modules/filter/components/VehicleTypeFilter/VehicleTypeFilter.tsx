@@ -1,4 +1,4 @@
-import React, { useContext, useMemo } from 'react';
+import React, { useCallback, useContext, useMemo } from 'react';
 import { ActivityIndicator, View } from 'react-native';
 import { translate } from '../../../translation';
 import {
@@ -14,7 +14,8 @@ import { useVehicleTypeList } from '../../../vehicleType/hooks';
 import { FilterContext } from '../../context';
 
 export const VehicleTypeFilter = () => {
-  const { vehicleType, setVehicleType } = useContext(FilterContext);
+  const { vehicleType, setVehicleType, vehicleTypeId, setVehicleTypeId } =
+    useContext(FilterContext);
   const { vehicleTypeList, vehicleTypeListLoading } = useVehicleTypeList();
 
   const label = useMemo(() => {
@@ -27,16 +28,22 @@ export const VehicleTypeFilter = () => {
   const options = useMemo(() => {
     return (
       vehicleTypeList
-        ?.map((type: { label: string }) => {
+        ?.map((type: { label: string; id: number }) => {
           const val = mapData[type.label].label;
           return {
             value: val,
             label: val,
+            extraData: type.id.toString(),
           };
         })
-        .concat({ label: translate('allCars'), value: '' }) || []
+        .concat({ label: translate('allCars'), value: '', extraData: '' }) || []
     );
   }, [vehicleTypeList]);
+
+  const onChange = useCallback((val: string, extraId?: any) => {
+    setVehicleType(val);
+    setVehicleTypeId(extraId);
+  }, []);
 
   if (vehicleTypeListLoading) {
     return (
@@ -48,7 +55,7 @@ export const VehicleTypeFilter = () => {
 
   return (
     <View>
-      <Select options={options} onChange={setVehicleType}>
+      <Select options={options} onChange={onChange}>
         <Row>
           <Typography.ScreenTitle>{label}</Typography.ScreenTitle>
           <Indent width={10} />

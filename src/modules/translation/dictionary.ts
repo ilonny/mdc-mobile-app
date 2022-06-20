@@ -231,4 +231,28 @@ export default {
     ru: 'в сутки',
     en: 'day',
   },
+  noCarsFound: {
+    ru: 'Ничего не найдено',
+    en: 'No cars found',
+  },
+  filterMark: {
+    ru: 'Марка',
+    en: 'Brand',
+  },
+  filterPower: {
+    ru: 'Мощность',
+    en: 'Power',
+  },
+  filterPrice: {
+    ru: 'Цена, ₽',
+    en: 'Price, $',
+  },
+  filterColor: {
+    ru: 'Цвет',
+    en: 'Color',
+  },
+  allMarks: {
+    ru: 'Все марки',
+    en: 'All brands',
+  },
 };

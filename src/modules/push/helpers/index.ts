@@ -6,8 +6,5 @@ export async function requestUserPermission() {
     authStatus === messaging.AuthorizationStatus.AUTHORIZED ||
     authStatus === messaging.AuthorizationStatus.PROVISIONAL;
 
-  // if (enabled) {
-  //   console.log('Authorization status:', authStatus);
-  // }
   return enabled;
 }

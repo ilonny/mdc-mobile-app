@@ -1,0 +1,1 @@
+export { useVehicleMarkList } from './useVehicleMarkList';

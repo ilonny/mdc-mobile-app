@@ -1,0 +1,1 @@
+export { getVehicleMarkList } from './getVehicleMarkList';

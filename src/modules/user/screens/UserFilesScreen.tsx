@@ -18,12 +18,10 @@ export const UserFilesScreen = () => {
   const { userData, userDataLoading, setUserDataReq } = useSetUserData();
   const navigation = useNavigation<NavigationProps>();
   const onSubmit = useCallback((values: Record<string, any>) => {
-    console.log('onSubmit: ', values);
     setUserDataReq(values);
   }, []);
 
   useEffect(() => {
-    console.log('userData hook', userData);
   }, [userData]);
 
   return (

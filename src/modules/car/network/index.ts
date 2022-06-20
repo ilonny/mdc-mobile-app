@@ -6,3 +6,4 @@ export {
   addCarFavorite,
   deleteCarFavorite,
 } from './carFavorite';
+export { getCarList } from './getCarList';

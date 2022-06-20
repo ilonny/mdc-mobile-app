@@ -54,7 +54,6 @@ export const FilePicker = (props: TProps) => {
                       mediaType: 'photo',
                       selectionLimit: 1,
                     }).then(photo => {
-                      console.log('photo: ', photo);
                       if (photo?.assets && photo.assets[0]) {
                         input.onChange(photo.assets[0].uri);
                       }

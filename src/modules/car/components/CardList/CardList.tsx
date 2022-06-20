@@ -1,5 +1,6 @@
 import React, { useMemo } from 'react';
 import { View } from 'react-native';
+import { translate } from '../../../translation';
 import { Indent, Row, Typography } from '../../../ui';
 import { TCar } from '../../types';
 import { CarCard } from '../CarCard';
@@ -16,7 +17,7 @@ export const CardList = (props: TProps) => {
       return items[0];
     }
     return null;
-  }, []);
+  }, [items]);
 
   const otherCards = useMemo(() => {
     if (items.length) {
@@ -29,7 +30,19 @@ export const CardList = (props: TProps) => {
   }, [items]);
 
   if (!items || items?.length === 0) {
-    return <></>;
+    return (
+      <View
+        style={{
+          width: '100%',
+          height: 200,
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}>
+        <Typography.BoldText textAlign="center">
+          {translate('noCarsFound')}
+        </Typography.BoldText>
+      </View>
+    );
   }
 
   return (
@@ -38,7 +51,7 @@ export const CardList = (props: TProps) => {
         <CarCard
           data={firstCard}
           isBig
-          onPress={() => console.log('card press')}
+          onPress={() => {}}
         />
       )}
       {!!otherCards && (
@@ -50,7 +63,7 @@ export const CardList = (props: TProps) => {
                 <CarCard
                   key={car.id}
                   data={car}
-                  onPress={() => console.log('card press')}
+                  onPress={() => {}}
                 />
               );
             })}

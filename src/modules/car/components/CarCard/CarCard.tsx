@@ -75,9 +75,12 @@ export const CarCard = (props: TProps) => {
                         <Typography.BoldText> </Typography.BoldText>
                       </>
                     )}
-                    <Typography.BoldText fontSize={11}>
-                      {translate('perDay')}
-                    </Typography.BoldText>
+                    <View
+                      style={{ marginBottom: firstTariff.promo_price ? 0 : 3 }}>
+                      <Typography.BoldText fontSize={11}>
+                        {translate('perDay')}
+                      </Typography.BoldText>
+                    </View>
                   </View>
                 </Row>
               ) : (

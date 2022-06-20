@@ -16,8 +16,6 @@ export const useGetInitialRouteName = () => {
     const user_id = (await Storage.getItem('user_id')) || '';
     const userData = await getUserDataReq(user_id);
 
-    console.log('userData', userData);
-
     if (!onboardingShowed) {
       return 'OnboardingMainScreen';
     }

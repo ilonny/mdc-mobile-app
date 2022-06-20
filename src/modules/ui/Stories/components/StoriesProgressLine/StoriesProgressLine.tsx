@@ -13,7 +13,8 @@ type TProps = {
 const DURATION = 2000;
 
 export const StoriesProgressLine = (props: TProps) => {
-  const { activeIndex, localIndex, setActiveIndex, lastIndex, callback } = props;
+  const { activeIndex, localIndex, setActiveIndex, lastIndex, callback } =
+    props;
   const primaryLineWidth = useRef(new Animated.Value(0)).current;
 
   const width = primaryLineWidth.interpolate({
@@ -29,16 +30,7 @@ export const StoriesProgressLine = (props: TProps) => {
         useNativeDriver: false,
         duration,
         easing: Easing.ease,
-      }).start(() => {
-        // callback();
-        // if (duration > 1) {
-        //   setActiveIndex(
-        //     localIndex === lastIndex ? localIndex : localIndex + 1,
-        //   );
-        //   // if (localIndex === activeIndex) {
-        //   // }
-        // }
-      });
+      }).start();
     },
     [lastIndex, localIndex, activeIndex, callback],
   );
@@ -53,7 +45,6 @@ export const StoriesProgressLine = (props: TProps) => {
   }, []);
 
   useEffect(() => {
-    // console.log('activeIndex, localIndex', activeIndex, localIndex);
     if (localIndex >= activeIndex) {
       resetAnimation();
       // return;
@@ -63,8 +54,6 @@ export const StoriesProgressLine = (props: TProps) => {
       // return;
     }
     if (activeIndex === localIndex) {
-      // console.log('start ', localIndex, primaryLineWidth);
-      // startAnimation(1);
       resetAnimation();
       setTimeout(() => {
         startAnimation(DURATION);

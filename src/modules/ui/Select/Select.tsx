@@ -11,10 +11,11 @@ import { Typography } from '../Typography';
 export type TOption = {
   label: string;
   value: string;
+  extraData?: any;
 };
 
 type TRestProps = {
-  onChange?: (arg: string) => void;
+  onChange?: (arg: string, extraData?: any) => void;
   placeholder?: string;
   children: JSX.Element;
 };
@@ -43,7 +44,7 @@ export const Select = (props: TProps) => {
   useEffect(() => {
     if (selectedOption) {
       if (typeof onChange === 'function') {
-        onChange(selectedOption.value as string);
+        onChange(selectedOption.value as string, selectedOption?.extraData);
       }
     }
   }, [selectedOption, onChange]);
