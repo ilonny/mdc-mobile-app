@@ -68,13 +68,23 @@ export const StoriesFourth = () => {
           </View>
         </View>
         <Indent height={30} />
+      </View>
+      <Indent height={40} />
+      <View
+        style={{
+          position: 'absolute',
+          bottom: 30,
+          // backgroundColor: 'red',
+          width: '100%',
+          // left: 16,
+          paddingHorizontal: 16,
+        }}>
         <Button isWhite onPress={completeOnboarding}>
           <Typography.ButtonText color={colors.totalBlack}>
             {translate('next')}
           </Typography.ButtonText>
         </Button>
       </View>
-      <Indent height={40} />
     </SafeAreaView>
   );
 };

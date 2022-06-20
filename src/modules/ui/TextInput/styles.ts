@@ -13,7 +13,10 @@ export const styles = StyleSheet.create({
     borderColor: colors.mainGray,
   },
   wrapperGray: {
-    backgroundColor: colors.backgroundGray,
+    // backgroundColor: colors.backgroundGray,
+  },
+  wrapperBlack: {
+    backgroundColor: colors.totalBlack,
   },
   wrapperNoLabel: {
     // height: 48,

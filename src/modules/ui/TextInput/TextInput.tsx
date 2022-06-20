@@ -20,6 +20,7 @@ import { styles } from './styles';
 import isObject from 'lodash/isObject';
 
 type TProps = {
+  isBlack?: boolean;
   mask?: Mask;
   label?: string;
   isGray?: boolean;
@@ -49,6 +50,7 @@ export const TextInput = forwardRef((props: TProps, ref) => {
     onBlur,
     onFocus,
     rightIconName,
+    isBlack,
   } = props;
   const [isFocused, setIsFocused] = useState(false);
   const interpolatedColor = useRef(new Animated.Value(ORIGINAL_VALUE)).current;
@@ -86,6 +88,7 @@ export const TextInput = forwardRef((props: TProps, ref) => {
       style={[
         styles.wrapper,
         isGray && styles.wrapperGray,
+        isBlack && styles.wrapperBlack,
         !label && styles.wrapperNoLabel,
         searchIcon && styles.wrapperSearch,
         isSmall && styles.wrapperSmall,

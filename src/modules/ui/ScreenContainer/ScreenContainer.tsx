@@ -45,6 +45,7 @@ export const ScreenContainer = (props: TProps) => {
     <View style={[styles.wrapper]}>
       {!!onBoardingVideo && (
         <Video
+          muted
           source={require('../../../assets/onboarding_video.mp4')} // Can be a URL or a local file.
           resizeMode="cover"
           repeat

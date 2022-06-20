@@ -1,6 +1,7 @@
 import React, { useCallback } from 'react';
 import { SafeAreaView, View } from 'react-native';
 import { colors } from '../../../../theme';
+import { isSmallWidth } from '../../../device';
 import { requestUserPermission } from '../../../push';
 import { translate } from '../../../translation';
 import { Button, Indent, Typography } from '../../../ui';
@@ -17,7 +18,6 @@ export const OnboardingPush = () => {
   const onSkipPush = useCallback(async () => {
     completeOnboardingPush();
   }, []);
-
   return (
     <SafeAreaView style={styles.wrapper}>
       <View style={styles.content}>
@@ -28,7 +28,7 @@ export const OnboardingPush = () => {
           <Indent height={20} />
           <Typography.BoldText
             textAlign="center"
-            fontSize={18}
+            fontSize={isSmallWidth ? 14 : 18}
             color={colors.secondaryText}>
             {translate('onboardingPushDescription')}
           </Typography.BoldText>
@@ -40,7 +40,7 @@ export const OnboardingPush = () => {
             source={ImageSource.onboarding_push}
             resizeMode="contain"
           />
-          <Indent height={30} />
+          {/* <Indent height={30} /> */}
         </View>
         <View>
           <Button isWhite onPress={onRequestPush}>

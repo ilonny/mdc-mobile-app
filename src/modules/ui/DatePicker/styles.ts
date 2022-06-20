@@ -18,7 +18,7 @@ export const styles = StyleSheet.create({
     padding: 20,
     borderTopLeftRadius: 12,
     borderTopRightRadius: 12,
-    paddingBottom: 50,
+    paddingBottom: 0,
   },
   calendarHeaderRow: {
     flexDirection: 'row',

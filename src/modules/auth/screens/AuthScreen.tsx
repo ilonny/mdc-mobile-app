@@ -119,6 +119,7 @@ export const AuthScreen = () => {
             </Typography.BoldText>
             <Indent height={30} />
             <PhoneInput onChange={setPhone} />
+            <Indent height={60} />
           </>
         )}
         {!!requestCodeResult ? (

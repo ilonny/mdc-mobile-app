@@ -22,7 +22,7 @@ export const styles = StyleSheet.create({
   },
   onboarding_push: {
     width: '100%',
-    height: 250,
+    height: 150,
   },
   perkWrapper: {
     width: '100%',

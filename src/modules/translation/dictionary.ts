@@ -255,4 +255,24 @@ export default {
     ru: 'Все марки',
     en: 'All brands',
   },
+  powerFrom: {
+    ru: 'Мощность (от)',
+    en: 'Power (from)',
+  },
+  powerTo: {
+    ru: 'Мощность (до)',
+    en: 'Power (to)',
+  },
+  closeModal: {
+    ru: 'Закрыть',
+    en: 'Close',
+  },
+  saveFilter: {
+    ru: 'Сохранить',
+    en: 'Confirm',
+  },
+  resetFilter: {
+    ru: 'Сбросить фильтр',
+    en: 'Reset filter',
+  },
 };
