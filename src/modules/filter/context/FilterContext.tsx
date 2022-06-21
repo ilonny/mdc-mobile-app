@@ -16,6 +16,11 @@ export type TCtx = {
   powerTo?: string;
   setPowerTo: (powerTo: string | undefined) => void;
 
+  priceFrom?: string;
+  setPriceFrom: (priceFrom: string | undefined) => void;
+  priceTo?: string;
+  setPriceTo: (priceTo: string | undefined) => void;
+
   clearFilterContext: () => void;
 };
 
@@ -32,6 +37,9 @@ export const FilterProvider = ({ children }: any) => {
 
   const [powerFrom, setPowerFrom] = useState<string | undefined>();
   const [powerTo, setPowerTo] = useState<string | undefined>();
+
+  const [priceFrom, setPriceFrom] = useState<string | undefined>();
+  const [priceTo, setPriceTo] = useState<string | undefined>();
 
   const clearFilterContext = useCallback(() => {
     setVehicleType(undefined);
@@ -53,6 +61,10 @@ export const FilterProvider = ({ children }: any) => {
         setPowerFrom,
         powerTo,
         setPowerTo,
+        priceFrom,
+        setPriceFrom,
+        priceTo,
+        setPriceTo,
       }}>
       {children}
     </FilterContext.Provider>

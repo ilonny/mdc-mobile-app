@@ -25,9 +25,13 @@ import { colors } from '../../../../theme';
 
 export const VehicleFilters = () => {
   const [isModalVisible, setModalVisible] = useState(false);
+  const [isModalVisiblePrice, setModalVisiblePrice] = useState(false);
 
   const [powerFromState, setPowerFromState] = useState('');
   const [powerToState, setPowerToState] = useState('');
+
+  const [priceFromState, setPriceFromState] = useState('');
+  const [priceToState, setPriceToState] = useState('');
 
   const {
     mark,
@@ -37,6 +41,10 @@ export const VehicleFilters = () => {
     setPowerFrom,
     powerFrom,
     powerTo,
+    priceFrom,
+    setPriceFrom,
+    priceTo,
+    setPriceTo,
   } = useContext(FilterContext);
   const { vehicleMarkList, vehicleMarkListLoading } = useVehicleMarkList();
 
@@ -65,6 +73,10 @@ export const VehicleFilters = () => {
     setModalVisible(false);
   }, []);
 
+  const closeModalCbPrice = useCallback(() => {
+    setModalVisiblePrice(false);
+  }, []);
+
   if (vehicleMarkListLoading) {
     return (
       <Row alignItems="center" justifyContent="center">
@@ -88,8 +100,10 @@ export const VehicleFilters = () => {
           </FilterButton>
         </TouchableFeedback>
         <Indent width={10} />
-        <TouchableFeedback>
-          <FilterButton>{translate('filterPrice')}</FilterButton>
+        <TouchableFeedback onPress={() => setModalVisiblePrice(true)}>
+          <FilterButton isActive={!!priceFrom || !!priceTo}>
+            {translate('filterPrice')}
+          </FilterButton>
         </TouchableFeedback>
         <Indent width={10} />
         <TouchableFeedback>
@@ -150,6 +164,70 @@ export const VehicleFilters = () => {
                   setPowerFrom('');
                   setPowerTo('');
                   closeModalCb();
+                }}>
+                <Typography.ButtonText>
+                  {translate('resetFilter')}
+                </Typography.ButtonText>
+              </Button>
+            </View>
+          </View>
+          {/* </ScrollView> */}
+        </KeyboardAvoidingView>
+      </Modal>
+      <Modal
+        isVisible={isModalVisiblePrice}
+        onBackdropPress={closeModalCbPrice}
+        style={[pickerStyles.modal]}
+        backdropOpacity={0.6}>
+        <KeyboardAvoidingView style={pickerStyles.modal} behavior="padding">
+          {/* <ScrollView contentContainerStyle={pickerStyles.modal}> */}
+          <View style={[pickerStyles.modalBottomContent]}>
+            <View style={[pickerStyles.calendarWrapper]}>
+              <View style={pickerStyles.calendarHeaderRow}>
+                <View />
+                <SecondaryButton isWhite onPress={closeModalCbPrice}>
+                  {translate('closeModal')}
+                </SecondaryButton>
+              </View>
+              <Indent height={28} />
+              <View style={{ height: 60 }}>
+                <TextInput
+                  isBlack
+                  placeholder={translate('priceFrom')}
+                  value={priceFromState}
+                  onChangeText={setPriceFromState}
+                  keyboardType="numeric"
+                />
+              </View>
+              <Indent height={28} />
+              <View style={{ height: 60 }}>
+                <TextInput
+                  isBlack
+                  placeholder={translate('priceTo')}
+                  value={priceToState}
+                  onChangeText={setPriceToState}
+                  keyboardType="numeric"
+                />
+              </View>
+              <Indent height={28} />
+              <Button
+                isWhite
+                onPress={() => {
+                  setPriceFrom(priceFromState);
+                  setPriceTo(priceToState);
+                  closeModalCbPrice();
+                }}>
+                <Typography.ButtonText color={colors.totalBlack}>
+                  {translate('saveFilter')}
+                </Typography.ButtonText>
+              </Button>
+              <Button
+                onPress={() => {
+                  setPriceFromState('');
+                  setPriceToState('');
+                  setPriceFrom('');
+                  setPriceTo('');
+                  closeModalCbPrice();
                 }}>
                 <Typography.ButtonText>
                   {translate('resetFilter')}

@@ -7,16 +7,21 @@ import { filterCarList } from '../helpers';
 import { useCarList } from '../hooks';
 
 export const CarListScreen = () => {
-  const { vehicleTypeId, markId } = useContext(FilterContext);
+  const { vehicleTypeId, markId, powerFrom, powerTo, priceFrom, priceTo } =
+    useContext(FilterContext);
   const { carList, carListLoading } = useCarList();
-  
+
   const carListFiltered = useMemo(() => {
     return filterCarList(carList, {
       vehicleTypeId,
       markId,
+      powerFrom,
+      powerTo,
+      priceFrom,
+      priceTo,
     });
-  }, [carList, vehicleTypeId, markId]);
-  
+  }, [carList, vehicleTypeId, markId, powerFrom, powerTo, priceFrom, priceTo]);
+
   return (
     <ScreenContainer
       headerProps={{ backButton: true }}

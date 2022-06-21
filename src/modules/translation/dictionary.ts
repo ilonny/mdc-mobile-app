@@ -263,6 +263,14 @@ export default {
     ru: 'Мощность (до)',
     en: 'Power (to)',
   },
+  priceFrom: {
+    ru: 'Цена (от)',
+    en: 'Price (from)',
+  },
+  priceTo: {
+    ru: 'Цена (до)',
+    en: 'Price (to)',
+  },
   closeModal: {
     ru: 'Закрыть',
     en: 'Close',
