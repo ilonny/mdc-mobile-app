@@ -11,8 +11,15 @@ type TFilters = {
 };
 
 export const filterCarList = (carList: TCar[], filters: TFilters) => {
-  const { vehicleTypeId, markId, powerFrom, powerTo, priceFrom, priceTo } =
-    filters;
+  const {
+    vehicleTypeId,
+    markId,
+    powerFrom,
+    powerTo,
+    priceFrom,
+    priceTo,
+    colorId,
+  } = filters;
   let res = carList;
 
   if (vehicleTypeId) {
@@ -50,5 +57,8 @@ export const filterCarList = (carList: TCar[], filters: TFilters) => {
     });
   }
 
+  if (colorId) {
+    res = res.filter(car => car.color_id === colorId);
+  }
   return res;
 };

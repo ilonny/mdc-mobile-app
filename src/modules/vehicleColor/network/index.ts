@@ -1,0 +1,1 @@
+export { getVehicleColorList } from './getVehicleColorList';

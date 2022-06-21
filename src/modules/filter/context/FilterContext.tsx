@@ -21,6 +21,11 @@ export type TCtx = {
   priceTo?: string;
   setPriceTo: (priceTo: string | undefined) => void;
 
+  color?: string;
+  setColor: (color: string | undefined) => void;
+  colorId?: string;
+  setColorId: (color: string | undefined) => void;
+
   clearFilterContext: () => void;
 };
 
@@ -40,6 +45,9 @@ export const FilterProvider = ({ children }: any) => {
 
   const [priceFrom, setPriceFrom] = useState<string | undefined>();
   const [priceTo, setPriceTo] = useState<string | undefined>();
+
+  const [color, setColor] = useState<string | undefined>();
+  const [colorId, setColorId] = useState<string | undefined>();
 
   const clearFilterContext = useCallback(() => {
     setVehicleType(undefined);
@@ -65,6 +73,10 @@ export const FilterProvider = ({ children }: any) => {
         setPriceFrom,
         priceTo,
         setPriceTo,
+        color,
+        setColor,
+        colorId,
+        setColorId,
       }}>
       {children}
     </FilterContext.Provider>

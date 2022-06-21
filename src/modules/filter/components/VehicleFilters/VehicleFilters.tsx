@@ -6,7 +6,7 @@ import {
   ScrollView,
   View,
 } from 'react-native';
-import { translate } from '../../../translation';
+import { lang, translate } from '../../../translation';
 import {
   Button,
   FilterButton,
@@ -22,6 +22,9 @@ import { useVehicleMarkList } from '../../../vehicleMark/hooks';
 import { FilterContext } from '../../context';
 import { styles as pickerStyles } from '../../../ui/DatePicker/styles';
 import { colors } from '../../../../theme';
+import { useVehicleColorList } from '../../../vehicleColor/hooks';
+import { colorTransition } from '../../../vehicleColor/constants';
+import { TOption } from '../../../ui/Select/Select';
 
 export const VehicleFilters = () => {
   const [isModalVisible, setModalVisible] = useState(false);
@@ -45,8 +48,12 @@ export const VehicleFilters = () => {
     setPriceFrom,
     priceTo,
     setPriceTo,
+    color,
+    setColor,
+    setColorId,
   } = useContext(FilterContext);
   const { vehicleMarkList, vehicleMarkListLoading } = useVehicleMarkList();
+  const { vehicleColorList, vehicleColorListLoading } = useVehicleColorList();
 
   const markOptions = useMemo(() => {
     return (
@@ -64,9 +71,35 @@ export const VehicleFilters = () => {
     );
   }, [vehicleMarkList]);
 
+  const colorOptions = useMemo(() => {
+    return (
+      vehicleColorList
+        ?.map(
+          (color: {
+            label: keyof typeof colorTransition;
+            id: number;
+          }): TOption => {
+            const val: keyof typeof colorTransition = color.label;
+            return {
+              value: colorTransition[val][lang] || '',
+              label: colorTransition[val][lang] || '',
+              extraData: color.id.toString(),
+            };
+          },
+        )
+        .concat({ label: translate('allColors'), value: '', extraData: '' }) ||
+      []
+    );
+  }, [vehicleColorList]);
+
   const onChangeMark = useCallback((val: string, extraId?: any) => {
     setMark(val);
     setMarkId(extraId);
+  }, []);
+
+  const onChangeColor = useCallback((val: string, extraId?: any) => {
+    setColor(val);
+    setColorId(extraId);
   }, []);
 
   const closeModalCb = useCallback(() => {
@@ -77,7 +110,7 @@ export const VehicleFilters = () => {
     setModalVisiblePrice(false);
   }, []);
 
-  if (vehicleMarkListLoading) {
+  if (vehicleMarkListLoading || vehicleColorListLoading) {
     return (
       <Row alignItems="center" justifyContent="center">
         <ActivityIndicator />
@@ -106,9 +139,11 @@ export const VehicleFilters = () => {
           </FilterButton>
         </TouchableFeedback>
         <Indent width={10} />
-        <TouchableFeedback>
-          <FilterButton>{translate('filterColor')}</FilterButton>
-        </TouchableFeedback>
+        <Select options={colorOptions} onChange={onChangeColor}>
+          <FilterButton isActive={!!color}>
+            {translate('filterColor')}
+          </FilterButton>
+        </Select>
       </Row>
       <Modal
         isVisible={isModalVisible}

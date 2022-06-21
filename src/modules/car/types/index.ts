@@ -14,6 +14,7 @@ export type TCar = {
   vehicle_type_id: string;
   video: string | null;
   volume: string;
+  color_id?: string;
 };
 
 export type TTariff = {

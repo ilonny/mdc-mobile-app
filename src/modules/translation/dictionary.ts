@@ -255,6 +255,10 @@ export default {
     ru: 'Все марки',
     en: 'All brands',
   },
+  allColors: {
+    ru: 'Все цвета',
+    en: 'All colors',
+  },
   powerFrom: {
     ru: 'Мощность (от)',
     en: 'Power (from)',
