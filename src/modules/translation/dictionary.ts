@@ -291,4 +291,12 @@ export default {
     ru: 'Договорная',
     en: 'Contract price',
   },
+  favAdd: {
+    ru: 'Добавить в избранное',
+    en: 'Add to favorite',
+  },
+  favRemove: {
+    ru: 'Удалить из избранного',
+    en: 'Remove from favorite',
+  },
 };

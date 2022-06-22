@@ -23,6 +23,9 @@ export type RootStackParamList = {
 export type CarStackParamList = {
   CarMainScreen: undefined;
   CarListScreen: undefined;
+  CarDetailScreen: {
+    vehicle_id: string;
+  };
 };
 
 export type ProfileStackParamList = {

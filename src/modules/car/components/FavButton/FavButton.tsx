@@ -1,15 +1,24 @@
 import React from 'react';
-import { ActivityIndicator } from 'react-native';
-import { ImageSource, ImageView, TouchableFeedback } from '../../../ui';
+import { ActivityIndicator, View } from 'react-native';
+import { translate } from '../../../translation';
+import {
+  ImageSource,
+  ImageView,
+  Indent,
+  Row,
+  TouchableFeedback,
+  Typography,
+} from '../../../ui';
 import { useCarFavorite } from '../../hooks';
 import { styles } from './styles';
 
 type TProps = {
   vehicle_id: number;
+  inCarCard?: boolean;
 };
 
 export const FavButton = (props: TProps) => {
-  const { vehicle_id } = props;
+  const { vehicle_id, inCarCard } = props;
   const { isFavorite, isFavoriteLoading, addFavorite, deleteFavorite } =
     useCarFavorite(vehicle_id);
 
@@ -17,17 +26,38 @@ export const FavButton = (props: TProps) => {
 
   return (
     <TouchableFeedback
-      style={styles.wrapper}
+      style={[styles.wrapper, inCarCard && styles.inCarCardWrapper]}
       onPress={() => {
         isFavorite ? deleteFavorite() : addFavorite();
       }}>
       {isFavoriteLoading ? (
-        <ActivityIndicator />
+        <View style={styles.imageWrapper}>
+          <ActivityIndicator />
+        </View>
       ) : (
-        <ImageView
-          size={18}
-          source={isFavorite ? ImageSource.heart_filled : ImageSource.heart}
-        />
+        <>
+          {!inCarCard ? (
+            <ImageView
+              size={18}
+              source={isFavorite ? ImageSource.heart_filled : ImageSource.heart}
+            />
+          ) : (
+            <Row>
+              <View style={styles.imageWrapper}>
+                <ImageView
+                  size={18}
+                  source={
+                    isFavorite ? ImageSource.heart_filled : ImageSource.heart
+                  }
+                />
+              </View>
+              <Indent width={15} />
+              <Typography.BoldText fontSize={17}>
+                {isFavorite ? translate('favRemove') : translate('favAdd')}
+              </Typography.BoldText>
+            </Row>
+          )}
+        </>
       )}
     </TouchableFeedback>
   );

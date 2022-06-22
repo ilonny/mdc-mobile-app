@@ -11,7 +11,10 @@ export const getCarIsFavorite = async (
     // body: JSON.stringify({ vehicle_id, user_id }),
   });
   //@ts-ignore
-  return !!res?.data?.length;
+  return !!res?.data?.find(
+    d => d.vehicle_id.toString() === vehicle_id.toString(),
+  );
+  // return !!res?.data?.length;
 };
 
 export const addCarFavorite = async (vehicle_id: number) => {

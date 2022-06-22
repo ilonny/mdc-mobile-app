@@ -1,5 +1,5 @@
 import { Text, View } from 'react-native';
-import React, { useMemo } from 'react';
+import React, { useCallback, useMemo } from 'react';
 import {
   ImageView,
   Indent,
@@ -12,18 +12,23 @@ import { styles } from './styles';
 import { getFirstTariff, printPrice } from '../../helpers';
 import { translate } from '../../../translation';
 import { FavButton } from '../FavButton';
+import { useNavigation } from '@react-navigation/native';
+import { NavigationProps } from '../../../../navigation/types';
 
 type TProps = {
   data: TCar;
   isBig?: boolean;
-  onPress: (arg: any) => void;
 };
 
 export const CarCard = (props: TProps) => {
-  const { data, isBig, onPress } = props;
-
+  const { data, isBig } = props;
+  const navigation = useNavigation<NavigationProps>();
   const firstTariff = useMemo(() => {
     return getFirstTariff(data.tariffs);
+  }, [data]);
+
+  const onPress = useCallback(() => {
+    navigation.navigate('CarDetailScreen', { vehicle_id: data.id.toString() });
   }, [data]);
 
   return (

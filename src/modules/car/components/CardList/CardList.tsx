@@ -51,7 +51,6 @@ export const CardList = (props: TProps) => {
         <CarCard
           data={firstCard}
           isBig
-          onPress={() => {}}
         />
       )}
       {!!otherCards && (
@@ -63,7 +62,6 @@ export const CardList = (props: TProps) => {
                 <CarCard
                   key={car.id}
                   data={car}
-                  onPress={() => {}}
                 />
               );
             })}

@@ -12,6 +12,7 @@ export const useCarFavorite = (vehicle_id: number) => {
   const checkFavorite = useCallback(async () => {
     setIsFavoriteLoading(true);
     const isFavorite = await getCarIsFavorite(vehicle_id);
+    console.log('isFavorite', isFavorite)
     setIsFavorite(isFavorite);
     setIsFavoriteLoading(false);
   }, [vehicle_id]);
