@@ -1,5 +1,8 @@
-import React from 'react';
+import { useNavigation } from '@react-navigation/native';
+import React, { useCallback, useContext } from 'react';
 import { ActivityIndicator, View } from 'react-native';
+import { NavigationProps } from '../../../../navigation/types';
+import { FilterContext } from '../../../filter/context';
 import {
   ImageSource,
   ImageView,
@@ -13,7 +16,19 @@ import { TVehicleType } from '../../types';
 import { styles } from './styles';
 
 export const VehicleTypeList = () => {
+  const navigation = useNavigation<NavigationProps>();
+  const { setVehicleType, setVehicleTypeId } = useContext(FilterContext);
   const { vehicleTypeList, vehicleTypeListLoading } = useVehicleTypeList();
+
+  const onPressType = useCallback(
+    (type: TVehicleType) => {
+      const val = mapData[type.label].label;
+      setVehicleType(val);
+      setVehicleTypeId(type.id.toString());
+      navigation.navigate('CarListScreen');
+    },
+    [navigation],
+  );
 
   if (vehicleTypeListLoading) {
     return (
@@ -27,7 +42,10 @@ export const VehicleTypeList = () => {
     <Row flexWrap="wrap" marginHorizontal={-2.5}>
       {vehicleTypeList?.map((type: TVehicleType) => {
         return (
-          <TouchableFeedback style={styles.itemWrap} key={type.id}>
+          <TouchableFeedback
+            style={styles.itemWrap}
+            key={type.id}
+            onPress={() => onPressType(type)}>
             <View style={styles.itemWrapInner}>
               <View style={styles.iconWrap}>
                 <ImageView

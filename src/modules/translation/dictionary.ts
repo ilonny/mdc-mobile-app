@@ -287,4 +287,8 @@ export default {
     ru: 'Сбросить фильтр',
     en: 'Reset filter',
   },
+  contractPrice: {
+    ru: 'Договорная',
+    en: 'Contract price',
+  },
 };

@@ -33,15 +33,15 @@ export const CarCard = (props: TProps) => {
           <ImageView style={styles.image} href source={data.main_image} />
         </View>
         <View style={styles.contentWrapper}>
-          {data?.text_label && (
+          {data?.text_label && data?.text_label !== 'null' && (
             <>
               <Text>
                 <View style={styles.badge}>
                   <Typography.BoldText fontSize={10}>
-                    {typeof data?.text_label === 'string'
+                    {typeof data?.text_label === 'string' &&
+                    data?.text_label !== 'null'
                       ? data.text_label
                       : ''}{' '}
-                    New
                   </Typography.BoldText>
                 </View>
               </Text>

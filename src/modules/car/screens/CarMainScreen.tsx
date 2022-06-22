@@ -1,8 +1,9 @@
 import { useNavigation } from '@react-navigation/native';
-import React, { useCallback } from 'react';
+import React, { useCallback, useContext } from 'react';
 import { View } from 'react-native';
 import { NavigationProps } from '../../../navigation/types';
 import { colors } from '../../../theme';
+import { FilterContext } from '../../filter/context';
 import { translate } from '../../translation';
 import {
   Button,
@@ -17,7 +18,10 @@ import { PopularList } from '../components';
 
 export const CarMainScreen = () => {
   const navigation = useNavigation<NavigationProps>();
+  const { setVehicleType, setVehicleTypeId } = useContext(FilterContext);
   const onPressAll = useCallback(() => {
+    setVehicleType(undefined);
+    setVehicleTypeId(undefined);
     navigation.navigate('CarListScreen');
   }, [navigation]);
 
