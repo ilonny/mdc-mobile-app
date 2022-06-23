@@ -11,6 +11,7 @@ import { AuthScreen } from '../modules/auth/screens';
 import { UserFilesScreen } from '../modules/user/screens';
 import { TabScreen } from './TabRoutes';
 import { SelectScreen } from '../modules/ui/Select/screens/SelectScreen';
+import { TripCreateScreen } from '../modules/trip/screens';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
@@ -67,6 +68,7 @@ export const Routes: React.FC<{
           component={UserFilesScreen}
           options={canNotGoBackOptions}
         />
+        <Stack.Screen name="TripCreateScreen" component={TripCreateScreen} />
         <Stack.Screen name="TabScreen" component={TabScreen} />
       </Stack.Navigator>
     </>

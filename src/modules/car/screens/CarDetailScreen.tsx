@@ -1,6 +1,6 @@
-import { useRoute } from '@react-navigation/native';
-import React, { useEffect, useMemo, useState } from 'react';
-import { RootRouteProps } from '../../../navigation/types';
+import { useNavigation, useRoute } from '@react-navigation/native';
+import React, { useCallback, useEffect, useMemo, useState } from 'react';
+import { NavigationProps, RootRouteProps } from '../../../navigation/types';
 import { colors } from '../../../theme';
 import { translate } from '../../translation';
 import { Button, Indent, Row, ScreenContainer, Typography } from '../../ui';
@@ -20,6 +20,7 @@ import { getCarData } from '../network';
 import { TCar } from '../types';
 
 export const CarDetailScreen = () => {
+  const navigation = useNavigation<NavigationProps>();
   const route = useRoute<RootRouteProps<'CarDetailScreen'>>();
   const { vehicle_id } = route.params;
   const [loading, setLoading] = useState(false);
@@ -45,7 +46,12 @@ export const CarDetailScreen = () => {
       .finally(() => setLoading(false));
   }, [vehicle_id]);
 
-  console.log('carData', carData);
+  const onPressBook = useCallback(() => {
+    navigation.navigate('TripCreateScreen', {
+      vehicle_id,
+      title: carData?.title || '',
+    });
+  }, [vehicle_id, navigation, carData?.title]);
 
   return (
     <ScreenContainer headerProps={{ backButton: true }} isLoading={loading}>
@@ -61,7 +67,7 @@ export const CarDetailScreen = () => {
       <Indent height={30} />
       <CarInsuranceDeposit amount={carData?.insurance_deposit || '0'} />
       <Indent height={30} />
-      <Button isWhite>
+      <Button isWhite onPress={onPressBook}>
         <Typography.BoldText color={colors.totalBlack}>
           {translate('bookBtn')}
         </Typography.BoldText>

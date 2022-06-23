@@ -25,7 +25,7 @@ export const CarBenefits = () => {
         <Row>
           <View style={styles.imageWrapper}>
             <ImageView
-              style={{ width: 42, height: 40 }}
+              style={{ width: 50, height: 33 }}
               source={ImageSource.ben_2}
             />
           </View>
@@ -39,7 +39,7 @@ export const CarBenefits = () => {
         <Row>
           <View style={styles.imageWrapper}>
             <ImageView
-              style={{ width: 42, height: 40 }}
+              style={{ width: 40, height: 35 }}
               source={ImageSource.ben_3}
             />
           </View>
@@ -53,7 +53,7 @@ export const CarBenefits = () => {
         <Row>
           <View style={styles.imageWrapper}>
             <ImageView
-              style={{ width: 42, height: 40 }}
+              style={{ width: 40, height: 40 }}
               source={ImageSource.ben_4}
             />
           </View>
@@ -67,7 +67,7 @@ export const CarBenefits = () => {
         <Row>
           <View style={styles.imageWrapper}>
             <ImageView
-              style={{ width: 42, height: 40 }}
+              style={{ width: 40, height: 43 }}
               source={ImageSource.ben_5}
             />
           </View>

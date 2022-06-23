@@ -395,4 +395,12 @@ export default {
     ru: 'Остальные автомобили',
     en: 'Other cars',
   },
+  BookingTitle: {
+    ru: 'Бронирование',
+    en: 'Booking',
+  },
+  bookingDepositText: {
+    ru: 'Удерживаем на случай, если вам понадобится оплатить штрафы. Вернем спустя месяц после завершения аренды. Полную сумму аренды и залог вы сможете оплатить в момент передачи автомобиля.',
+    en: 'We hold in case you need to pay fines. We will return a month after the end of the lease. You can pay the full amount of the rental and the deposit at the time of the transfer of the car.',
+  },
 };

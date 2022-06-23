@@ -52,10 +52,12 @@ export const ScreenHeader = (props: THeaderProps) => {
         )}
       </View>
       {title && (
-        <Animated.View style={{ opacity: titleOpacity }}>
-          <Typography.BoldText color={isBlue ? '#fff' : colors.totalBlack}>
-            {title}
-          </Typography.BoldText>
+        <Animated.View
+          style={{
+            // opacity: titleOpacity,
+            maxWidth: 250,
+          }}>
+          <Typography.BoldText numberOfLines={1}>{title}</Typography.BoldText>
         </Animated.View>
       )}
       {topLine && <View style={styles.topLine} />}

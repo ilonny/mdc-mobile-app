@@ -18,6 +18,10 @@ export type RootStackParamList = {
     isSuggestions?: boolean;
     suggestionsPrefix?: string;
   };
+  TripCreateScreen: {
+    vehicle_id: string;
+    title: string;
+  };
 };
 
 export type CarStackParamList = {

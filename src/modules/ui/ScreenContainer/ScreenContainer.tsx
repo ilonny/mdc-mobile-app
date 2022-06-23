@@ -87,8 +87,7 @@ export const ScreenContainer = (props: TProps) => {
           )}
         </KeyboardAvoidingView>
         {!!headerProps && (
-          <View
-            style={[styles.headerWrapper, ]}>
+          <View style={[styles.headerWrapper]}>
             <SafeAreaView style={styles.headerWrapperContent}>
               <View style={styles.headerWrapperContentRow}>
                 <ScreenHeader

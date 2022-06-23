@@ -14,6 +14,7 @@ type TBoldText = {
   textAlign?: TextStyle['textAlign'];
   lineHeight?: TextStyle['lineHeight'];
   textDecorationLine?: TextStyle['textDecorationLine'];
+  numberOfLines?: number;
 };
 
 export const ScreenTitle: React.FC<
@@ -119,6 +120,7 @@ export const BoldText: React.FC<TBoldText> = ({
   textAlign,
   lineHeight,
   textDecorationLine,
+  numberOfLines,
 }) => {
   return (
     <Text
@@ -129,7 +131,8 @@ export const BoldText: React.FC<TBoldText> = ({
         !!textAlign && { textAlign },
         !!lineHeight && { lineHeight },
         !!textDecorationLine && { textDecorationLine },
-      ]}>
+      ]}
+      numberOfLines={numberOfLines}>
       {children}
     </Text>
   );

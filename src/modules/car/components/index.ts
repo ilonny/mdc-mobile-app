@@ -9,3 +9,4 @@ export { CarTariffs } from './CarTariffs';
 export { CarInsuranceDeposit } from './CarInsuranceDeposit';
 export { CarChars } from './CarChars';
 export { CarBenefits } from './CarBenefits';
+export { CarBookingDeposit } from './CarBookingDeposit';
