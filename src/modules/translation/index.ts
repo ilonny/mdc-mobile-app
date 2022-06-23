@@ -14,5 +14,9 @@ export const lang = 'en';
 // export const translation = t;
 
 export const translate = (key: keyof typeof dictionary) => {
-  return dictionary[key][lang] || key;
+  try {
+    return dictionary[key][lang];
+  } catch (e) {
+    return key;
+  }
 };

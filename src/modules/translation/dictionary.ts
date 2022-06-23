@@ -299,4 +299,100 @@ export default {
     ru: 'Удалить из избранного',
     en: 'Remove from favorite',
   },
+  videoReviewFromMdc: {
+    ru: 'Видео обзор от MDC',
+    en: 'Our video review',
+  },
+  waterInCabin: {
+    ru: 'Вода в салоне',
+    en: 'Water in cabin',
+  },
+  chargeForPhones: {
+    ru: 'Зарядка для\nсмартфонов',
+    en: 'Charger for\nsmarptphones',
+  },
+  btAudio: {
+    ru: 'Bluetooth-аудио',
+    en: 'Bluetooth-audio',
+  },
+  tariffsPerDay: {
+    ru: '₽ в сутки',
+    en: '$ per day',
+  },
+  days: {
+    ru: 'суток',
+    en: 'days',
+  },
+  carInsuranceDeposit: {
+    ru: 'Страховой залог',
+    en: 'Insurance deposit',
+  },
+  around: {
+    ru: 'около',
+    en: 'around',
+  },
+  Returns: {
+    ru: 'Возвращается',
+    en: 'Returns',
+  },
+  carInsuranceDepositText: {
+    ru: 'По умолчанию стоимость залога рассчитывается менеджером исходя из ваших данных профиля и привелегий. Точную сумму уточняйте у менеджера.',
+    en: 'By default, the value of the deposit is calculated by the manager based on your profile data and privileges. Specify the exact amount with the manager.',
+  },
+  bookBtn: {
+    ru: 'Забронировать',
+    en: 'Book now',
+  },
+  carClass: {
+    ru: 'Класс',
+    en: 'Class',
+  },
+  carPower: {
+    ru: 'Мощность двигателя',
+    en: 'Engine power',
+  },
+  engineVolume: {
+    ru: 'Объем двигателя',
+    en: 'Engine volume',
+  },
+  carAcceleration: {
+    ru: 'Разгон 0-100',
+    en: 'Acceleration 0-100',
+  },
+  enginePoistionDrive: {
+    ru: 'Компоновка двигателя/привод',
+    en: 'Engine layout/drive',
+  },
+  sitsNumber: {
+    ru: 'Количество мест',
+    en: 'Sits number',
+  },
+  minDaysRent: {
+    ru: 'Минимальный срок аренды',
+    en: 'Minimum rental period',
+  },
+  ben_1: {
+    ru: 'Не ведётся видео и аудио запись в автомобиле',
+    en: 'There is no video and audio recording in the car',
+  },
+  ben_2: {
+    ru: 'Доставка и прием автомобилей по Москве 24/7',
+    en: 'Delivery and reception of cars in Moscow 24/7',
+  },
+  ben_3: {
+    ru: 'Страхование КАСКО и ОСАГО включено',
+    en: 'CASCO and OSAGO insurance included',
+  },
+  ben_4: {
+    ru: '50+ уникальных авто в аренду из нашего автопарка',
+    en: '50+ unique cars for rent from our fleet',
+  },
+  ben_5: {
+    ru: 'Круглосуточная техническая поддержка',
+    en: '24/7 technical support',
+  },
+  otherCars: {
+    ru: 'Остальные автомобили',
+    en: 'Other cars',
+  },
 };

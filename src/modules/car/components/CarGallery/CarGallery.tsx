@@ -18,8 +18,6 @@ export const CarGallery = (props: TProps) => {
     });
   }, [sources]);
 
-  console.log('hrefs', hrefs);
-  console.log('sources', sources);
   if (!hrefs.length) {
     return <></>;
   }

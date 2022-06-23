@@ -37,6 +37,18 @@ export const ImageSource = {
   heart_filled: require(imageSrc + 'heart_filled.png'),
   next_button: require(imageSrc + 'next_button.png'),
   prev_button: require(imageSrc + 'prev_button.png'),
+  play_circle: require(imageSrc + 'play_circle.png'),
+  play_circle_big: require(imageSrc + 'play_circle_big.png'),
+  ellipse_gradient: require(imageSrc + 'ellipse_gradient.png'),
+  bottle: require(imageSrc + 'bottle.png'),
+  battery: require(imageSrc + 'battery.png'),
+  bt: require(imageSrc + 'bt.png'),
+  video_bg: require(imageSrc + 'video_bg.png'),
+  ben_1: require(imageSrc + 'ben_1.png'),
+  ben_2: require(imageSrc + 'ben_2.png'),
+  ben_3: require(imageSrc + 'ben_3.png'),
+  ben_4: require(imageSrc + 'ben_4.png'),
+  ben_5: require(imageSrc + 'ben_5.png'),
 };
 
 export type TImageSource = keyof typeof ImageSource;
