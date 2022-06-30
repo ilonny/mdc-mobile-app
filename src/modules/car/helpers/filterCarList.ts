@@ -8,6 +8,9 @@ type TFilters = {
   powerTo?: string;
   priceFrom?: string;
   priceTo?: string;
+  colorId?: any;
+  mark?: any;
+  color?: any;
 };
 
 export const filterCarList = (carList: TCar[], filters: TFilters) => {
@@ -19,11 +22,18 @@ export const filterCarList = (carList: TCar[], filters: TFilters) => {
     priceFrom,
     priceTo,
     colorId,
+    mark,
+    color,
   } = filters;
   let res = carList;
 
   if (vehicleTypeId) {
     res = res.filter(car => car.vehicle_type_id === vehicleTypeId);
+  }
+
+  if (!!mark?.length) {
+    const markIdArr = mark?.map(m => m.extraData);
+    res = res.filter(car => markIdArr.includes(car.vehicle_mark_id.toString()));
   }
 
   if (markId) {
@@ -55,6 +65,11 @@ export const filterCarList = (carList: TCar[], filters: TFilters) => {
         Number(priceTo)
       );
     });
+  }
+
+  if (!!color?.length) {
+    const colorIdArr = color?.map(m => m.extraData);
+    res = res.filter(car => colorIdArr.includes(car?.color_id?.toString()));
   }
 
   if (colorId) {

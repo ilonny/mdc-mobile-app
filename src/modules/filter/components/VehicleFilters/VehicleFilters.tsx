@@ -57,38 +57,32 @@ export const VehicleFilters = () => {
 
   const markOptions = useMemo(() => {
     return (
-      vehicleMarkList
-        ?.map((mark: { label: string; id: number }) => {
-          const val = mark.label;
-          return {
-            value: val,
-            label: val,
-            extraData: mark.id.toString(),
-          };
-        })
-        .concat({ label: translate('allMarks'), value: '', extraData: '' }) ||
-      []
+      vehicleMarkList?.map((mark: { label: string; id: number }) => {
+        const val = mark.label;
+        return {
+          value: val,
+          label: val,
+          extraData: mark.id.toString(),
+        };
+      }) || []
     );
   }, [vehicleMarkList]);
 
   const colorOptions = useMemo(() => {
     return (
-      vehicleColorList
-        ?.map(
-          (color: {
-            label: keyof typeof colorTransition;
-            id: number;
-          }): TOption => {
-            const val: keyof typeof colorTransition = color.label;
-            return {
-              value: colorTransition[val][lang] || '',
-              label: colorTransition[val][lang] || '',
-              extraData: color.id.toString(),
-            };
-          },
-        )
-        .concat({ label: translate('allColors'), value: '', extraData: '' }) ||
-      []
+      vehicleColorList?.map(
+        (color: {
+          label: keyof typeof colorTransition;
+          id: number;
+        }): TOption => {
+          const val: keyof typeof colorTransition = color.label;
+          return {
+            value: colorTransition[val][lang] || '',
+            label: colorTransition[val][lang] || '',
+            extraData: color.id.toString(),
+          };
+        },
+      ) || []
     );
   }, [vehicleColorList]);
 
@@ -121,8 +115,12 @@ export const VehicleFilters = () => {
   return (
     <ScrollView horizontal>
       <Row>
-        <Select options={markOptions} onChange={onChangeMark}>
-          <FilterButton isActive={!!mark}>
+        <Select
+          options={markOptions}
+          onChange={onChangeMark}
+          multiple
+          value={mark}>
+          <FilterButton isActive={!!mark?.length}>
             {translate('filterMark')}
           </FilterButton>
         </Select>
@@ -139,8 +137,12 @@ export const VehicleFilters = () => {
           </FilterButton>
         </TouchableFeedback>
         <Indent width={10} />
-        <Select options={colorOptions} onChange={onChangeColor}>
-          <FilterButton isActive={!!color}>
+        <Select
+          options={colorOptions}
+          onChange={onChangeColor}
+          multiple
+          value={color}>
+          <FilterButton isActive={!!color?.length}>
             {translate('filterColor')}
           </FilterButton>
         </Select>

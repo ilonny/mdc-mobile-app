@@ -6,6 +6,7 @@ import {
   TouchableFeedback,
   ImageView,
   ImageSource,
+  CheckBox,
 } from '../../../../ui';
 import { TOption } from '../../Select';
 import { styles } from './styles';
@@ -14,20 +15,30 @@ import { RootRouteProps } from '../../../../../navigation/types';
 export const OptionsList: React.FC<{
   options: TOption[];
   loading?: boolean;
-}> = ({ options, loading }) => {
+  onPressOption: (option: TOption) => void;
+}> = ({ options, loading, onPressOption }) => {
   const route = useRoute<RootRouteProps<'SelectScreen'>>();
+  const multiple = route?.params?.multiple;
   const value = route?.params?.value;
-  const onPressOption = useCallback(
-    (option: TOption) => {
-      if (typeof route?.params?.onPressOption === 'function') {
-        route?.params?.onPressOption(option);
-      }
-    },
-    [route.params],
-  );
   return (
     <View>
       {options?.map(c => {
+        if (multiple) {
+          const initialChecked = !!value?.find(v => v.value == c.value);
+          // console.log('c', c, value);
+          return (
+            <View style={styles.row}>
+              <View style={styles.rowLeft}>
+                <CheckBox
+                  fullwidth
+                  onPress={() => onPressOption(c)}
+                  initialChecked={initialChecked}>
+                  <Typography.MainText>{c.label}</Typography.MainText>
+                </CheckBox>
+              </View>
+            </View>
+          );
+        }
         return (
           <TouchableFeedback key={c.value} onPress={() => onPressOption(c)}>
             <View style={styles.row}>

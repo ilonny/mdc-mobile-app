@@ -9,12 +9,14 @@ import { useCarList } from '../hooks';
 export const CarListScreen = () => {
   const {
     vehicleTypeId,
+    mark,
     markId,
     powerFrom,
     powerTo,
     priceFrom,
     priceTo,
     colorId,
+    color
   } = useContext(FilterContext);
   const { carList, carListLoading } = useCarList();
 
@@ -27,6 +29,8 @@ export const CarListScreen = () => {
       priceFrom,
       priceTo,
       colorId,
+      mark,
+      color,
     });
   }, [
     carList,
@@ -37,6 +41,8 @@ export const CarListScreen = () => {
     priceFrom,
     priceTo,
     colorId,
+    mark,
+    color
   ]);
 
   return (

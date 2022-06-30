@@ -7,16 +7,23 @@ import { TouchableFeedback } from '../TouchableFeedback';
 
 type TProps = {
   children: any;
+  fullwidth?: boolean;
+  onPress?: (arg?: any) => void;
+  initialChecked?: boolean;
 };
 
 export const CheckBox = (props: TProps) => {
-  const { children } = props;
-  const [checked, setChecked] = useState(false);
+  const { children, fullwidth, onPress, initialChecked = false } = props;
+  const [checked, setChecked] = useState(initialChecked);
   return (
-    <View>
-      <TouchableFeedback onPress={() => {
-        setChecked(!checked);
-      }}>
+    <View style={fullwidth && { width: '100%' }}>
+      <TouchableFeedback
+        onPress={() => {
+          if (typeof onPress === 'function') {
+            onPress();
+          }
+          setChecked(!checked);
+        }}>
         <Row>
           <ImageView
             size={22}

@@ -11,12 +11,16 @@ export type RootStackParamList = {
   UserFilesScreen: undefined;
   TabScreen: undefined;
   SelectScreen: {
-    onPressOption: (option: TOption) => void;
+    // onPressOption: (option: TOption) => void;
     title: string;
     options?: TOption[];
-    value: any;
+    value?: any;
     isSuggestions?: boolean;
     suggestionsPrefix?: string;
+    multiple: boolean;
+    onChange: (arg: any, arg2: any) => void;
+    // onPressResetFilter?: () => void;
+    // onPressSaveFilter?: () => void;
   };
   TripCreateScreen: {
     vehicle_id: string;

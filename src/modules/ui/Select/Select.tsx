@@ -15,39 +15,46 @@ export type TOption = {
 };
 
 type TRestProps = {
-  onChange?: (arg: string, extraData?: any) => void;
+  onChange: (arg?: any, extraData?: any) => void;
   placeholder?: string;
   children: JSX.Element;
+  multiple?: boolean;
+  value?: any;
 };
 
 type TProps = TRestProps &
   XOR<{ isSuggestions: boolean }, { options: TOption[] }>;
 
 export const Select = (props: TProps) => {
-  const { placeholder, onChange, options, children } = props;
+  const {
+    placeholder,
+    onChange,
+    options,
+    children,
+    multiple = false,
+    value,
+  } = props;
   const navigation = useNavigation<NavigationProps>();
-  const [selectedOption, setSelectedOption] = useState<null | TOption>(null);
-
   const openSelect = useCallback(() => {
     navigation.navigate('SelectScreen', {
-      onPressOption: (option: TOption) => {
-        navigation.getParent()?.goBack();
-        // navigation.goBack();
-        setSelectedOption(option);
-      },
       title: `Select ${placeholder}`,
       options,
-      value: selectedOption?.value,
+      multiple,
+      onChange,
+      value,
     });
-  }, [navigation, placeholder, options, selectedOption]);
+  }, [navigation, placeholder, options, multiple, value]);
 
-  useEffect(() => {
-    if (selectedOption) {
-      if (typeof onChange === 'function') {
-        onChange(selectedOption.value as string, selectedOption?.extraData);
-      }
-    }
-  }, [selectedOption, onChange]);
+  // useEffect(() => {
+  //   if (selectedOption) {
+  //     if (typeof onChange === 'function') {
+  //       onChange(selectedOption.value as string, selectedOption?.extraData);
+  //     } else {
+  //     }
+  //   }
+  // }, [selectedOption, onChange]);
+
+
   return (
     <TouchableFeedback onPress={openSelect}>
       {children}
