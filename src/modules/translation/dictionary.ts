@@ -240,12 +240,12 @@ export default {
     en: 'Brand',
   },
   filterPower: {
-    ru: 'Мощность',
-    en: 'Power',
+    ru: 'Мощность, лс',
+    en: 'Power, hp',
   },
   filterPrice: {
     ru: 'Цена, ₽',
-    en: 'Price, $',
+    en: 'Price, AED',
   },
   filterColor: {
     ru: 'Цвет',
@@ -260,12 +260,12 @@ export default {
     en: 'All colors',
   },
   powerFrom: {
-    ru: 'Мощность (от)',
-    en: 'Power (from)',
+    ru: 'Мощность, лс (от)',
+    en: 'Power, hp (from)',
   },
   powerTo: {
-    ru: 'Мощность (до)',
-    en: 'Power (to)',
+    ru: 'Мощность, лс (до)',
+    en: 'Power, hp (to)',
   },
   priceFrom: {
     ru: 'Цена (от)',
@@ -317,7 +317,7 @@ export default {
   },
   tariffsPerDay: {
     ru: '₽ в сутки',
-    en: '$ per day',
+    en: 'AED per day',
   },
   days: {
     ru: 'суток',

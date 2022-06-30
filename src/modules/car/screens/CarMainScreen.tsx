@@ -27,6 +27,7 @@ export const CarMainScreen = () => {
 
   return (
     <ScreenContainer fullscreen noPadding>
+      <Indent height={40} />
       <Row paddingHorizontal={16}>
         <Typography.ScreenTitle>{translate('autoPark')}</Typography.ScreenTitle>
       </Row>
