@@ -10,7 +10,7 @@ type TProps = {
   callback: any;
 };
 
-const DURATION = 2000;
+const DURATION = 10000;
 
 export const StoriesProgressLine = (props: TProps) => {
   const { activeIndex, localIndex, setActiveIndex, lastIndex, callback } =
@@ -29,7 +29,7 @@ export const StoriesProgressLine = (props: TProps) => {
         toValue: 1,
         useNativeDriver: false,
         duration,
-        easing: Easing.ease,
+        easing: Easing.linear,
       }).start();
     },
     [lastIndex, localIndex, activeIndex, callback],

@@ -49,7 +49,7 @@ export const Stories = (props: TProps) => {
                       clearTimeout(timeout);
                       timeout = setTimeout(() => {
                         setActiveIndex(index === lastIndex ? index : index + 1);
-                      }, 2000);
+                      }, 10000);
                     }}
                   />
                 </>

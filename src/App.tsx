@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { StatusBar } from 'react-native';
 import SplashScreen from 'react-native-splash-screen';
 import { Storage } from './modules/asyncStorage';
 import { FilterProvider } from './modules/filter/context';
@@ -12,6 +13,7 @@ const App = () => {
   }, []);
   return (
     <>
+      <StatusBar translucent barStyle="light-content" />
       <OnboardingProvider>
         <FilterProvider>
           <Navigation />
