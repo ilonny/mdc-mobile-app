@@ -43,14 +43,14 @@ export const CarChars = (props: TProps) => {
 
   return (
     <Panel>
-      <View style={styles.imageWrapper}>
+      {/* <View style={styles.imageWrapper}>
         <ImageView
           style={styles.image}
           href
           source={`${API_URL}/${imageHref}`}
         />
       </View>
-      <Indent height={20} />
+      <Indent height={20} /> */}
       <View>
         <Typography.MainText color={colors.secondaryText} fontSize={16}>
           {translate('carClass')}

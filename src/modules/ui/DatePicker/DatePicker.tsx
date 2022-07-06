@@ -4,7 +4,7 @@ import { View } from 'react-native';
 import Modal from 'react-native-modal';
 import { Field, useForm } from 'react-final-form';
 import CalendarPicker from 'react-native-calendar-picker';
-import { Moment } from 'moment';
+import moment, { Moment } from 'moment';
 import {
   TextInput,
   TouchableFeedback,
@@ -22,6 +22,7 @@ type TProps = {
   validate?: (arg: string | undefined) => undefined | string;
   placeholder?: string;
   onDateChange?: (date: string) => void;
+  minDate?: any;
 };
 
 const customDayHeaderStylesCallback = () => {
@@ -44,7 +45,7 @@ const customDatesStylesCallback = () => {
 export const DatePicker = (props: TProps) => {
   const form = useForm();
   const inputRef = useRef();
-  const { name, validate, placeholder, onDateChange } = props;
+  const { name, validate, placeholder, onDateChange, minDate } = props;
   const [isModalVisible, setModalVisible] = useState(false);
   const [selectedDate, setSelectedDate] = useState<null | Moment>(null);
   const openModalCb = useCallback(() => setModalVisible(true), []);
@@ -56,7 +57,7 @@ export const DatePicker = (props: TProps) => {
   }, []);
   const doneCallback = useCallback(() => {
     if (selectedDate) {
-      const dateFormatted = selectedDate.format('DD.MM.YYYY');
+      const dateFormatted = selectedDate.format('MM/DD/YYYY');
       if (typeof onDateChange === 'function') {
         onDateChange(dateFormatted);
       }
@@ -65,9 +66,6 @@ export const DatePicker = (props: TProps) => {
       }
     }
     closeModalCb();
-    // setTimeout(() => {
-    //   inputRef?.current?.blur();
-    // }, 500);
   }, [onDateChange, selectedDate, closeModalCb, form, name]);
   return (
     <Field name={name} validate={validate}>
@@ -112,7 +110,10 @@ export const DatePicker = (props: TProps) => {
                   </View>
                   <Indent height={28} />
                   <CalendarPicker
-                    onDateChange={setSelectedDate}
+                    onDateChange={date => {
+                      setSelectedDate(date);
+                    }}
+                    minDate={minDate}
                     dayShape="square"
                     weekdays={['M', 'T', 'W', 'T', 'F', 'S', 'S']}
                     startFromMonday={true}

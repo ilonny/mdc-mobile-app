@@ -1,0 +1,1 @@
+export const BOOKING_DEPOSIT_AMOUNT = 1000;

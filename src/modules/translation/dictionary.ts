@@ -403,4 +403,24 @@ export default {
     ru: 'Удерживаем на случай, если вам понадобится оплатить штрафы. Вернем спустя месяц после завершения аренды. Полную сумму аренды и залог вы сможете оплатить в момент передачи автомобиля.',
     en: 'We hold in case you need to pay fines. We will return a month after the end of the lease. You can pay the full amount of the rental and the deposit at the time of the transfer of the car.',
   },
+  tripCreateDateTitle: {
+    ru: 'Период аренды *',
+    en: 'Rent period *',
+  },
+  tripCreateDateDescription: {
+    ru: 'Укажите даты аренды, чтобы рассчитать стоимость брони.',
+    en: 'Enter your rental dates to calculate the cost of your reservation.',
+  },
+  dateStart: {
+    ru: 'Дата начала',
+    en: 'Start date',
+  },
+  dateEnd: {
+    ru: 'Дата окончания аренды',
+    en: 'End date',
+  },
+  Additionally: {
+    ru: 'Дополнительно',
+    en: 'Additionally',
+  },
 };
