@@ -1,5 +1,6 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { useCallback, useEffect } from 'react';
+import { reset } from '../../../navigation';
 import { NavigationProps } from '../../../navigation/types';
 import { translate } from '../../translation';
 import {
@@ -22,6 +23,9 @@ export const UserFilesScreen = () => {
   }, []);
 
   useEffect(() => {
+    if (userData?.passport_first_page) {
+      reset('TabScreen');
+    }
   }, [userData]);
 
   return (
