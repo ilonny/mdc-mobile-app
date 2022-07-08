@@ -423,4 +423,40 @@ export default {
     ru: 'Дополнительно',
     en: 'Additionally',
   },
+  OrderBtn: {
+    ru: 'Оплатить бронь',
+    en: 'Pay for the reservation',
+  },
+  additionalDrivers: {
+    ru: 'Нужно несколько водителей для авто',
+    en: 'Need multiple drivers',
+  },
+  vehicleDelivery: {
+    ru: 'Нужна доставка автомобиля',
+    en: 'Need car delivery',
+  },
+  additionalMileage: {
+    ru: 'Нужен дополнительный пробег',
+    en: 'Need extra mileage',
+  },
+  defaultMileage: {
+    ru: 'По умолчанию для вас включено 1000 км',
+    en: 'By default, 1000 km is enabled for you',
+  },
+  abroad: {
+    ru: 'Нужен выезд за пределы МО',
+    en: 'Need to travel outside the permitted zone',
+  },
+  babyChair: {
+    ru: 'Нужно детское кресло',
+    en: 'Need a child seat',
+  },
+  depositCalculation: {
+    ru: 'Расчет залога',
+    en: 'Deposit calculation',
+  },
+  depositCalculationText: {
+    ru: 'По умолчанию стоимость залога рассчитывается менеджером исходя из ваших данных профиля и привелегий. Точную сумму залога уточняйте у менеджера. Залог возвращается после завершения поездки.',
+    en: 'By default, the value of the deposit is calculated by the manager based on your profile data and privileges. Specify the exact amount of the deposit with the manager. The deposit is returned after the trip is completed.'
+  }
 };

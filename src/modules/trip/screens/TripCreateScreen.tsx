@@ -18,7 +18,7 @@ export const TripCreateScreen = () => {
       <Indent height={30} />
       <CarBookingDeposit amount={BOOKING_DEPOSIT_AMOUNT.toString()} />
       <Indent height={30} />
-      <TripCreateForm />
+      <TripCreateForm vehicle_id={vehicle_id} />
     </ScreenContainer>
   );
 };

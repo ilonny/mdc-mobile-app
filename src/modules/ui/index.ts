@@ -20,3 +20,4 @@ export { ScreenHeader } from './ScreenHeader';
 export { Select } from './Select';
 export { FilterButton } from './FilterButton';
 export { Panel } from './Panel';
+export { Divider } from './Divider';
