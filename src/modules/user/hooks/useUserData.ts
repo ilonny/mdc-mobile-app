@@ -1,7 +1,8 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useState, useEffect } from 'react';
+import { Storage } from '../../asyncStorage';
 import { getUserData } from '../network';
 
-export const useUserData = () => {
+export const useUserData = (force?: boolean) => {
   const [userData, setUserData] = useState(null);
   const [userDataLoading, setUserDataLoading] = useState(false);
 
@@ -15,6 +16,18 @@ export const useUserData = () => {
     setUserDataLoading(false);
     return res;
   }, []);
+
+  useEffect(() => {
+    if (force) {
+      const getUserId = async () => {
+        const user_id = await Storage.getItem('user_id');
+        if (user_id) {
+          getUserDataReq(user_id);
+        }
+      };
+      getUserId();
+    }
+  }, [force, getUserDataReq]);
 
   return { userData, userDataLoading, getUserDataReq };
 };

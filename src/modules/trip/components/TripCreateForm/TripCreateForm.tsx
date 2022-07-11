@@ -1,7 +1,11 @@
-import React, { useCallback } from 'react';
+import moment from 'moment';
+import React, { useCallback, useMemo, useState } from 'react';
 import { Form } from 'react-final-form';
 import { View } from 'react-native';
 import { colors } from '../../../../theme';
+import { printPrice } from '../../../car/helpers';
+import { useCarData } from '../../../car/hooks';
+import { BOOKING_DEPOSIT_AMOUNT } from '../../../core/constants';
 import { translate } from '../../../translation';
 import {
   Button,
@@ -9,8 +13,12 @@ import {
   Divider,
   FormCheckBox,
   Indent,
+  Panel,
+  Row,
   Typography,
 } from '../../../ui';
+import { useUserData } from '../../../user/hooks';
+import { getTripPrice } from '../../helpers';
 
 type TProps = {
   vehicle_id: string;
@@ -21,6 +29,34 @@ const required = (value: undefined | string) =>
 
 export const TripCreateForm = (props: TProps) => {
   const { vehicle_id } = props;
+
+  const { carData } = useCarData(vehicle_id);
+  const { userData } = useUserData(true);
+
+  const [dateStart, setDateStart] = useState<null | string>(null);
+  const [dateEnd, setDateEnd] = useState<null | string>(null);
+
+  const dayDiff = useMemo(() => {
+    if (dateStart && dateEnd) {
+      const mStart = moment(dateStart);
+      const mEnd = moment(dateEnd);
+      const diff = mEnd.diff(mStart, 'days');
+      if (diff >= 0) {
+        return diff + 1;
+      }
+      return 0;
+    }
+    return 0;
+  }, [dateStart, dateEnd]);
+
+  const rentPrice = useMemo(() => {
+    return getTripPrice(carData?.tariffs || [], dayDiff);
+  }, [carData?.tariffs, dayDiff]);
+
+  const sumOfDeposit = useMemo(() => {
+    return BOOKING_DEPOSIT_AMOUNT - Number(userData?.deposit_balance || 0);
+  }, [userData?.deposit_balance, BOOKING_DEPOSIT_AMOUNT]);
+
   const onSubmit = useCallback((values: Record<string, any>) => {
     console.log('onSubmit', values);
   }, []);
@@ -46,6 +82,7 @@ export const TripCreateForm = (props: TProps) => {
               name="date_start"
               placeholder={translate('dateStart')}
               minDate={new Date()}
+              onDateChange={setDateStart}
             />
             <Indent height={20} />
             <DatePicker
@@ -53,6 +90,7 @@ export const TripCreateForm = (props: TProps) => {
               name="date_end"
               placeholder={translate('dateEnd')}
               minDate={values.date_start}
+              onDateChange={setDateEnd}
             />
             <Indent height={20} />
             <Typography.BoldText fontSize={20}>
@@ -113,12 +151,40 @@ export const TripCreateForm = (props: TProps) => {
             <Divider margin={20} />
 
             {/* <Indent height={20} /> */}
-            <Button isWhite onPress={handleSubmit}>
-              <Typography.ButtonText color={colors.totalBlack}>
-                {translate('OrderBtn')}
-              </Typography.ButtonText>
-            </Button>
-            <Indent height={60} />
+            <Panel fullWidth>
+              <Row justifyContent="space-between">
+                <Typography.BoldText fontSize={20}>
+                  {translate('rentCost')}
+                </Typography.BoldText>
+                <Typography.BoldText fontSize={20}>
+                  {printPrice(rentPrice.toString())}
+                </Typography.BoldText>
+              </Row>
+              <Indent height={20} />
+              <Row justifyContent="space-between" alignItems="flex-start">
+                <View style={{ maxWidth: '70%' }}>
+                  <Typography.BoldText fontSize={14}>
+                    {translate('insuranceDepositCost')}
+                  </Typography.BoldText>
+                  <Indent height={7} />
+                  <Typography.MainText
+                    fontSize={14}
+                    color={colors.secondaryText}>
+                    {translate('insuranceDepositCostDesc')}
+                  </Typography.MainText>
+                </View>
+                <Typography.BoldText fontSize={14} flex={1}>
+                  {printPrice(carData?.insurance_deposit)}
+                </Typography.BoldText>
+              </Row>
+              <Indent height={20} />
+              <Button isWhite onPress={handleSubmit}>
+                <Typography.ButtonText color={colors.totalBlack}>
+                  {translate('OrderBtn')} {printPrice(sumOfDeposit.toString())}
+                </Typography.ButtonText>
+              </Button>
+              <Indent height={20} />
+            </Panel>
             {/* <FormCheckBox /> */}
           </View>
         );

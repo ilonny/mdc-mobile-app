@@ -467,4 +467,16 @@ export default {
     ru: 'Выбрать из галереи',
     en: 'Choose from gallery',
   },
+  rentCost: {
+    ru: 'Стоимость аренды',
+    en: 'Rent cost',
+  },
+  insuranceDepositCost: {
+    ru: 'Стоимость страхового залога',
+    en: 'Security deposit cost',
+  },
+  insuranceDepositCostDesc: {
+    ru: 'Точная сумма залога будет расчитана менеджером',
+    en: 'The exact amount of the deposit will be calculated by the manager',
+  },
 };
