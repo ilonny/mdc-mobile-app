@@ -457,6 +457,14 @@ export default {
   },
   depositCalculationText: {
     ru: 'По умолчанию стоимость залога рассчитывается менеджером исходя из ваших данных профиля и привелегий. Точную сумму залога уточняйте у менеджера. Залог возвращается после завершения поездки.',
-    en: 'By default, the value of the deposit is calculated by the manager based on your profile data and privileges. Specify the exact amount of the deposit with the manager. The deposit is returned after the trip is completed.'
-  }
+    en: 'By default, the value of the deposit is calculated by the manager based on your profile data and privileges. Specify the exact amount of the deposit with the manager. The deposit is returned after the trip is completed.',
+  },
+  takePhoto: {
+    ru: 'Сделать фотографию',
+    en: 'Take a photo',
+  },
+  fromGallery: {
+    ru: 'Выбрать из галереи',
+    en: 'Choose from gallery',
+  },
 };

@@ -32,11 +32,11 @@ export const OnboardingMainScreen = () => {
           <ImageView source={ImageSource.logo} style={styles.logo} />
         </View>
         <View>
-          <Typography.ScreenTitle textAlign="center">
+          <Typography.ScreenTitle textAlign="center" fontSize={36}>
             {translate('onboardingMainTitle')}
           </Typography.ScreenTitle>
           <Indent height={20} />
-          <Typography.BoldText textAlign="center" fontSize={17} lineHeight={24}>
+          <Typography.BoldText textAlign="center" fontSize={20} lineHeight={26}>
             {translate('onboardingMainDescription')}
           </Typography.BoldText>
           <Indent height={160} />

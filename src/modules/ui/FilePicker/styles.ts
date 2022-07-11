@@ -30,4 +30,28 @@ export const styles = StyleSheet.create({
     right: 10,
     top: 10,
   },
+  modal: {
+    flex: 1,
+    margin: 0,
+    justifyContent: 'flex-end',
+  },
+  modalBottomContent: {
+    backgroundColor: colors.mainGray,
+    padding: 20,
+    borderTopLeftRadius: 12,
+    borderTopRightRadius: 12,
+    paddingBottom: 0,
+  },
+  calendarHeaderRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    paddingTop: 5,
+    marginBottom: 5,
+  },
+  calendarWrapper: {
+    backgroundColor: colors.mainGray,
+    borderRadius: 16,
+    padding: 16,
+  },
 });

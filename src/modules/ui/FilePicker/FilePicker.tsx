@@ -1,4 +1,5 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useState } from 'react';
+import Modal from 'react-native-modal';
 import { Field } from 'react-final-form';
 import { Image, View } from 'react-native';
 import { launchCamera, launchImageLibrary } from 'react-native-image-picker';
@@ -7,10 +8,11 @@ import {
   ImageView,
   ImageSource,
   TouchableFeedback,
+  Row,
 } from '../../ui';
-import { Indent } from '../Indent';
-import { TextInput } from '../TextInput';
+import { Indent, TextInput, SecondaryButton } from '../../ui';
 import { styles } from './styles';
+import { translate } from '../../translation';
 
 type TProps = {
   name: string;
@@ -21,7 +23,11 @@ type TProps = {
 
 export const FilePicker = (props: TProps) => {
   const { name, validate, placeholder, selfie } = props;
-
+  const [isModalVisible, setModalVisible] = useState(false);
+  const openModalCb = useCallback(() => setModalVisible(true), []);
+  const closeModalCb = useCallback(() => {
+    setModalVisible(false);
+  }, []);
   return (
     <View>
       <Field name={name} validate={validate}>
@@ -50,14 +56,7 @@ export const FilePicker = (props: TProps) => {
                       }
                     });
                   } else {
-                    launchImageLibrary({
-                      mediaType: 'photo',
-                      selectionLimit: 1,
-                    }).then(photo => {
-                      if (photo?.assets && photo.assets[0]) {
-                        input.onChange(photo.assets[0].uri);
-                      }
-                    });
+                    openModalCb();
                   }
                 }}>
                 <View style={[styles.wrapper, error && styles.wrapperError]}>
@@ -89,6 +88,70 @@ export const FilePicker = (props: TProps) => {
               </TouchableFeedback>
               <Indent height={10} />
               <Typography.BoldText>{placeholder || ''}</Typography.BoldText>
+              <Modal
+                swipeDirection={['down', 'up']}
+                isVisible={isModalVisible}
+                onBackdropPress={closeModalCb}
+                style={styles.modal}
+                backdropOpacity={0.6}>
+                <View style={styles.modalBottomContent}>
+                  <View style={styles.calendarWrapper}>
+                    <View style={styles.calendarHeaderRow}>
+                      <View />
+                      <SecondaryButton isWhite onPress={closeModalCb}>
+                        Cancel
+                      </SecondaryButton>
+                    </View>
+                    <Indent height={28} />
+                    <TouchableFeedback
+                      onPress={() => {
+                        launchCamera({
+                          mediaType: 'photo',
+                          cameraType: 'back',
+                        }).then(photo => {
+                          if (photo?.assets && photo.assets[0]) {
+                            input.onChange(photo.assets[0].uri);
+                            closeModalCb();
+                          }
+                        });
+                      }}>
+                      <Row>
+                        <ImageView source={ImageSource.camera} size={40} />
+                        <Indent width={20} />
+                        <Typography.BoldText fontSize={17}>
+                          {translate('takePhoto')}
+                        </Typography.BoldText>
+                      </Row>
+                    </TouchableFeedback>
+                    <Indent height={20} />
+                    <TouchableFeedback
+                      onPress={() => {
+                        launchImageLibrary({
+                          mediaType: 'photo',
+                          selectionLimit: 1,
+                        }).then(photo => {
+                          if (photo?.assets && photo.assets[0]) {
+                            input.onChange(photo.assets[0].uri);
+                            closeModalCb();
+                          }
+                        });
+                      }}>
+                      <Row>
+                        <ImageView
+                          source={ImageSource.gallery}
+                          size={40}
+                          tintColorProp="#fff"
+                        />
+                        <Indent width={20} />
+                        <Typography.BoldText fontSize={17}>
+                          {translate('fromGallery')}
+                        </Typography.BoldText>
+                      </Row>
+                    </TouchableFeedback>
+                    <Indent height={40} />
+                  </View>
+                </View>
+              </Modal>
             </View>
           );
         }}

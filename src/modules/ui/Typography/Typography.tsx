@@ -18,8 +18,13 @@ type TBoldText = {
 };
 
 export const ScreenTitle: React.FC<
-  TText & { small?: boolean; primary?: boolean; white?: boolean }
-> = ({ children, small, primary, white, textAlign }) => {
+  TText & {
+    small?: boolean;
+    primary?: boolean;
+    white?: boolean;
+    fontSize?: number;
+  }
+> = ({ children, small, primary, white, textAlign, fontSize }) => {
   return (
     <Text
       style={[
@@ -28,6 +33,7 @@ export const ScreenTitle: React.FC<
         primary && styles.screenTitlePrimary,
         white && styles.screenTitleWhite,
         textAlign && { textAlign },
+        !!fontSize && { fontSize },
       ]}>
       {children}
     </Text>

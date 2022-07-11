@@ -23,7 +23,8 @@ export const UserFilesScreen = () => {
   }, []);
 
   useEffect(() => {
-    if (userData?.passport_first_page) {
+    console.log('userData effect', userData);
+    if (userData?.data?.existedUserData?.passport_first_page) {
       reset('TabScreen');
     }
   }, [userData]);

@@ -10,13 +10,13 @@ export const StoriesFirst = () => {
   return (
     <SafeAreaView style={styles.wrapper}>
       <View style={styles.content}>
-        <Typography.BoldText textAlign="center" fontSize={22}>
+        <Typography.BoldText textAlign="center" fontSize={24}>
           {translate('onboarding1Title')}
         </Typography.BoldText>
-        <Indent height={20} />
+        <Indent height={22} />
         <Typography.BoldText
           textAlign="center"
-          fontSize={18}
+          fontSize={20}
           color={colors.secondaryText}>
           {translate('onboarding1Description')}
         </Typography.BoldText>
