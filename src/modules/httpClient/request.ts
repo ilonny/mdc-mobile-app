@@ -57,6 +57,13 @@ export const request = async (options: TRequestOptions) => {
     data: null,
     parsedError: null,
   };
+  if (response?.status === 502) {
+    Alert.alert('Service temporarily unavailable, please try again later');
+    await Storage.removeItem('user_id');
+    await Storage.removeItem('token');
+    reset('AuthScreen');
+    return false;
+  }
   if (response?.status === 401) {
     Alert.alert('Authorize error, please login again');
     await Storage.removeItem('user_id');
