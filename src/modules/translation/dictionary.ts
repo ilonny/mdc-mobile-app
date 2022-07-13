@@ -424,8 +424,8 @@ export default {
     en: 'Additionally',
   },
   OrderBtn: {
-    ru: 'Оплатить бронь',
-    en: 'Pay for the reservation',
+    ru: 'Забронировать',
+    en: 'Book',
   },
   additionalDrivers: {
     ru: 'Нужно несколько водителей для авто',
@@ -478,5 +478,49 @@ export default {
   insuranceDepositCostDesc: {
     ru: 'Точная сумма залога будет расчитана менеджером',
     en: 'The exact amount of the deposit will be calculated by the manager',
+  },
+  depositFillTitle: {
+    ru: 'Пополнение\nдепозита',
+    en: 'Deposit\nreplenishment',
+  },
+  depositFillText: {
+    ru: 'Чтобы получить возможность бронировать автомобили, необходимо пополнить депозит на сумму до 1000 AED, на случай если вам понадобится оплатить штрафы. Полную сумму аренды и залог вы сможете оплатить в момент передачи автомобиля.\n\nДепозит возвращается на карту спустя 4 недели после завершения аренды, либо по запросу, в случае если вы выбрали бессрочный.',
+    en: 'To be able to book cars, you need to top up a deposit of up to 1000 AED in case you need to pay fines. You can pay the full amount of the rental and the deposit at the time of the transfer of the car.\n\nThe deposit is returned to the card 4 weeks after the end of the rental, or upon request, if you have chosen an indefinite period.',
+  },
+  currentDeposit: {
+    ru: 'Сейчас на счете:',
+    en: 'Current balance:',
+  },
+  depositToPay: {
+    ru: 'Сумма пополнения:',
+    en: 'Replenishment amount:',
+  },
+  depositToPayTime: {
+    ru: 'Выберите срок возврата депозита',
+    en: 'Select the term for the return of the deposit',
+  },
+  after4Weeks: {
+    ru: 'Через 4 недели',
+    en: 'After 4 weeks',
+  },
+  after4WeeksText: {
+    ru: 'Если вы не планируете\nчасто пользоваться арендой',
+    en: 'If you don`t plan\nto rent frequently',
+  },
+  after4WeeksInf: {
+    ru: 'Бессрочно',
+    en: 'Indefinitely',
+  },
+  bankConditionsBtn: {
+    ru: 'Условия оплаты от банка',
+    en: 'Bank payment terms',
+  },
+  depositPayBtn: {
+    ru: 'Пополнить депозит',
+    en: 'Pay for deposit',
+  },
+  bookedSuccessfully: {
+    ru: 'Автомобиль забронирован!',
+    en: 'Car is booked!',
   },
 };

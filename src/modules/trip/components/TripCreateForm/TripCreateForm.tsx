@@ -6,6 +6,7 @@ import { colors } from '../../../../theme';
 import { printPrice } from '../../../car/helpers';
 import { useCarData } from '../../../car/hooks';
 import { BOOKING_DEPOSIT_AMOUNT } from '../../../core/constants';
+import { PaymentDepositModal } from '../../../payment/components';
 import { translate } from '../../../translation';
 import {
   Button,
@@ -17,7 +18,6 @@ import {
   Row,
   Typography,
 } from '../../../ui';
-import { useUserData } from '../../../user/hooks';
 import { getTripPrice } from '../../helpers';
 
 type TProps = {
@@ -30,8 +30,10 @@ const required = (value: undefined | string) =>
 export const TripCreateForm = (props: TProps) => {
   const { vehicle_id } = props;
 
+  const [payModalIsVisible, setPayModalIsVisible] = useState(false);
+  const [tripData, setTripData] = useState<null | Record<any, any>>(null);
+
   const { carData } = useCarData(vehicle_id);
-  const { userData } = useUserData(true);
 
   const [dateStart, setDateStart] = useState<null | string>(null);
   const [dateEnd, setDateEnd] = useState<null | string>(null);
@@ -53,13 +55,18 @@ export const TripCreateForm = (props: TProps) => {
     return getTripPrice(carData?.tariffs || [], dayDiff);
   }, [carData?.tariffs, dayDiff]);
 
-  const sumOfDeposit = useMemo(() => {
-    return BOOKING_DEPOSIT_AMOUNT - Number(userData?.deposit_balance || 0);
-  }, [userData?.deposit_balance, BOOKING_DEPOSIT_AMOUNT]);
-
-  const onSubmit = useCallback((values: Record<string, any>) => {
-    console.log('onSubmit', values);
-  }, []);
+  const onSubmit = useCallback(
+    (values: Record<any, any>) => {
+      const params = {
+        ...values,
+        price: rentPrice,
+      };
+      console.log('onSubmit', params);
+      setTripData(params);
+      setPayModalIsVisible(true);
+    },
+    [rentPrice],
+  );
 
   return (
     <Form
@@ -173,19 +180,24 @@ export const TripCreateForm = (props: TProps) => {
                     {translate('insuranceDepositCostDesc')}
                   </Typography.MainText>
                 </View>
-                <Typography.BoldText fontSize={14} flex={1}>
+                <Typography.BoldText fontSize={14} flex={1} textAlign="right">
                   {printPrice(carData?.insurance_deposit)}
                 </Typography.BoldText>
               </Row>
               <Indent height={20} />
               <Button isWhite onPress={handleSubmit}>
                 <Typography.ButtonText color={colors.totalBlack}>
-                  {translate('OrderBtn')} {printPrice(sumOfDeposit.toString())}
+                  {translate('OrderBtn')}
                 </Typography.ButtonText>
               </Button>
               <Indent height={20} />
             </Panel>
             {/* <FormCheckBox /> */}
+            <PaymentDepositModal
+              isVisible={payModalIsVisible}
+              setIsVisible={setPayModalIsVisible}
+              tripData={tripData || {}}
+            />
           </View>
         );
       }}

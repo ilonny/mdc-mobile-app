@@ -10,7 +10,7 @@ export const getTripPrice = (tariffs: TTariff[], days: number): number => {
     ).reverse();
     const chosenTariff = tariffsSortered.find(t => days >= Number(t.min_days));
     if (chosenTariff) {
-      console.log('chosenTariff: ', chosenTariff);
+      // console.log('chosenTariff: ', chosenTariff);
       const resPrice =
         Number(chosenTariff?.promo_price) || Number(chosenTariff.price) || 0;
       return resPrice * days;

@@ -26,6 +26,13 @@ export type RootStackParamList = {
     vehicle_id: string;
     title: string;
   };
+  TripSuccessScreen: {
+    data: Record<any, any>;
+  }
+  PaymentScreen: {
+    callback: () => void;
+    sumOfDeposit: number;
+  };
 };
 
 export type CarStackParamList = {

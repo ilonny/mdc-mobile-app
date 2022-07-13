@@ -50,6 +50,8 @@ export const ImageSource = {
   ben_4: require(imageSrc + 'ben_4.png'),
   ben_5: require(imageSrc + 'ben_5.png'),
   gallery: require(imageSrc + 'gallery.png'),
+  visa: require(imageSrc + 'visa.png'),
+  success_circle: require(imageSrc + 'success_circle.png'),
 };
 
 export type TImageSource = keyof typeof ImageSource;
