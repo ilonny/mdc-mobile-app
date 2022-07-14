@@ -60,12 +60,13 @@ export const TripCreateForm = (props: TProps) => {
       const params = {
         ...values,
         price: rentPrice,
+        insurance_deposit: carData?.insurance_deposit,
       };
       console.log('onSubmit', params);
       setTripData(params);
       setPayModalIsVisible(true);
     },
-    [rentPrice],
+    [rentPrice, carData?.insurance_deposit],
   );
 
   return (

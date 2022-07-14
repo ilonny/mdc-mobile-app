@@ -523,4 +523,32 @@ export default {
     ru: 'Автомобиль забронирован!',
     en: 'Car is booked!',
   },
+  currentBalance: {
+    ru: 'Сейчас на счете:',
+    en: 'Current balance:',
+  },
+  returnPeriod: {
+    ru: 'Срок возврата',
+    en: 'Returns period',
+  },
+  tripDetails: {
+    ru: 'Детали поездки',
+    en: 'Trip details',
+  },
+  tripDates: {
+    ru: 'Даты поездки',
+    en: 'Trip dates',
+  },
+  points: {
+    ru: 'баллов',
+    en: 'points',
+  },
+  whatIsThis: {
+    ru: 'Что это?',
+    en: 'What is this?',
+  },
+  pointsDesc: {
+    ru: 'Вы получите после завершения поездки',
+    en: 'You will receive after the completion of the trip',
+  },
 };
