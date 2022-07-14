@@ -61,8 +61,11 @@ export const TripCreateForm = (props: TProps) => {
         ...values,
         price: rentPrice,
         insurance_deposit: carData?.insurance_deposit,
+        insurance_payed: carData?.insurance_deposit,
+        mileage: 1000,
+        status: "CREATED",
       };
-      console.log('onSubmit', params);
+      // console.log('onSubmit', params);
       setTripData(params);
       setPayModalIsVisible(true);
     },

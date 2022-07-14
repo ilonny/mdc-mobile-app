@@ -80,7 +80,7 @@ export const PaymentDepositModal = (props: TProps) => {
           //book without payemnt
           setLoading(true);
           const user_id = await Storage.getItem('user_id');
-          const data = { ...tripData, returnTime, user_id };
+          const data = { ...tripData, returnTime, user_id,  };
           const createdTrip = await createTrip(data);
           setTimeout(() => {
             setLoading(false);
