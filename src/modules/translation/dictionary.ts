@@ -627,4 +627,12 @@ export default {
     ru: 'Нажмите для экстренного звонка',
     en: 'Click for emergency call',
   },
+  agreement: {
+    ru: 'Договор',
+    en: 'Agreement',
+  },
+  open: {
+    ru: 'Открыть',
+    en: 'Open',
+  },
 };

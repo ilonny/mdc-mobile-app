@@ -56,6 +56,7 @@ export const ImageSource = {
   telegram: require(imageSrc + 'telegram.png'),
   sos: require(imageSrc + 'sos.png'),
   phonecall: require(imageSrc + 'phonecall.png'),
+  filepdf: require(imageSrc + 'filepdf.png'),
 };
 
 export type TImageSource = keyof typeof ImageSource;

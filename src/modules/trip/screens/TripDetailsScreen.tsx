@@ -1,10 +1,11 @@
-import { useRoute } from '@react-navigation/native';
 import React, { useMemo, useState } from 'react';
+import Modal from 'react-native-modal';
+import { useRoute } from '@react-navigation/native';
 import { View } from 'react-native';
 import { RootRouteProps } from '../../../navigation/types';
 import { colors } from '../../../theme';
 import { BonusPanel } from '../../bonus/components';
-import { CarBenefits, CarOptions } from '../../car/components';
+import { CarOptions } from '../../car/components';
 import { printPrice } from '../../car/helpers';
 import { SupportBlock } from '../../support/components';
 import { translate } from '../../translation';
@@ -19,11 +20,13 @@ import {
   Typography,
 } from '../../ui';
 import { styles } from './styles';
+import { TripAgreementPanel } from '../components';
 
 export const TripDetailsScreen = () => {
   const route = useRoute<RootRouteProps<'TripDetailsScreen'>>();
   const tripData = route.params.tripData;
   const [activeTabIndex, setActiveTabIndex] = useState(0);
+  const [modalIsVisible, setModalIsVisible] = useState(false);
 
   const pricePayed = useMemo(() => {
     if (tripData?.price_payed !== 'null' && tripData?.price !== 'null') {
@@ -34,6 +37,8 @@ export const TripDetailsScreen = () => {
     }
     return false;
   }, [tripData?.price, tripData?.price_payed]);
+
+  console.log('tripData', tripData);
 
   return (
     <ScreenContainer headerProps={{ backButton: true }}>
@@ -90,7 +95,7 @@ export const TripDetailsScreen = () => {
             {printPrice(tripData?.price || '')}
           </Typography.BoldText>
         </Row>
-        <Indent height={0} />
+        <Indent height={10} />
         <Row justifyContent="space-between" alignItems="flex-start">
           <Typography.MainText fontSize={14} color={colors.secondaryText}>
             {translate('tripDetailsCostDesc')}
@@ -103,7 +108,14 @@ export const TripDetailsScreen = () => {
         </Row>
         <Indent height={6} />
       </Panel>
-
+      {tripData?.agreement_link && tripData?.agreement_link !== 'null' ? (
+        <>
+          <Indent height={20} />
+          <TripAgreementPanel link={tripData?.agreement_link} />
+        </>
+      ) : (
+        <></>
+      )}
       <Indent height={40} />
 
       <Typography.BoldText fontSize={20}>
