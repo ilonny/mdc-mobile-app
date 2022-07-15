@@ -11,6 +11,7 @@ type TProps = {
   isTransparent?: boolean;
   smallHeight?: boolean;
   isBlue?: boolean;
+  border?: boolean;
 } & TouchableOpacityProps;
 
 export const Button = (props: TProps) => {
@@ -24,6 +25,7 @@ export const Button = (props: TProps) => {
     isTransparent,
     smallHeight,
     isBlue,
+    border,
   } = props;
   if (disabled) {
     return (
@@ -40,6 +42,7 @@ export const Button = (props: TProps) => {
           isBlue && styles.wrapperBlue,
           isTransparent && styles.wrapperTransparent,
           smallHeight && styles.smallHeightWrapper,
+          border && styles.border,
         ]}>
         {isLoading ? <ActivityIndicator /> : children}
       </View>

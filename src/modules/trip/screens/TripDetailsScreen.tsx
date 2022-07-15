@@ -6,6 +6,7 @@ import { colors } from '../../../theme';
 import { BonusPanel } from '../../bonus/components';
 import { CarBenefits, CarOptions } from '../../car/components';
 import { printPrice } from '../../car/helpers';
+import { SupportBlock } from '../../support/components';
 import { translate } from '../../translation';
 import {
   CheckBox,
@@ -199,6 +200,8 @@ export const TripDetailsScreen = () => {
       </CheckBox>
       <Indent height={40} />
       <BonusPanel price={Number(tripData?.price) || 0} />
+      <Indent height={40} />
+      <SupportBlock />
       <Indent height={40} />
     </ScreenContainer>
   );

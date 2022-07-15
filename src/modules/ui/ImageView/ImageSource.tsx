@@ -52,6 +52,10 @@ export const ImageSource = {
   gallery: require(imageSrc + 'gallery.png'),
   visa: require(imageSrc + 'visa.png'),
   success_circle: require(imageSrc + 'success_circle.png'),
+  whatsapp: require(imageSrc + 'whatsapp.png'),
+  telegram: require(imageSrc + 'telegram.png'),
+  sos: require(imageSrc + 'sos.png'),
+  phonecall: require(imageSrc + 'phonecall.png'),
 };
 
 export type TImageSource = keyof typeof ImageSource;

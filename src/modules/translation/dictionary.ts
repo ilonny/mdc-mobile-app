@@ -607,4 +607,24 @@ export default {
     ru: 'не оплачено',
     en: 'not paid',
   },
+  haveQ: {
+    ru: 'Возникли вопросы?',
+    en: 'Have a questions?',
+  },
+  writeInChat: {
+    ru: 'Написать в чат',
+    en: 'Write in chat',
+  },
+  writeInWA: {
+    ru: 'Написать в WhatsApp',
+    en: 'Write in WhatsApp',
+  },
+  writeInTG: {
+    ru: 'Написать в Telegram',
+    en: 'Write in Telegram',
+  },
+  tapToSos: {
+    ru: 'Нажмите для экстренного звонка',
+    en: 'Click for emergency call',
+  },
 };

@@ -30,4 +30,9 @@ export const styles = StyleSheet.create({
     height: 34,
     borderRadius: 8,
   },
+  border: {
+    borderWidth: 2,
+    borderColor: '#fff',
+    height: 58,
+  },
 });
