@@ -11,7 +11,11 @@ import { AuthScreen } from '../modules/auth/screens';
 import { UserFilesScreen } from '../modules/user/screens';
 import { TabScreen } from './TabRoutes';
 import { SelectScreen } from '../modules/ui/Select/screens/SelectScreen';
-import { TripCreateScreen, TripSuccessScreen } from '../modules/trip/screens';
+import {
+  TripCreateScreen,
+  TripDetailsScreen,
+  TripSuccessScreen,
+} from '../modules/trip/screens';
 import { PaymentScreen } from '../modules/payment/screens';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -75,7 +79,12 @@ export const Routes: React.FC<{
           options={canNotGoBackOptions}
         />
         <Stack.Screen name="TripCreateScreen" component={TripCreateScreen} />
-        <Stack.Screen name="TripSuccessScreen" component={TripSuccessScreen} options={canNotGoBackOptions} />
+        <Stack.Screen
+          name="TripSuccessScreen"
+          component={TripSuccessScreen}
+          options={canNotGoBackOptions}
+        />
+        <Stack.Screen name="TripDetailsScreen" component={TripDetailsScreen} />
         <Stack.Screen name="TabScreen" component={TabScreen} />
       </Stack.Navigator>
     </>

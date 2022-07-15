@@ -1,5 +1,6 @@
 import { RouteProp } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { TTrip } from '../modules/trip/types';
 import { TOption } from '../modules/ui/Select/Select';
 
 export type RootStackParamList = {
@@ -28,7 +29,10 @@ export type RootStackParamList = {
   };
   TripSuccessScreen: {
     data: Record<any, any>;
-  }
+  };
+  TripDetailsScreen: {
+    tripData: TTrip;
+  };
   PaymentScreen: {
     callback: () => void;
     sumOfDeposit: number;

@@ -575,4 +575,36 @@ export default {
     ru: 'Остаток оплачен, хорошей поездки!',
     en: 'Trip was paid, have a good trip!',
   },
+  notifications: {
+    ru: 'Уведомления',
+    en: 'Notifications',
+  },
+  whatNext: {
+    ru: 'Что дальше?',
+    en: "What's next?",
+  },
+  whatNext1: {
+    ru: 'Наш менеджер скоро свяжется с вами для подписания  договора, оплаты залога и остатка.',
+    en: 'Our manager will contact you soon to sign the contract, pay the deposit and the balance.',
+  },
+  whatNext2: {
+    ru: 'Приложение заранее напомнит вам о начале поездки.',
+    en: 'The application will remind you in advance of the start of the trip.',
+  },
+  whatNext3: {
+    ru: 'Это всё, можете наслаждаться автомобилем! Информация о поездке сохранена в разделе «Мои поездки»',
+    en: `That's all, you can enjoy the car! The trip information is saved in the "My trips" section`,
+  },
+  tripDetailsCostDesc: {
+    ru: 'Мы свяжемся с вами для проведения оплаты ',
+    en: 'We will contact you for payment',
+  },
+  paid: {
+    ru: 'оплачено',
+    en: 'paid',
+  },
+  notpaid: {
+    ru: 'не оплачено',
+    en: 'not paid',
+  },
 };

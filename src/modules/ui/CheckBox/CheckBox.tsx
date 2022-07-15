@@ -10,15 +10,25 @@ type TProps = {
   fullwidth?: boolean;
   onPress?: (arg?: any) => void;
   initialChecked?: boolean;
+  disabled?: boolean;
 };
 
 export const CheckBox = (props: TProps) => {
-  const { children, fullwidth, onPress, initialChecked = false } = props;
+  const {
+    children,
+    fullwidth,
+    onPress,
+    initialChecked = false,
+    disabled = false,
+  } = props;
   const [checked, setChecked] = useState(initialChecked);
   return (
     <View style={fullwidth && { width: '100%' }}>
       <TouchableFeedback
         onPress={() => {
+          if (disabled) {
+            return false;
+          }
           if (typeof onPress === 'function') {
             onPress();
           }

@@ -1,6 +1,8 @@
+import { useNavigation } from '@react-navigation/native';
 import moment from 'moment';
-import React, { useMemo } from 'react';
+import React, { useCallback, useMemo } from 'react';
 import { View } from 'react-native';
+import { NavigationProps } from '../../../../navigation/types';
 import { colors } from '../../../../theme';
 import { BONUS_EARN_RATE } from '../../../bonus/constants';
 import { printPrice } from '../../../car/helpers';
@@ -23,7 +25,7 @@ type TProps = {
 
 export const TripBlock = (props: TProps) => {
   const { tripData } = props;
-
+  const navigation = useNavigation<NavigationProps>();
   const poinstsNumber = useMemo(() => {
     if (tripData?.price && tripData?.price !== 'null') {
       return Number(tripData?.price) * BONUS_EARN_RATE;
@@ -41,9 +43,12 @@ export const TripBlock = (props: TProps) => {
     return false;
   }, [tripData?.price, tripData?.price_payed]);
 
-  console.log('TripBlock', tripData);
+  const onPressBlock = useCallback(() => {
+    navigation.navigate('TripDetailsScreen', { tripData });
+  }, []);
+
   return (
-    <TouchableFeedback style={styles.wrapper}>
+    <TouchableFeedback style={styles.wrapper} onPress={onPressBlock}>
       <Panel>
         <Indent height={10} />
         <Row justifyContent="space-between">
