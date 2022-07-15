@@ -11,4 +11,10 @@ export const styles = StyleSheet.create({
     marginLeft: -16,
     width: deviceWidth,
   },
+  wrapperIsRed: {
+    backgroundColor: colors.red,
+  },
+  wrapperIsGreen: {
+    backgroundColor: colors.success,
+  },
 });

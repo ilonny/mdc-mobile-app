@@ -2,6 +2,7 @@ import React from 'react';
 import Video from 'react-native-video';
 import {
   KeyboardAvoidingView,
+  RefreshControl,
   SafeAreaView,
   ScrollView,
   StyleSheet,
@@ -26,6 +27,8 @@ type TProps = {
   isLoading?: boolean;
   noPadding?: boolean;
   headerProps?: THeaderProps;
+  onRefresh?: () => void;
+  refreshing?: boolean;
 };
 
 export const ScreenContainer = (props: TProps) => {
@@ -40,6 +43,8 @@ export const ScreenContainer = (props: TProps) => {
     footerPadding,
     noPadding,
     headerProps,
+    onRefresh,
+    refreshing,
   } = props;
   return (
     <View style={[styles.wrapper]}>
@@ -76,6 +81,14 @@ export const ScreenContainer = (props: TProps) => {
             </SafeAreaView>
           ) : (
             <ScrollView
+              refreshControl={
+                onRefresh && refreshing !== undefined ? (
+                  <RefreshControl
+                    refreshing={refreshing}
+                    onRefresh={onRefresh}
+                  />
+                ) : undefined
+              }
               scrollEventThrottle={100}
               contentContainerStyle={[
                 styles.scrollContent,

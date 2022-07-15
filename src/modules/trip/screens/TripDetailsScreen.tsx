@@ -20,13 +20,19 @@ import {
   Typography,
 } from '../../ui';
 import { styles } from './styles';
-import { TripAgreementPanel } from '../components';
+import { TripAgreementPanel, TripCancelButton } from '../components';
+import { useTripData } from '../hooks';
 
 export const TripDetailsScreen = () => {
   const route = useRoute<RootRouteProps<'TripDetailsScreen'>>();
-  const tripData = route.params.tripData;
+  const tripDataParam = route.params.tripData;
   const [activeTabIndex, setActiveTabIndex] = useState(0);
-  const [modalIsVisible, setModalIsVisible] = useState(false);
+
+  const { tripDataHook, tripDataLoading, getTripDataReq } = useTripData();
+
+  const tripData = useMemo(() => {
+    return { ...tripDataParam, ...tripDataHook };
+  }, [tripDataParam, tripDataHook]);
 
   const pricePayed = useMemo(() => {
     if (tripData?.price_payed !== 'null' && tripData?.price !== 'null') {
@@ -38,10 +44,13 @@ export const TripDetailsScreen = () => {
     return false;
   }, [tripData?.price, tripData?.price_payed]);
 
-  console.log('tripData', tripData);
+  console.log('tripData', tripData, tripDataHook);
 
   return (
-    <ScreenContainer headerProps={{ backButton: true }}>
+    <ScreenContainer
+      headerProps={{ backButton: true }}
+      onRefresh={() => getTripDataReq(tripData.id.toString())}
+      refreshing={tripDataLoading}>
       <Typography.ScreenTitle small>
         {tripData?.vehicle_title || ''}
       </Typography.ScreenTitle>
@@ -51,6 +60,48 @@ export const TripDetailsScreen = () => {
         tabs={[translate('tripDetails'), translate('notifications')]}
         onChange={setActiveTabIndex}
       />
+      {tripData?.status === 'CANCELED' ? (
+        <>
+          <Indent height={40} />
+          <Panel isRed>
+            <Indent height={30} />
+            <Typography.BoldText fontSize={20} textAlign="center">
+              {translate('tripWasCanceled')}
+            </Typography.BoldText>
+            <Indent height={10} />
+            <Typography.BoldText fontSize={18} textAlign="center">
+              {translate('tripWasCanceledText')}
+            </Typography.BoldText>
+            <Indent height={30} />
+          </Panel>
+        </>
+      ) : (
+        <></>
+      )}
+      {tripData?.status === 'COMPLETED' ? (
+        <>
+          <Indent height={40} />
+          <Panel isGreen>
+            <Indent height={30} />
+            <Typography.BoldText
+              fontSize={20}
+              textAlign="center"
+              color={'#fff'}>
+              {translate('tripWasCompleted')}
+            </Typography.BoldText>
+            <Indent height={10} />
+            <Typography.BoldText
+              fontSize={18}
+              textAlign="center"
+              color={'#fff'}>
+              {translate('tripWasCompletedText')}
+            </Typography.BoldText>
+            <Indent height={30} />
+          </Panel>
+        </>
+      ) : (
+        <></>
+      )}
       <Indent height={40} />
       <Typography.BoldText fontSize={20}>
         {translate('whatNext')}
@@ -84,7 +135,17 @@ export const TripDetailsScreen = () => {
       </Row>
 
       <Indent height={40} />
-
+      {tripData.status === 'CREATED' ? (
+        <>
+          <TripCancelButton
+            id={tripData.id}
+            callback={() => getTripDataReq(tripData.id.toString())}
+          />
+          <Indent height={40} />
+        </>
+      ) : (
+        <></>
+      )}
       <Panel fullWidth>
         <Indent height={6} />
         <Row justifyContent="space-between">

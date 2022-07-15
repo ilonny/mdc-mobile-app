@@ -1,5 +1,6 @@
 import React, { useCallback } from 'react';
 import { FlatList, View } from 'react-native';
+import { Indent } from '../../../ui';
 import { TTrip } from '../../types';
 import { TripBlock } from '../TripBlock';
 
@@ -20,8 +21,13 @@ export const TripList = (props: TProps) => {
     return item.id.toString();
   }, []);
 
+  const separator = useCallback(() => {
+    return <Indent height={20} />;
+  }, []);
+
   return (
     <FlatList
+      ItemSeparatorComponent={separator}
       onRefresh={onRefresh}
       refreshing={refreshing}
       nestedScrollEnabled

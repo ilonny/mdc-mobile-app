@@ -635,4 +635,36 @@ export default {
     ru: 'Открыть',
     en: 'Open',
   },
+  TripCancelButton: {
+    ru: 'Отменить бронирование',
+    en: 'Cancel booking',
+  },
+  tripCancelTitle: {
+    ru: 'Вы уверены, что хотите отменить бронь?',
+    en: 'Are you sure you want to cancel your booking?',
+  },
+  tripCancelText: {
+    ru: 'Сумма брони вернется на ваш депозит, в дальнейшем вы сможете использовать его для оплаты штрафов и бронирования других автомобилей',
+    en: 'The amount of the reservation will be returned to your deposit, in the future you can use it to pay fines and book other cars',
+  },
+  tripCancelOkBtn: {
+    ru: 'Хорошо, отменить бронь',
+    en: 'Ok, cancel the booking',
+  },
+  tripWasCanceled: {
+    ru: 'Поездка отменена',
+    en: 'Trip was cancelled',
+  },
+  tripWasCanceledText: {
+    ru: 'Сумма за бронь автомобиля возвращена на депозит',
+    en: 'The amount for the car reservation was returned to the deposit',
+  },
+  tripWasCompleted: {
+    ru: 'Поездка завершена!',
+    en: 'The trip is over!',
+  },
+  tripWasCompletedText: {
+    ru: 'Сумма брони автомобиля вернется через месяц после завершения поездки.!',
+    en: 'The amount of the car reservation will be returned one month after the end of the trip.',
+  },
 };
