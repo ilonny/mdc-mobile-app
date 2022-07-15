@@ -22,3 +22,4 @@ export { FilterButton } from './FilterButton';
 export { Panel } from './Panel';
 export { Divider } from './Divider';
 export { Tabs } from './Tabs';
+export { Badge } from './Badge';

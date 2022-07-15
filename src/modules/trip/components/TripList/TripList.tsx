@@ -1,7 +1,7 @@
 import React, { useCallback } from 'react';
 import { FlatList, View } from 'react-native';
-import { Typography } from '../../../ui';
 import { TTrip } from '../../types';
+import { TripBlock } from '../TripBlock';
 
 type TProps = {
   data: TTrip[];
@@ -13,11 +13,7 @@ export const TripList = (props: TProps) => {
   const { data, onRefresh, refreshing } = props;
 
   const renderItem = useCallback(({ item }: { item: TTrip }) => {
-    return (
-      <View>
-        <Typography.MainText>Item {item.id.toString()}</Typography.MainText>
-      </View>
-    );
+    return <TripBlock tripData={item} />;
   }, []);
 
   const keyExtractor = useCallback((item: TTrip) => {

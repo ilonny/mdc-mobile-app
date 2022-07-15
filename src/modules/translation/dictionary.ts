@@ -563,4 +563,16 @@ export default {
     ru: 'Список поездок пуст',
     en: 'You dont have any trips',
   },
+  trip: {
+    ru: 'Поздека',
+    en: 'Trip',
+  },
+  tripNotPayed: {
+    ru: 'Остаток не оплачен',
+    en: 'Trip not paid',
+  },
+  tripIsPayed: {
+    ru: 'Остаток оплачен, хорошей поездки!',
+    en: 'Trip was paid, have a good trip!',
+  },
 };
