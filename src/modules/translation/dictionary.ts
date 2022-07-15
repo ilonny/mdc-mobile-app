@@ -551,4 +551,12 @@ export default {
     ru: 'Вы получите после завершения поездки',
     en: 'You will receive after the completion of the trip',
   },
+  tripsFuture: {
+    ru: 'Предстоящие',
+    en: 'Upcoming',
+  },
+  tripsPast: {
+    ru: 'Прошедшие',
+    en: 'Past',
+  },
 };

@@ -1,0 +1,26 @@
+export type TTrip = {
+  abroad: null | string;
+  additional_drivers: null | string;
+  additional_mileage: null | string;
+  agreement_link: null | string;
+  baby_chair: null | string;
+  createdAt: string;
+  date_end: string;
+  date_start: string;
+  deposit_payed: null | string;
+  id: number;
+  insurance_payed: null | string;
+  mileage: null | string;
+  other: null | string;
+  price: null | string;
+  price_payed: null | string;
+  promo_points: null | string;
+  returnTime: null | string;
+  status: null | string;
+  updatedAt: null | string;
+  user_full_name: null | string;
+  user_id: null | string;
+  vehicle_delivery: null | string;
+  vehicle_id: null | string;
+  vehicle_title: null | string;
+};
