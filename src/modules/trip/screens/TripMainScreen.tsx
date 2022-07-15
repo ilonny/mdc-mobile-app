@@ -1,8 +1,10 @@
 import { useNavigation } from '@react-navigation/native';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { NavigationProps } from '../../../navigation/types';
 import { translate } from '../../translation';
-import { Indent, ScreenContainer, Tabs, Typography } from '../../ui';
+import { Indent, Row, ScreenContainer, Tabs, Typography } from '../../ui';
+import { TripList } from '../components';
+import { getFutureTrips, getPastTrips } from '../helpers';
 import { useTripList } from '../hooks';
 
 export const TripMainScreen = () => {
@@ -17,18 +19,42 @@ export const TripMainScreen = () => {
     return unsubscribe;
   }, [navigation]);
 
-  console.log('tripList', tripList);
+  const futureTrips = useMemo(() => {
+    return getFutureTrips(tripList);
+  }, [tripList]);
+
+  const pastTrips = useMemo(() => {
+    return getPastTrips(tripList);
+  }, [tripList]);
 
   return (
-    <ScreenContainer fullscreen isLoading={tripListLoading}>
+    <ScreenContainer fullscreen isLoading={tripListLoading} disableScroll>
       <Indent height={40} />
       <Typography.ScreenTitle>{translate('MyTrips')}</Typography.ScreenTitle>
       <Indent height={20} />
-      <Tabs
-        activeIndex={activeTabIndex}
-        tabs={[translate('tripsFuture'), translate('tripsPast')]}
-        onChange={setActiveTabIndex}
-      />
+      {tripList?.length ? (
+        <>
+          <Row>
+            <Tabs
+              activeIndex={activeTabIndex}
+              tabs={[translate('tripsFuture'), translate('tripsPast')]}
+              onChange={setActiveTabIndex}
+            />
+          </Row>
+          <Indent height={20} />
+          <TripList
+            data={activeTabIndex === 0 ? futureTrips : pastTrips}
+            onRefresh={getTripListReq}
+            refreshing={tripListLoading}
+          />
+        </>
+      ) : (
+        <>
+          <Typography.BoldText>
+            {translate('tripListEmpty')}
+          </Typography.BoldText>
+        </>
+      )}
     </ScreenContainer>
   );
 };

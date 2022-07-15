@@ -559,4 +559,8 @@ export default {
     ru: 'Прошедшие',
     en: 'Past',
   },
+  tripListEmpty: {
+    ru: 'Список поездок пуст',
+    en: 'You dont have any trips',
+  },
 };
