@@ -1,0 +1,20 @@
+export type TUserData = {
+  balance: null | string;
+  birth_date: null | string;
+  createdAt: null | string;
+  deposit_balance: null | string;
+  driver_experience: null | string;
+  driver_license_first_page: null | string;
+  driver_license_second_page: null | string;
+  id: number;
+  name: null | string;
+  passport_first_page: null | string;
+  passport_second_page: null | string;
+  security_check: null | string;
+  selfie: null | string;
+  status: any;
+  surname: null | string;
+  thirdname: null | string;
+  updatedAt: null | string;
+  user_id: null | string;
+};

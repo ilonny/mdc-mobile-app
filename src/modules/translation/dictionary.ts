@@ -667,4 +667,16 @@ export default {
     ru: 'Сумма брони автомобиля вернется через месяц после завершения поездки.!',
     en: 'The amount of the car reservation will be returned one month after the end of the trip.',
   },
+  secutiryCheckStatusOk: {
+    ru: 'Проверка пройдена',
+    en: 'Check have been succesfull',
+  },
+  secutiryCheckStatusNotOk: {
+    ru: 'На проверке',
+    en: 'Check in progress',
+  },
+  around1Hour: {
+    ru: 'Около 1 часа',
+    en: 'Around 1 hour',
+  },
 };

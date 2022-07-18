@@ -57,6 +57,8 @@ export const ImageSource = {
   sos: require(imageSrc + 'sos.png'),
   phonecall: require(imageSrc + 'phonecall.png'),
   filepdf: require(imageSrc + 'filepdf.png'),
+  checkcircle: require(imageSrc + 'checkcircle.png'),
+  arrowscounterclockwise: require(imageSrc + 'arrowscounterclockwise.png'),
 };
 
 export type TImageSource = keyof typeof ImageSource;
