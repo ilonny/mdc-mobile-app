@@ -679,4 +679,24 @@ export default {
     ru: 'Около 1 часа',
     en: 'Around 1 hour',
   },
+  yourStatus: {
+    ru: 'Ваш статус',
+    en: 'Your status',
+  },
+  nextLevelText: {
+    ru: 'До следующего уровня «Ценитель» осталось накопить:',
+    en: 'Until the next level "Connoisseur", it remains to accumulate:',
+  },
+  Available: {
+    ru: 'Доступно',
+    en: 'Available',
+  },
+  achievments: {
+    ru: 'наград',
+    en: 'achievments',
+  },
+  showAllachievments: {
+    ru: 'Посмотреть все награды',
+    en: 'View all achievements',
+  },
 };

@@ -26,13 +26,14 @@ export const styles = StyleSheet.create({
   wrapperTransparent: {
     backgroundColor: 'transparent',
   },
-  smallHeightWrapper: {
-    height: 34,
-    borderRadius: 8,
-  },
   border: {
     borderWidth: 2,
     borderColor: '#fff',
     height: 58,
+  },
+  smallHeightWrapper: {
+    height: 34,
+    borderRadius: 8,
+    borderWidth: 1,
   },
 });

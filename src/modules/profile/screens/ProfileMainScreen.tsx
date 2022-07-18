@@ -7,6 +7,8 @@ import { Storage } from '../../asyncStorage';
 import { Button, Indent, ScreenContainer, Typography } from '../../ui';
 import { useUserData } from '../../user/hooks';
 import { UserSecurityStatus } from '../../user/components';
+import { ProfileBonusPanel } from '../../bonus/components';
+import { SupportBlock } from '../../support/components';
 
 export const ProfileMainScreen = () => {
   const navigation = useNavigation<NavigationProps>();
@@ -44,6 +46,18 @@ export const ProfileMainScreen = () => {
       <Typography.ScreenTitle>{userData?.name || ''}</Typography.ScreenTitle>
       <Indent height={20} />
       <UserSecurityStatus status={userData?.security_check || null} />
+      <Indent height={20} />
+      {userData?.user_id ? (
+        <ProfileBonusPanel
+          userId={userData.user_id}
+          bonusValue={userData?.balance}
+        />
+      ) : (
+        <></>
+      )}
+      <Indent height={40} />
+      <SupportBlock />
+      <Indent height={40} />
     </ScreenContainer>
   );
 };
