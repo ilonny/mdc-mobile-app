@@ -146,6 +146,7 @@ export const DatePicker = (props: TProps) => {
                       />
                     }
                   />
+                  <Indent height={20} />
                 </View>
               </View>
             </Modal>

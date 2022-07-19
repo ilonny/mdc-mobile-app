@@ -412,12 +412,12 @@ export default {
     en: 'Enter your rental dates to calculate the cost of your reservation.',
   },
   dateStart: {
-    ru: 'Дата начала',
-    en: 'Start date',
+    ru: 'Дата начала (MM/DD/YYYY)',
+    en: 'Start date (MM/DD/YYYY)',
   },
   dateEnd: {
-    ru: 'Дата окончания аренды',
-    en: 'End date',
+    ru: 'Дата окончания аренды (MM/DD/YYYY)',
+    en: 'End date (MM/DD/YYYY)',
   },
   Additionally: {
     ru: 'Дополнительно',
