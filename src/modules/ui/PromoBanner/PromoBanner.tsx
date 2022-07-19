@@ -9,7 +9,7 @@ export const PromoBanner = () => {
     <View style={styles.wrapper}>
       <ImageView style={styles.image} source={ImageSource.promo_pic} />
       <View style={styles.text}>
-        <Typography.MainText>Промоблок</Typography.MainText>
+        <Typography.MainText>Promo coming soon</Typography.MainText>
       </View>
     </View>
   );

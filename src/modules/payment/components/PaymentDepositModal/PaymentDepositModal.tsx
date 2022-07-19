@@ -183,7 +183,7 @@ export const PaymentDepositModal = (props: TProps) => {
                           textAlign="right"
                           fontSize={14}
                           color={colors.secondaryText}>
-                          {translate('after4WeeksText')}
+                          {translate('after4WeeksInfText')}
                         </Typography.MainText>
                       </Row>
                     </Panel>

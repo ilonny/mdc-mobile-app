@@ -12,7 +12,7 @@ export const StoriesFourth = () => {
     <SafeAreaView style={styles.wrapper}>
       <View style={styles.content}>
         <View>
-          <Typography.BoldText textAlign="center" fontSize={24}>
+          <Typography.BoldText textAlign="center" fontSize={32}>
             {translate('onboarding4Title')}
           </Typography.BoldText>
           <Indent height={22} />

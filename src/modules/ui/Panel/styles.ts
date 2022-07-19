@@ -15,6 +15,6 @@ export const styles = StyleSheet.create({
     backgroundColor: colors.red,
   },
   wrapperIsGreen: {
-    backgroundColor: colors.success,
+    backgroundColor: colors.lightGreen,
   },
 });

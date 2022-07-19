@@ -1,15 +1,11 @@
-import React, { useContext, useMemo } from 'react';
+import React, { useMemo } from 'react';
 import { View } from 'react-native';
 import { colors } from '../../../../theme';
-import { FilterContext } from '../../../filter/context';
-import { API_URL } from '../../../httpClient/constants';
 import { translate } from '../../../translation';
-import { ImageView, Indent, Panel, Typography } from '../../../ui';
+import { Indent, Panel, Typography } from '../../../ui';
 import { mapData } from '../../../vehicleType/constants';
 import { useVehicleTypeList } from '../../../vehicleType/hooks';
-import { TVehicleType } from '../../../vehicleType/types';
 import { TCar } from '../../types';
-import { styles } from './styles';
 
 type TProps = {
   data: TCar;
@@ -69,14 +65,6 @@ export const CarChars = (props: TProps) => {
       <Indent height={20} />
       <View>
         <Typography.MainText color={colors.secondaryText} fontSize={16}>
-          {translate('carPower')}
-        </Typography.MainText>
-        <Indent height={5} />
-        <Typography.BoldText fontSize={16}>{data.power}</Typography.BoldText>
-      </View>
-      <Indent height={20} />
-      <View>
-        <Typography.MainText color={colors.secondaryText} fontSize={16}>
           {translate('engineVolume')}
         </Typography.MainText>
         <Indent height={5} />
@@ -96,7 +84,7 @@ export const CarChars = (props: TProps) => {
           {translate('minDaysRent')}
         </Typography.MainText>
         <Indent height={5} />
-        <Typography.BoldText fontSize={16}>1</Typography.BoldText>
+        <Typography.BoldText fontSize={16}>24 hours</Typography.BoldText>
       </View>
     </Panel>
   );

@@ -1,51 +1,51 @@
 export default {
   onboardingMainTitle: {
     ru: `Спасибо, что\nприсоединились к нам!`,
-    en: `Thanks\nfor joining us!`,
+    en: `Thank you for\njoining us!`,
   },
   onboardingMainDescription: {
     ru: `В формате сторис расскажем\nвам, что вы получите в этом\nприложении`,
-    en: `We will tell you what you will get\nin this application\nin stories format`,
+    en: `We will tell you what you will get\nin this app through stories`,
   },
   onboardingMainButtonOk: {
     ru: `Хорошо`,
-    en: `Start`,
+    en: `Ok`,
   },
   onboardingMainButtonSkip: {
     ru: `Пропустить`,
     en: `Skip`,
   },
   onboarding1Title: {
-    ru: 'Онлайн-бронирование\nавтомобилей для поездок\nв Москве и МО',
-    en: 'Online car booking',
+    ru: 'Онлайн-бронирование автомобилей для поездок в Москве и МО',
+    en: 'Online car booking for trips in Dubai',
   },
   onboarding1Description: {
-    ru: '50+ авто. Доставка и самовывоз.\nДепозит на бронь',
+    ru: '50+ авто. Доставка и самовывоз. Депозит на бронь',
     en: '50+ cars. Delivery and pickup.\nDeposit for booking',
   },
   onboarding2Title: {
     ru: 'Отслеживание информации\nо предстоящих и прошедших\nпоездках',
-    en: 'Tracking information about\nupcoming and past trips',
+    en: 'Tracking information about upcoming and past trips',
   },
   onboarding2Description: {
     ru: 'Вся информация о поездке в одном\nместе. Напоминания о начале\nи завершении аренды',
-    en: 'All travel information in one place.\nReminders for the beginning\nand end of the rental',
+    en: 'All information about the trip in one place. Reminders about the rental beginning and end',
   },
   onboarding3Title: {
     ru: 'Сервисы для наших клиентов',
-    en: 'Services for our clients',
+    en: 'Our customer service',
   },
   onboarding3Description: {
-    ru: 'Советуем куда съездить и на что\nпосмотреть с персональными скидками.\nДелимся уникальными предложениями\nот партнеров (скоро!)',
-    en: 'We advise where to go and what\nto see with personal discounts.\nWe shareunique offers from\npartners (coming soon!)',
+    ru: 'Советуем куда съездить и на что посмотреть с персональными скидками. Делимся уникальными предложениями от партнеров (скоро!)',
+    en: 'We advise you where to go and what to see with personal discounts. We share unique offers from partners (soon!)',
   },
   onboarding4Title: {
     ru: 'Бонусы и прочие плюшки\nдля членов клуба MDC',
-    en: 'Bonuses and other perks\nfor MDC members',
+    en: 'Bonuses and rewards\nfor DC club members',
   },
   onboarding4Description: {
-    ru: 'Повышайте рейтинг, получая баллы,\nа за это мы будем дарить реальные\nподарки',
-    en: 'Raise your rating by getting points,\nand for this we will give\nreal gifts',
+    ru: 'Повышайте рейтинг, получая баллы, а за это мы будем дарить реальные подарки',
+    en: 'Increase your rating by getting points and get real gifts',
   },
   onboardingPerk1: {
     ru: 'Скидки до 50%',
@@ -53,7 +53,7 @@ export default {
   },
   onboardingPerk2: {
     ru: 'Мерч MDC',
-    en: 'Merch MDC',
+    en: 'Dream Cars merch',
   },
   onboardingPerk3: {
     ru: 'Бесплатные дни аренды',
@@ -72,8 +72,8 @@ export default {
     en: 'Allow us to send\nnotifications',
   },
   onboardingPushDescription: {
-    ru: 'Напомним о начале и завершении\nпоездки, пришлём информацию о ГИБДД\nштрафах и покажем персональные\nпредложения',
-    en: 'We will remind you about the\nbeginning and end of the trip, send\ninformation about the traffic\npolice finesand show\npersonal offers',
+    ru: 'Напомним о начале и завершении поездки, пришлём информацию о ГИБДД штрафах и покажем персональные предложения',
+    en: 'We will remind you about the beginning and end of the trip, send you information about traffic police fines & show you personal offers',
   },
   pushAllowBtn: {
     ru: 'Разрешить уведомления',
@@ -81,27 +81,27 @@ export default {
   },
   notNow: {
     ru: 'Не сейчас',
-    en: 'Not now',
+    en: 'Later',
   },
   enterPhone: {
     ru: 'Введите телефон',
-    en: 'Enter phone',
+    en: 'Enter your\nphone number',
   },
   enterPhoneDescription: {
-    ru: 'Зарегистируйтесь за минуту\nи автоматически станьте членом\nклуба MDC.',
-    en: 'Register in a minute\nand automatically become a member\nof the MDC club.',
+    ru: 'Зарегистируйтесь за минуту\nи автоматически станьте членом\nклуба MDC.',
+    en: 'Register in a minute and automatically\nbecome a member of the DC club.',
   },
   send: {
     ru: 'Отправить',
-    en: 'Send',
+    en: 'Done',
   },
   enterCode: {
     ru: 'Введите код',
-    en: 'Enter code',
+    en: 'Enter the code',
   },
   resendCode: {
     ru: 'запросить код повторно',
-    en: 'request code again',
+    en: 'request the code again',
   },
   resendCodeTime1: {
     ru: 'через',
@@ -121,7 +121,7 @@ export default {
   },
   userFilesDescription: {
     ru: 'Для бронирования автомобилей, нам\nпонадобятся некоторые ваши\nданные и документы для проверки\nв службе безопасности',
-    en: 'For booking cars, we\nwill need some of your\ndetails and documents\nfor security checks',
+    en: 'We need some of your data and\ndocuments to check with the security\nservice for you to rent a car',
   },
   yourNameInput: {
     ru: 'Ваше имя *',
@@ -129,11 +129,11 @@ export default {
   },
   birthdayInput: {
     ru: 'Дата рождения (mm/dd/yyyy) *',
-    en: 'Date of birth (mm/dd/yyyy) *',
+    en: 'Birth date (mm/dd/yyyy) *',
   },
   expInput: {
     ru: 'Стаж вождения *',
-    en: 'Drive experience *',
+    en: 'Driving experience *',
   },
   Passport: {
     ru: 'Паспорт',
@@ -145,7 +145,7 @@ export default {
   },
   PassportPickerPlaceholder2: {
     ru: 'Фото/скан страницы с регистрацией',
-    en: 'Photo/scan of the second page',
+    en: 'Photo/scan of the registration page',
   },
   DriverLicense: {
     ru: 'Водительское\nудостоверение',
@@ -153,35 +153,35 @@ export default {
   },
   DriverLicense1: {
     ru: 'Лицевая сторона',
-    en: 'First page',
+    en: 'Front side',
   },
   DriverLicense2: {
     ru: 'Задняя сторона',
-    en: 'Second page',
+    en: 'Back side',
   },
   Selfie: {
     ru: 'Селфи арендатора',
-    en: 'Selfie',
+    en: "Tenant's selfie",
   },
   filesSecureText: {
-    ru: 'Все данные строго конфиденциальны\nи предназначены только для службы\nбезопасности MDC',
-    en: 'All data is strictly confidential\nand is intended only for the\nMDC security service',
+    ru: 'Все данные строго конфиденциальны\nи предназначены только для службы\nбезопасности MDC',
+    en: 'All data is strictly confidential and intended\nonly for the DC security service',
   },
   agreeWithConditions: {
     ru: 'Согласен с условиями',
-    en: 'Agree with conditions of',
+    en: 'I agree with',
   },
   dataProcessing: {
     ru: 'обработки данных',
-    en: 'data processiing',
+    en: 'the terms of data processing',
   },
   offer: {
     ru: 'договора оферты',
-    en: 'offer',
+    en: 'the terms of the offer',
   },
   autoPark: {
     ru: 'Автопарк',
-    en: 'Autopark',
+    en: 'Car park',
   },
   Profile: {
     ru: 'Профиль',
@@ -197,15 +197,15 @@ export default {
   },
   vehicleTypeOffroad: {
     ru: 'Внедорожники',
-    en: 'Off-road',
+    en: 'S.U.V.',
   },
   vehicleTypeCabrio: {
     ru: 'Кабриолеты',
-    en: 'Cabrio',
+    en: 'Сonvertible',
   },
   vehicleTypeSport: {
     ru: 'Спорткары',
-    en: 'Sport-cars',
+    en: 'Sports car',
   },
   vehicleTypeCoupe: {
     ru: 'Купе',
@@ -217,7 +217,7 @@ export default {
   },
   vehicleTypeBike: {
     ru: 'Мотоциклы',
-    en: 'Bikes',
+    en: 'Motorcycle',
   },
   allCars: {
     ru: 'Все автомобили',
@@ -249,7 +249,7 @@ export default {
   },
   filterColor: {
     ru: 'Цвет',
-    en: 'Color',
+    en: 'Colour',
   },
   allMarks: {
     ru: 'Все марки',
@@ -293,27 +293,27 @@ export default {
   },
   favAdd: {
     ru: 'Добавить в избранное',
-    en: 'Add to favorite',
+    en: 'Add to favourites',
   },
   favRemove: {
     ru: 'Удалить из избранного',
-    en: 'Remove from favorite',
+    en: 'Remove from favourites',
   },
   videoReviewFromMdc: {
     ru: 'Видео обзор от MDC',
-    en: 'Our video review',
+    en: 'Video-review from DC',
   },
   waterInCabin: {
     ru: 'Вода в салоне',
-    en: 'Water in cabin',
+    en: 'Water in\nthe cabin',
   },
   chargeForPhones: {
     ru: 'Зарядка для\nсмартфонов',
-    en: 'Charger for\nsmarptphones',
+    en: 'Smartphone\ncharging',
   },
   btAudio: {
     ru: 'Bluetooth-аудио',
-    en: 'Bluetooth-audio',
+    en: 'Bluetooth\naudio',
   },
   tariffsPerDay: {
     ru: '₽ в сутки',
@@ -341,7 +341,7 @@ export default {
   },
   bookBtn: {
     ru: 'Забронировать',
-    en: 'Book now',
+    en: 'Rent',
   },
   carClass: {
     ru: 'Класс',
@@ -353,7 +353,7 @@ export default {
   },
   engineVolume: {
     ru: 'Объем двигателя',
-    en: 'Engine volume',
+    en: 'Engine capacity',
   },
   carAcceleration: {
     ru: 'Разгон 0-100',
@@ -365,7 +365,7 @@ export default {
   },
   sitsNumber: {
     ru: 'Количество мест',
-    en: 'Sits number',
+    en: 'Number of seats',
   },
   minDaysRent: {
     ru: 'Минимальный срок аренды',
@@ -373,19 +373,19 @@ export default {
   },
   ben_1: {
     ru: 'Не ведётся видео и аудио запись в автомобиле',
-    en: 'There is no video and audio recording in the car',
+    en: 'No video and audio recording in the car',
   },
   ben_2: {
     ru: 'Доставка и прием автомобилей по Москве 24/7',
-    en: 'Delivery and reception of cars in Moscow 24/7',
+    en: 'Delivery and reception of cars in Dubai 24/7',
   },
   ben_3: {
     ru: 'Страхование КАСКО и ОСАГО включено',
-    en: 'CASCO and OSAGO insurance included',
+    en: 'CASCO and OSAGO insurance is included',
   },
   ben_4: {
     ru: '50+ уникальных авто в аренду из нашего автопарка',
-    en: '50+ unique cars for rent from our fleet',
+    en: '50+ unique cars for rent from our park',
   },
   ben_5: {
     ru: 'Круглосуточная техническая поддержка',
@@ -405,11 +405,11 @@ export default {
   },
   tripCreateDateTitle: {
     ru: 'Период аренды *',
-    en: 'Rent period *',
+    en: 'Rental period *',
   },
   tripCreateDateDescription: {
     ru: 'Укажите даты аренды, чтобы рассчитать стоимость брони.',
-    en: 'Enter your rental dates to calculate the cost of your reservation.',
+    en: 'Enter your rental dates to calculate the cost of your booking',
   },
   dateStart: {
     ru: 'Дата начала (MM/DD/YYYY)',
@@ -421,7 +421,7 @@ export default {
   },
   Additionally: {
     ru: 'Дополнительно',
-    en: 'Additionally',
+    en: 'Additional',
   },
   OrderBtn: {
     ru: 'Забронировать',
@@ -429,15 +429,15 @@ export default {
   },
   additionalDrivers: {
     ru: 'Нужно несколько водителей для авто',
-    en: 'Need multiple drivers',
+    en: 'I need several drivers for a car',
   },
   vehicleDelivery: {
     ru: 'Нужна доставка автомобиля',
-    en: 'Need car delivery',
+    en: 'I need a car delivery',
   },
   additionalMileage: {
     ru: 'Нужен дополнительный пробег',
-    en: 'Need extra mileage',
+    en: 'I need extra mileage',
   },
   defaultMileage: {
     ru: 'По умолчанию для вас включено 1000 км',
@@ -449,7 +449,7 @@ export default {
   },
   babyChair: {
     ru: 'Нужно детское кресло',
-    en: 'Need a child seat',
+    en: 'I need a child safety seat',
   },
   depositCalculation: {
     ru: 'Расчет залога',
@@ -457,7 +457,15 @@ export default {
   },
   depositCalculationText: {
     ru: 'По умолчанию стоимость залога рассчитывается менеджером исходя из ваших данных профиля и привелегий. Точную сумму залога уточняйте у менеджера. Залог возвращается после завершения поездки.',
-    en: 'By default, the value of the deposit is calculated by the manager based on your profile data and privileges. Specify the exact amount of the deposit with the manager. The deposit is returned after the trip is completed.',
+    en: 'By default, the deposit is calculated by the manager based on your profile data and privileges. Check the exact amount of the deposit with the manager. The deposit is refunded after the end of the trip.',
+  },
+  depositCancellation: {
+    ru: 'Отмена брони',
+    en: 'Booking cancellation',
+  },
+  depositCancellationText: {
+    ru: 'Вы можете отменить бронь за 3 дня до начала поездки. Сумма брони вернется на ваш депозит и в дальнейшем вы сможете использовать ее для брони других автомобилей.',
+    en: 'You can cancel your booking 3 days before the start of the trip. The amount of the booking will be returned to your deposit and in the future you will be able to use it for booking other cars.',
   },
   takePhoto: {
     ru: 'Сделать фотографию',
@@ -469,7 +477,7 @@ export default {
   },
   rentCost: {
     ru: 'Стоимость аренды',
-    en: 'Rent cost',
+    en: 'Rental price',
   },
   insuranceDepositCost: {
     ru: 'Стоимость страхового залога',
@@ -485,19 +493,19 @@ export default {
   },
   depositFillText: {
     ru: 'Чтобы получить возможность бронировать автомобили, необходимо пополнить депозит на сумму до 1000 AED, на случай если вам понадобится оплатить штрафы. Полную сумму аренды и залог вы сможете оплатить в момент передачи автомобиля.\n\nДепозит возвращается на карту спустя 4 недели после завершения аренды, либо по запросу, в случае если вы выбрали бессрочный.',
-    en: 'To be able to book cars, you need to top up a deposit of up to 1000 AED in case you need to pay fines. You can pay the full amount of the rental and the deposit at the time of the transfer of the car.\n\nThe deposit is returned to the card 4 weeks after the end of the rental, or upon request, if you have chosen an indefinite period.',
+    en: 'You need to top up a deposit of up to 1000 AED, in case you need to pay fines (to be able to book cars). You will be able to pay the full amount of the rental and the deposit at the time of the transfer of the car.\n\nThe deposit is returned to the card 4 weeks after the end of the lease, or upon request, if you have chosen an indefinite one.',
   },
   currentDeposit: {
     ru: 'Сейчас на счете:',
-    en: 'Current balance:',
+    en: 'now on the account:',
   },
   depositToPay: {
     ru: 'Сумма пополнения:',
-    en: 'Replenishment amount:',
+    en: 'Deposit amount:',
   },
   depositToPayTime: {
     ru: 'Выберите срок возврата депозита',
-    en: 'Select the term for the return of the deposit',
+    en: 'Select the deposit refund period',
   },
   after4Weeks: {
     ru: 'Через 4 недели',
@@ -505,11 +513,15 @@ export default {
   },
   after4WeeksText: {
     ru: 'Если вы не планируете\nчасто пользоваться арендой',
-    en: 'If you don`t plan\nto rent frequently',
+    en: 'If you do not plan to use the\nrental often',
   },
   after4WeeksInf: {
     ru: 'Бессрочно',
-    en: 'Indefinitely',
+    en: 'Perpetual',
+  },
+  after4WeeksInfText: {
+    ru: 'Если планируете арендовать\nавто регулярно',
+    en: 'If you plan to rent cars regularly',
   },
   bankConditionsBtn: {
     ru: 'Условия оплаты от банка',
@@ -517,19 +529,19 @@ export default {
   },
   depositPayBtn: {
     ru: 'Пополнить депозит',
-    en: 'Pay for deposit',
+    en: 'Replenish your deposit',
   },
   bookedSuccessfully: {
     ru: 'Автомобиль забронирован!',
-    en: 'Car is booked!',
+    en: 'Car has been booked!',
   },
   currentBalance: {
     ru: 'Сейчас на счете:',
-    en: 'Current balance:',
+    en: 'Now on the account::',
   },
   returnPeriod: {
     ru: 'Срок возврата',
-    en: 'Returns period',
+    en: 'Refund period',
   },
   tripDetails: {
     ru: 'Детали поездки',
@@ -545,11 +557,11 @@ export default {
   },
   whatIsThis: {
     ru: 'Что это?',
-    en: 'What is this?',
+    en: 'What is it?',
   },
   pointsDesc: {
     ru: 'Вы получите после завершения поездки',
-    en: 'You will receive after the completion of the trip',
+    en: 'You will receive after completing the trip',
   },
   tripsFuture: {
     ru: 'Предстоящие',
@@ -589,15 +601,15 @@ export default {
   },
   whatNext2: {
     ru: 'Приложение заранее напомнит вам о начале поездки.',
-    en: 'The application will remind you in advance of the start of the trip.',
+    en: 'The app will remind you in advance about the start of the trip.',
   },
   whatNext3: {
     ru: 'Это всё, можете наслаждаться автомобилем! Информация о поездке сохранена в разделе «Мои поездки»',
-    en: `That's all, you can enjoy the car! The trip information is saved in the "My trips" section`,
+    en: `That's all, you can enjoy the car! Information about the trip is saved in the "My trips" section`,
   },
   tripDetailsCostDesc: {
     ru: 'Мы свяжемся с вами для проведения оплаты ',
-    en: 'We will contact you for payment',
+    en: 'We will contact you to make the payment',
   },
   paid: {
     ru: 'оплачено',
@@ -609,19 +621,19 @@ export default {
   },
   haveQ: {
     ru: 'Возникли вопросы?',
-    en: 'Have a questions?',
+    en: 'Any questions?',
   },
   writeInChat: {
     ru: 'Написать в чат',
-    en: 'Write in chat',
+    en: 'Write to the chat',
   },
   writeInWA: {
     ru: 'Написать в WhatsApp',
-    en: 'Write in WhatsApp',
+    en: 'Write to WhatsApp',
   },
   writeInTG: {
     ru: 'Написать в Telegram',
-    en: 'Write in Telegram',
+    en: 'Write to Telegram',
   },
   tapToSos: {
     ru: 'Нажмите для экстренного звонка',
@@ -645,7 +657,7 @@ export default {
   },
   tripCancelText: {
     ru: 'Сумма брони вернется на ваш депозит, в дальнейшем вы сможете использовать его для оплаты штрафов и бронирования других автомобилей',
-    en: 'The amount of the reservation will be returned to your deposit, in the future you can use it to pay fines and book other cars',
+    en: 'The amount of the booking will be returned to your deposit, in the future you will be able to use it to pay fines and book other cars',
   },
   tripCancelOkBtn: {
     ru: 'Хорошо, отменить бронь',
@@ -665,7 +677,7 @@ export default {
   },
   tripWasCompletedText: {
     ru: 'Сумма брони автомобиля вернется через месяц после завершения поездки.!',
-    en: 'The amount of the car reservation will be returned one month after the end of the trip.',
+    en: 'The amount of the car booking will be refunded a month after the end of the trip.',
   },
   secutiryCheckStatusOk: {
     ru: 'Проверка пройдена',
@@ -673,11 +685,11 @@ export default {
   },
   secutiryCheckStatusNotOk: {
     ru: 'На проверке',
-    en: 'Check in progress',
+    en: 'On checking',
   },
   around1Hour: {
-    ru: 'Около 1 часа',
-    en: 'Around 1 hour',
+    ru: 'около 1 часа',
+    en: 'about 1 hour',
   },
   yourStatus: {
     ru: 'Ваш статус',

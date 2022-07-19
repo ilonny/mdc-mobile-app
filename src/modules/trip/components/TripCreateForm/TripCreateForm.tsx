@@ -153,11 +153,11 @@ export const TripCreateForm = (props: TProps) => {
             </Typography.MainText>
             <Divider margin={20} />
             <Typography.BoldText fontSize={17}>
-              {translate('depositCalculation')}
+              {translate('depositCancellation')}
             </Typography.BoldText>
             <Indent height={10} />
             <Typography.MainText fontSize={13} color={colors.secondaryText}>
-              {translate('depositCalculationText')}
+              {translate('depositCancellationText')}
             </Typography.MainText>
             <Divider margin={20} />
 

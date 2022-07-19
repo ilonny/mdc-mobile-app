@@ -22,7 +22,7 @@ export const OnboardingPush = () => {
     <SafeAreaView style={styles.wrapper}>
       <View style={styles.content}>
         <View>
-          <Typography.BoldText textAlign="center" fontSize={24}>
+          <Typography.BoldText textAlign="center" fontSize={32}>
             {translate('onboardingPushTitle')}
           </Typography.BoldText>
           <Indent height={20} />

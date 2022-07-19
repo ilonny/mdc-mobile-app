@@ -86,16 +86,16 @@ export const TripDetailsScreen = () => {
             <Typography.BoldText
               fontSize={20}
               textAlign="center"
-              color={'#fff'}>
+              color={colors.mainGray}>
               {translate('tripWasCompleted')}
             </Typography.BoldText>
             <Indent height={10} />
-            <Typography.BoldText
-              fontSize={18}
+            <Typography.MainText
+              fontSize={14}
               textAlign="center"
-              color={'#fff'}>
+              color={colors.mainGray}>
               {translate('tripWasCompletedText')}
-            </Typography.BoldText>
+            </Typography.MainText>
             <Indent height={30} />
           </Panel>
         </>
