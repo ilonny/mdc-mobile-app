@@ -1,8 +1,10 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
+import { Storage } from '../../asyncStorage';
+import { getUserData } from '../../user/network';
 import { getAchievmentCollection, getAchievmentList } from '../network';
 import { TAchievment, TAchievmentCollection } from '../types';
 
-export const useAchievmentList = (bonus_value: string) => {
+export const useAchievmentList = () => {
   const [achievmentList, setAchievmentList] = useState<TAchievment[]>([]);
   const [achievmentListLoading, setAchievmentListLoading] =
     useState<boolean>(false);
@@ -12,6 +14,9 @@ export const useAchievmentList = (bonus_value: string) => {
 
   const getAchievmentListReq = useCallback(async () => {
     setAchievmentListLoading(true);
+    const user_id = await Storage.getItem('user_id');
+    const userData = await getUserData(user_id || '');
+    const bonus_value = userData.balance;
     const resAvhievment = await getAchievmentList();
     const resCollection = await getAchievmentCollection();
     // setAchievmentList(resAvhievment);
@@ -48,9 +53,13 @@ export const useAchievmentList = (bonus_value: string) => {
     getAchievmentListReq();
   }, []);
 
-  const availableCount = useMemo(() => {
-    return achievmentList?.filter(a => a.available)?.length || 0;
+  const availableList = useMemo(() => {
+    return achievmentList?.filter(a => a.available);
   }, [achievmentList]);
 
-  return { achievmentList, achievmentListLoading, availableCount };
+  const availableCount = useMemo(() => {
+    return availableList?.length || 0;
+  }, [availableList]);
+
+  return { achievmentList, achievmentListLoading, availableCount, availableList };
 };

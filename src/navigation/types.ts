@@ -37,6 +37,7 @@ export type RootStackParamList = {
     callback: () => void;
     sumOfDeposit: number;
   };
+  AchievmentListScreen: undefined;
 };
 
 export type CarStackParamList = {

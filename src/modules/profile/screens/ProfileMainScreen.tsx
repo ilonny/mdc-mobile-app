@@ -26,7 +26,6 @@ export const ProfileMainScreen = () => {
     return unsubscribe;
   }, [refreshData, navigation]);
 
-  console.log('userData', userData);
   return (
     <ScreenContainer
       isLoading={userDataLoading}

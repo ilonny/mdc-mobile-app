@@ -14,4 +14,7 @@ export const styles = StyleSheet.create({
     paddingHorizontal: 8,
     width: deviceWidth,
   },
+  fullWidth: {
+    width: '100%',
+  },
 });

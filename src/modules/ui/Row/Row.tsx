@@ -12,6 +12,7 @@ type TProps = {
   flex?: FlexStyle['flex'];
   paddingHorizontal?: number;
   marginHorizontal?: number;
+  fullWidth?: boolean;
 };
 
 export const Row: React.FC<TProps> = ({
@@ -24,6 +25,7 @@ export const Row: React.FC<TProps> = ({
   flex,
   paddingHorizontal,
   marginHorizontal,
+  fullWidth,
 }) => {
   return (
     <View
@@ -37,6 +39,7 @@ export const Row: React.FC<TProps> = ({
         flex ? { flex } : {},
         column && styles.wrapperColumn,
         negativeMargin && styles.wrapperNegativeMargin,
+        fullWidth && styles.fullWidth,
       ]}>
       {children}
     </View>

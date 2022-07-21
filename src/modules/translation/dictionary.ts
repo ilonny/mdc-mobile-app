@@ -735,4 +735,28 @@ export default {
     ru: 'О приложении',
     en: 'About the app',
   },
+  rewards: {
+    ru: 'наград',
+    en: 'rewards',
+  },
+  showAllRewards: {
+    ru: 'Показать все награды',
+    en: 'Show all rewards',
+  },
+  all: {
+    ru: 'все',
+    en: 'all',
+  },
+  available: {
+    ru: 'доступные',
+    en: 'available',
+  },
+  getRewardsTitle: {
+    ru: 'Получить награду',
+    en: 'Get a reward',
+  },
+  getRewardsText: {
+    ru: 'Чтобы получить награду, пожалуйста свяжитесь с вашим менеджером или с поддержкой',
+    en: 'To get a reward, please contact your manager or support',
+  },
 };

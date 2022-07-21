@@ -59,6 +59,8 @@ export const ImageSource = {
   filepdf: require(imageSrc + 'filepdf.png'),
   checkcircle: require(imageSrc + 'checkcircle.png'),
   arrowscounterclockwise: require(imageSrc + 'arrowscounterclockwise.png'),
+  reward_recieved: require(imageSrc + 'reward_recieved.png'),
+  gift: require(imageSrc + 'gift.png'),
 };
 
 export type TImageSource = keyof typeof ImageSource;
