@@ -719,4 +719,20 @@ export default {
     ru: 'Посмотреть все награды',
     en: 'View all achievements',
   },
+  ProfileSettings: {
+    ru: 'Настройки профиля',
+    en: 'Profile settings',
+  },
+  DataProcessingPolicy: {
+    ru: 'Политика обработки данных',
+    en: 'Data processing policy',
+  },
+  OfferAgreement: {
+    ru: 'Договор оферты',
+    en: 'Offer Agreement',
+  },
+  AboutApp: {
+    ru: 'О приложении',
+    en: 'About the app',
+  },
 };

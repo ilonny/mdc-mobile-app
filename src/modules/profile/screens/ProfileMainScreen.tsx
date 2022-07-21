@@ -9,6 +9,7 @@ import { useUserData } from '../../user/hooks';
 import { UserSecurityStatus } from '../../user/components';
 import { ProfileBonusPanel } from '../../bonus/components';
 import { SupportBlock } from '../../support/components';
+import { ProfileLinks } from '../components';
 
 export const ProfileMainScreen = () => {
   const navigation = useNavigation<NavigationProps>();
@@ -55,6 +56,8 @@ export const ProfileMainScreen = () => {
       ) : (
         <></>
       )}
+      <Indent height={40} />
+      <ProfileLinks />
       <Indent height={40} />
       <SupportBlock />
       <Indent height={40} />

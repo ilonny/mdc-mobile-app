@@ -89,28 +89,24 @@ export const ProfileBonusPanel = (props: TProps) => {
           ) : (
             <></>
           )}
-          {true ? (
-            <>
-              <Divider margin={30} />
-              <Typography.BoldText fontSize={14} color={colors.secondaryGray}>
-                {translate('Available')}
-              </Typography.BoldText>
-              <Indent height={10} />
-              <Typography.BoldText fontSize={20}>
-                {availableCount.toString()} {translate('achievments')}
-              </Typography.BoldText>
-              <Indent height={20} />
-              <Text>
-                <Button smallHeight border>
-                  <Typography.MainText fontSize={14}>
-                    {translate('showAllachievments')}
-                  </Typography.MainText>
-                </Button>
-              </Text>
-            </>
-          ) : (
-            <></>
-          )}
+          <>
+            <Divider margin={30} />
+            <Typography.BoldText fontSize={14} color={colors.secondaryGray}>
+              {translate('Available')}
+            </Typography.BoldText>
+            <Indent height={10} />
+            <Typography.BoldText fontSize={20}>
+              {availableCount.toString()} {translate('achievments')}
+            </Typography.BoldText>
+            <Indent height={20} />
+            <Text>
+              <Button smallHeight border>
+                <Typography.MainText fontSize={14}>
+                  {translate('showAllachievments')}
+                </Typography.MainText>
+              </Button>
+            </Text>
+          </>
         </Panel>
       </TouchableFeedback>
     );
