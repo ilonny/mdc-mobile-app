@@ -1,1 +1,2 @@
 export const BOOKING_DEPOSIT_AMOUNT = 1000;
+export const DEFAULT_MILEAGE = 200;

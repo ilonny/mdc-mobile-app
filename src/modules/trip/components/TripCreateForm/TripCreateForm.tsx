@@ -5,7 +5,10 @@ import { View } from 'react-native';
 import { colors } from '../../../../theme';
 import { printPrice } from '../../../car/helpers';
 import { useCarData } from '../../../car/hooks';
-import { BOOKING_DEPOSIT_AMOUNT } from '../../../core/constants';
+import {
+  BOOKING_DEPOSIT_AMOUNT,
+  DEFAULT_MILEAGE,
+} from '../../../core/constants';
 import { PaymentDepositModal } from '../../../payment/components';
 import { translate } from '../../../translation';
 import {
@@ -55,6 +58,13 @@ export const TripCreateForm = (props: TProps) => {
     return getTripPrice(carData?.tariffs || [], dayDiff);
   }, [carData?.tariffs, dayDiff]);
 
+  const includedMileage = useMemo(() => {
+    if (dayDiff >= 1) {
+      return dayDiff * DEFAULT_MILEAGE;
+    }
+    return DEFAULT_MILEAGE;
+  }, [dayDiff]);
+
   const onSubmit = useCallback(
     (values: Record<any, any>) => {
       const params = {
@@ -62,14 +72,14 @@ export const TripCreateForm = (props: TProps) => {
         price: rentPrice,
         insurance_deposit: carData?.insurance_deposit,
         insurance_payed: carData?.insurance_deposit,
-        mileage: 1000,
-        status: "CREATED",
+        mileage: includedMileage,
+        status: 'CREATED',
       };
       // console.log('onSubmit', params);
       setTripData(params);
       setPayModalIsVisible(true);
     },
-    [rentPrice, carData?.insurance_deposit],
+    [rentPrice, carData?.insurance_deposit, includedMileage],
   );
 
   return (
@@ -126,7 +136,8 @@ export const TripCreateForm = (props: TProps) => {
                   {translate('additionalMileage')}
                 </Typography.BoldText>
                 <Typography.MainText color={colors.secondaryText} fontSize={12}>
-                  {translate('defaultMileage')}
+                  {translate('defaultMileage')} {includedMileage.toString()}{' '}
+                  {translate('km')}
                 </Typography.MainText>
               </View>
             </FormCheckBox>

@@ -9,7 +9,11 @@ import {
   TripStackParamList,
 } from './types';
 import { colors } from '../theme';
-import { CarListScreen, CarMainScreen, CarDetailScreen } from '../modules/car/screens';
+import {
+  CarListScreen,
+  CarMainScreen,
+  CarDetailScreen,
+} from '../modules/car/screens';
 import { translate } from '../modules/translation';
 import { ImageSource, ImageView } from '../modules/ui';
 import { ProfileMainScreen } from '../modules/profile/screens';
@@ -109,11 +113,11 @@ export const TabScreen = () => {
         },
       })}>
       <Tab.Screen name={translate('autoPark')} component={CarStackComponent} />
+      <Tab.Screen name={translate('MyTrips')} component={TripStackComponent} />
       <Tab.Screen
         name={translate('Profile')}
         component={ProfileStackComponent}
       />
-      <Tab.Screen name={translate('MyTrips')} component={TripStackComponent} />
       <Tab.Screen
         name={translate('Services')}
         component={ServiceStackComponent}

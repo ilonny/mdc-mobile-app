@@ -440,8 +440,12 @@ export default {
     en: 'I need extra mileage',
   },
   defaultMileage: {
-    ru: 'По умолчанию для вас включено 1000 км',
-    en: 'By default, 1000 km is enabled for you',
+    ru: 'По умолчанию для вас включено:',
+    en: 'By default, is enabled for you:',
+  },
+  km: {
+    ru: 'км',
+    en: 'km',
   },
   abroad: {
     ru: 'Нужен выезд за пределы МО',

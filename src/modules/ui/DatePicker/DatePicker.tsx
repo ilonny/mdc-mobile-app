@@ -67,6 +67,28 @@ export const DatePicker = (props: TProps) => {
     }
     closeModalCb();
   }, [onDateChange, selectedDate, closeModalCb, form, name]);
+
+  const onChangeInput = useCallback(
+    (val: string) => {
+      if (val.length === 10) {
+        console.log('onChangeInput', val);
+        const m = moment(val, 'MM/DD/YYYY');
+        if (m.isValid()) {
+          const dateFormatted = m.format('MM/DD/YYYY');
+          if (dateFormatted?.length === 10) {
+            if (typeof onDateChange === 'function') {
+              onDateChange(dateFormatted);
+            }
+            if (form?.change) {
+              form.change(name, dateFormatted);
+            }
+          }
+        }
+      }
+    },
+    [onDateChange],
+  );
+
   return (
     <Field name={name} validate={validate}>
       {({ input, meta }) => {
@@ -77,7 +99,10 @@ export const DatePicker = (props: TProps) => {
               mask={Masks.DATE_MMDDYYYY}
               keyboardType="numeric"
               placeholder={placeholder}
-              onChangeText={input.onChange}
+              onChangeText={arg => {
+                input.onChange(arg);
+                onChangeInput(arg);
+              }}
               value={input.value}
               error={meta.touched && meta.error}
               onBlur={() => {
