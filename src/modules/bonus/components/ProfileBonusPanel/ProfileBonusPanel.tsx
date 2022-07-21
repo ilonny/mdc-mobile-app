@@ -11,7 +11,7 @@ import {
 } from '../../../ui';
 import { Panel } from '../../../ui/Panel';
 import { Row } from '../../../ui/Row';
-import { usePromoStatusList } from '../../hooks';
+import { useAchievmentList, usePromoStatusList } from '../../hooks';
 import { styles } from './styles';
 
 type TProps = {
@@ -23,8 +23,11 @@ export const ProfileBonusPanel = (props: TProps) => {
   const { userId, bonusValue } = props;
   const { promoStatusListLoading, userPromoStatus, nextStatus } =
     usePromoStatusList(userId, Number(bonusValue) || 0);
-  console.log('userPromoStatus', userPromoStatus, nextStatus);
-  if (promoStatusListLoading) {
+
+  const { achievmentList, achievmentListLoading, availableCount } =
+    useAchievmentList(bonusValue || '');
+
+  if (promoStatusListLoading || achievmentListLoading) {
     return (
       <>
         <Indent height={20} />
@@ -50,7 +53,9 @@ export const ProfileBonusPanel = (props: TProps) => {
             <>
               <Indent height={20} />
               <Typography.MainText fontSize={14}>
-                {translate('nextLevelText')}{' '}
+                {translate('nextLevelText1')}
+                {nextStatus?.title || ' '}
+                {translate('nextLevelText2')}{' '}
                 {(
                   Number(nextStatus?.bonus_cost || 0) - Number(bonusValue || 0)
                 ).toString()}
@@ -92,7 +97,7 @@ export const ProfileBonusPanel = (props: TProps) => {
               </Typography.BoldText>
               <Indent height={10} />
               <Typography.BoldText fontSize={20}>
-                0 {translate('achievments')}
+                {availableCount.toString()} {translate('achievments')}
               </Typography.BoldText>
               <Indent height={20} />
               <Text>

@@ -699,9 +699,13 @@ export default {
     ru: 'Ваш статус',
     en: 'Your status',
   },
-  nextLevelText: {
-    ru: 'До следующего уровня «Ценитель» осталось накопить:',
-    en: 'Until the next level "Connoisseur", it remains to accumulate:',
+  nextLevelText1: {
+    ru: 'До следующего уровня ',
+    en: 'Until the next level ',
+  },
+  nextLevelText2: {
+    ru: ' осталось накопить:',
+    en: ', it remains to accumulate:',
   },
   Available: {
     ru: 'Доступно',
