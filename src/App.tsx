@@ -1,15 +1,27 @@
 import React, { useEffect } from 'react';
-import { StatusBar } from 'react-native';
+import messaging from '@react-native-firebase/messaging';
+import { Alert, StatusBar } from 'react-native';
 import SplashScreen from 'react-native-splash-screen';
-import { Storage } from './modules/asyncStorage';
 import { FilterProvider } from './modules/filter/context';
 import { OnboardingProvider } from './modules/onboarding/context';
+import { notificationHandler } from './modules/push/helpers';
 import { Navigation } from './navigation';
 
 const App = () => {
   useEffect(() => {
     SplashScreen.hide();
+    notificationHandler();
     // Storage.clear();
+
+    const unsubscribe = messaging().onMessage(async remoteMessage => {
+      console.log('remoteMessage', remoteMessage);
+      Alert.alert(
+        remoteMessage?.notification?.title || 'New notification:',
+        remoteMessage?.notification?.body || '',
+      );
+    });
+
+    return unsubscribe;
   }, []);
   return (
     <>
