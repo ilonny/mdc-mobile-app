@@ -38,6 +38,7 @@ export type RootStackParamList = {
     sumOfDeposit: number;
   };
   AchievmentListScreen: undefined;
+  ProfileNotificationsScreen: undefined;
 };
 
 export type CarStackParamList = {

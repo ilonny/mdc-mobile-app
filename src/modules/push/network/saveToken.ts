@@ -6,5 +6,4 @@ export const saveToken = async (token: string, user_id: string) => {
     body: JSON.stringify({ token, user_id }),
     method: 'POST',
   });
-  console.log('res: ', res);
 };

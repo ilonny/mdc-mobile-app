@@ -1,4 +1,7 @@
-import React from 'react';
+import { useNavigation } from '@react-navigation/native';
+import React, { useCallback } from 'react';
+import { NavigationProps } from '../../../navigation/types';
+import { usePushList } from '../../push/hooks';
 import { translate } from '../../translation';
 import {
   Divider,
@@ -11,16 +14,25 @@ import {
 } from '../../ui';
 
 export const ProfileLinks = () => {
+  const { pushList } = usePushList();
+  const navigation = useNavigation<NavigationProps>();
+
+  const onPressNotificationsLink = useCallback(() => {
+    navigation.navigate('ProfileNotificationsScreen');
+  }, [navigation]);
+
   return (
     <>
       <Divider margin={10} />
-      <TouchableFeedback>
+      <TouchableFeedback onPress={onPressNotificationsLink}>
         <Indent height={10} />
         <Row justifyContent="space-between">
           <Typography.BoldText fontSize={16}>
             {translate('notifications')}
           </Typography.BoldText>
-          <Typography.BoldText fontSize={16}>0</Typography.BoldText>
+          <Typography.BoldText fontSize={16}>
+            {pushList?.length?.toString() || '0'}
+          </Typography.BoldText>
         </Row>
         <Indent height={10} />
       </TouchableFeedback>
