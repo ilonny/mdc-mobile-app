@@ -1,0 +1,1 @@
+export { usePromoblockList } from './usePromoblockList';

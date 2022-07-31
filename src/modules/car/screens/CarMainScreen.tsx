@@ -4,6 +4,7 @@ import { View } from 'react-native';
 import { NavigationProps } from '../../../navigation/types';
 import { colors } from '../../../theme';
 import { FilterContext } from '../../filter/context';
+import { PromoblockSwiper } from '../../promoblock/components';
 import { translate } from '../../translation';
 import {
   Button,
@@ -32,7 +33,7 @@ export const CarMainScreen = () => {
         <Typography.ScreenTitle>{translate('autoPark')}</Typography.ScreenTitle>
       </Row>
       <Indent height={20} />
-      <PromoBanner />
+      <PromoblockSwiper />
       <Indent height={20} />
       <VehicleTypeList />
       <Indent height={20} />
