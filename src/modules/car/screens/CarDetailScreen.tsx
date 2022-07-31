@@ -4,6 +4,7 @@ import { NavigationProps, RootRouteProps } from '../../../navigation/types';
 import { colors } from '../../../theme';
 import { translate } from '../../translation';
 import { Button, Indent, Row, ScreenContainer, Typography } from '../../ui';
+import { useUserData } from '../../user/hooks';
 import {
   CarBenefits,
   CarChars,
@@ -26,6 +27,7 @@ export const CarDetailScreen = () => {
   const [loading, setLoading] = useState(false);
   const [carData, setCarData] = useState<TCar | null>(null);
   const { carList } = useCarList();
+  const { userData, userDataLoading } = useUserData(true);
 
   const otherCarList = useMemo(() => {
     if (carList?.length && vehicle_id) {
@@ -54,7 +56,9 @@ export const CarDetailScreen = () => {
   }, [vehicle_id, navigation, carData?.title]);
 
   return (
-    <ScreenContainer headerProps={{ backButton: true }} isLoading={loading}>
+    <ScreenContainer
+      headerProps={{ backButton: true }}
+      isLoading={loading || userDataLoading}>
       <Typography.ScreenTitle>{carData?.title || ''}</Typography.ScreenTitle>
       <Indent height={30} />
       <FavButton vehicle_id={Number(vehicle_id)} inCarCard />
@@ -67,7 +71,10 @@ export const CarDetailScreen = () => {
       <Indent height={30} />
       <CarInsuranceDeposit amount={carData?.insurance_deposit || '0'} />
       <Indent height={30} />
-      <Button isWhite onPress={onPressBook}>
+      <Button
+        isWhite
+        onPress={onPressBook}
+        disabled={userData?.security_check !== '1'}>
         <Typography.BoldText color={colors.totalBlack}>
           {translate('bookBtn')}
         </Typography.BoldText>
