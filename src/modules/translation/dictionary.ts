@@ -767,4 +767,40 @@ export default {
     ru: 'Смотреть все статьи',
     en: 'View all articles',
   },
+  Tests: {
+    ru: 'Тесты',
+    en: 'Tests',
+  },
+  Partners: {
+    ru: 'Партнеры',
+    en: 'Partners',
+  },
+  servicesPartnersUnderDev: {
+    ru: 'Раздел находится в разработке',
+    en: 'The section is under development',
+  },
+  Restaurants: {
+    ru: 'Рестораны',
+    en: 'Restaurants',
+  },
+  Detailing: {
+    ru: 'Детейлинг',
+    en: 'Detailing',
+  },
+  Barbershops: {
+    ru: 'Барбершопы',
+    en: 'Barbershops',
+  },
+  Realty: {
+    ru: 'Недвижимость',
+    en: 'Realty',
+  },
+  Hotels: {
+    ru: 'Отели',
+    en: 'Hotels',
+  },
+  MoscowRaceway: {
+    ru: 'Moscow Raceway',
+    en: 'Moscow Raceway',
+  },
 };

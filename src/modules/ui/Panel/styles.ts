@@ -17,4 +17,10 @@ export const styles = StyleSheet.create({
   wrapperIsGreen: {
     backgroundColor: colors.lightGreen,
   },
+  wrapperIsDashed: {
+    backgroundColor: 'transparent',
+    borderWidth: 1,
+    borderColor: colors.secondaryText,
+    borderStyle: 'dashed',
+  },
 });

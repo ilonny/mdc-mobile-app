@@ -1,0 +1,1 @@
+export { PartnersOptions } from './PartnersOptions';

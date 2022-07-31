@@ -61,6 +61,15 @@ export const ImageSource = {
   arrowscounterclockwise: require(imageSrc + 'arrowscounterclockwise.png'),
   reward_recieved: require(imageSrc + 'reward_recieved.png'),
   gift: require(imageSrc + 'gift.png'),
+  service_1: require(imageSrc + 'service_1.png'),
+  service_2: require(imageSrc + 'service_2.png'),
+  service_3: require(imageSrc + 'service_3.png'),
+  rest: require(imageSrc + 'rest.png'),
+  car: require(imageSrc + 'car.png'),
+  scissors: require(imageSrc + 'scissors.png'),
+  houseline: require(imageSrc + 'houseline.png'),
+  bed: require(imageSrc + 'bed.png'),
+  mrw: require(imageSrc + 'mrw.png'),
 };
 
 export type TImageSource = keyof typeof ImageSource;
