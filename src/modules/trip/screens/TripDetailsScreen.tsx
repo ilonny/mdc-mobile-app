@@ -44,7 +44,7 @@ export const TripDetailsScreen = () => {
     return false;
   }, [tripData?.price, tripData?.price_payed]);
 
-  console.log('tripData', tripData, tripDataHook);
+  // console.log('tripData', tripData, tripDataHook);
 
   return (
     <ScreenContainer

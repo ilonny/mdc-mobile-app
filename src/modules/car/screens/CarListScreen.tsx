@@ -16,7 +16,7 @@ export const CarListScreen = () => {
     priceFrom,
     priceTo,
     colorId,
-    color
+    color,
   } = useContext(FilterContext);
   const { carList, carListLoading } = useCarList();
 
@@ -42,7 +42,7 @@ export const CarListScreen = () => {
     priceTo,
     colorId,
     mark,
-    color
+    color,
   ]);
 
   return (

@@ -39,6 +39,10 @@ export type RootStackParamList = {
   };
   AchievmentListScreen: undefined;
   ProfileNotificationsScreen: undefined;
+  ArticleListScreen: undefined;
+  ArticleDetailScreen: {
+    id: number;
+  };
 };
 
 export type CarStackParamList = {

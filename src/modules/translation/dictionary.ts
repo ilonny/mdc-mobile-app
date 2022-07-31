@@ -759,4 +759,12 @@ export default {
     ru: 'Чтобы получить награду, пожалуйста свяжитесь с вашим менеджером или с поддержкой',
     en: 'To get a reward, please contact your manager or support',
   },
+  Articles: {
+    ru: 'Статьи',
+    en: 'Articles',
+  },
+  articlesViewAllBtn: {
+    ru: 'Смотреть все статьи',
+    en: 'View all articles',
+  },
 };

@@ -44,7 +44,9 @@ export const CarMainScreen = () => {
         </Button>
       </View>
       <Indent height={20} />
-      <PopularList />
+      <View style={{ paddingHorizontal: 16 }}>
+        <PopularList />
+      </View>
       <Indent height={80} />
     </ScreenContainer>
   );

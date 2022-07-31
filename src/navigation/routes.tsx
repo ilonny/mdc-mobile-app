@@ -19,6 +19,10 @@ import {
 import { PaymentScreen } from '../modules/payment/screens';
 import { AchievmentListScreen } from '../modules/bonus/screens';
 import { ProfileNotificationsScreen } from '../modules/profile/screens';
+import {
+  ArticleDetailScreen,
+  ArticleListScreen,
+} from '../modules/article/screens';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
@@ -94,6 +98,11 @@ export const Routes: React.FC<{
         <Stack.Screen
           name="ProfileNotificationsScreen"
           component={ProfileNotificationsScreen}
+        />
+        <Stack.Screen name="ArticleListScreen" component={ArticleListScreen} />
+        <Stack.Screen
+          name="ArticleDetailScreen"
+          component={ArticleDetailScreen}
         />
         <Stack.Screen name="TabScreen" component={TabScreen} />
       </Stack.Navigator>

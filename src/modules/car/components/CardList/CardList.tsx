@@ -4,6 +4,7 @@ import { translate } from '../../../translation';
 import { Indent, Row, Typography } from '../../../ui';
 import { TCar } from '../../types';
 import { CarCard } from '../CarCard';
+import { styles } from './styles';
 
 type TProps = {
   items: Array<TCar>;
@@ -46,24 +47,14 @@ export const CardList = (props: TProps) => {
   }
 
   return (
-    <View>
-      {!!firstCard && (
-        <CarCard
-          data={firstCard}
-          isBig
-        />
-      )}
+    <View style={styles.wrapper}>
+      {!!firstCard && <CarCard data={firstCard} isBig />}
       {!!otherCards && (
         <>
           <Indent height={20} />
-          <Row flexWrap="wrap" marginHorizontal={-2.5}>
+          <Row flexWrap="wrap" marginHorizontal={-2.5} alignItems="flex-start">
             {otherCards?.map(car => {
-              return (
-                <CarCard
-                  key={car.id}
-                  data={car}
-                />
-              );
+              return <CarCard key={car.id} data={car} />;
             })}
           </Row>
         </>
