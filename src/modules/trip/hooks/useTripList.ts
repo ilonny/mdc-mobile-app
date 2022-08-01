@@ -9,7 +9,7 @@ export const useTripList = () => {
   const getTripListReq = useCallback(async () => {
     setTripListLoading(true);
     let res = await getTripList();
-    res = res?.filter(t => t.status !== 'DELETED');
+    res = res?.filter(t => t.status !== 'DELETED')?.reverse();
     setTripListLoading(false);
     setTripList(res);
     return res;

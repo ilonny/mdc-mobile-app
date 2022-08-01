@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import Modal from 'react-native-modal';
 import { useRoute } from '@react-navigation/native';
 import { View } from 'react-native';
@@ -22,6 +22,7 @@ import {
 import { styles } from './styles';
 import { TripAgreementPanel, TripCancelButton } from '../components';
 import { useTripData } from '../hooks';
+import moment from 'moment';
 
 export const TripDetailsScreen = () => {
   const route = useRoute<RootRouteProps<'TripDetailsScreen'>>();
@@ -44,7 +45,17 @@ export const TripDetailsScreen = () => {
     return false;
   }, [tripData?.price, tripData?.price_payed]);
 
-  // console.log('tripData', tripData, tripDataHook);
+  const dayStartDiff = useMemo(() => {
+    const today = moment();
+    const mStart = moment(tripData?.date_start);
+
+    const res = Math.abs(mStart.diff(today, 'days'));
+    return res;
+  }, [tripData]);
+
+  useEffect(() => {
+    getTripDataReq(tripData.id.toString());
+  }, []);
 
   return (
     <ScreenContainer
@@ -68,10 +79,10 @@ export const TripDetailsScreen = () => {
             <Typography.BoldText fontSize={20} textAlign="center">
               {translate('tripWasCanceled')}
             </Typography.BoldText>
-            <Indent height={10} />
+            {/* <Indent height={10} />
             <Typography.BoldText fontSize={18} textAlign="center">
               {translate('tripWasCanceledText')}
-            </Typography.BoldText>
+            </Typography.BoldText> */}
             <Indent height={30} />
           </Panel>
         </>
@@ -138,6 +149,7 @@ export const TripDetailsScreen = () => {
       {tripData.status === 'CREATED' ? (
         <>
           <TripCancelButton
+            disabled={dayStartDiff <= 2}
             id={tripData.id}
             callback={() => getTripDataReq(tripData.id.toString())}
           />

@@ -45,7 +45,7 @@ export default {
   },
   onboarding4Description: {
     ru: 'Повышайте рейтинг, получая баллы, а за это мы будем дарить реальные подарки',
-    en: 'Increase your rating by getting points and get real gifts',
+    en: 'Increase your rating by getting dream points and get real gifts',
   },
   onboardingPerk1: {
     ru: 'Скидки до 50%',
@@ -557,7 +557,7 @@ export default {
   },
   points: {
     ru: 'баллов',
-    en: 'points',
+    en: 'dream points',
   },
   whatIsThis: {
     ru: 'Что это?',

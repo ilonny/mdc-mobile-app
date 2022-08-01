@@ -10,10 +10,11 @@ import { cancelTrip } from '../../network';
 type TProps = {
   id: number;
   callback: () => void;
+  disabled?: boolean;
 };
 
 export const TripCancelButton = (props: TProps) => {
-  const { id, callback = () => {} } = props;
+  const { id, callback = () => {}, disabled = false } = props;
   const [modalIsVisible, setModalIsVisible] = useState(false);
   const [loading, setLoading] = useState(false);
 
@@ -27,7 +28,10 @@ export const TripCancelButton = (props: TProps) => {
 
   return (
     <View>
-      <Button border onPress={() => setModalIsVisible(true)}>
+      <Button
+        border
+        onPress={() => setModalIsVisible(true)}
+        disabled={disabled}>
         <Typography.BoldText>
           {translate('TripCancelButton')}
         </Typography.BoldText>

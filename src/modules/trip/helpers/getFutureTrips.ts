@@ -5,7 +5,7 @@ export const getFutureTrips = (list: TTrip[]) => {
   return list?.filter(trip => {
     const today = moment();
     const dateEnd = moment(trip.date_end);
-    if (dateEnd.diff(today, 'days') >= 0) {
+    if (dateEnd.diff(today, 'days') >= 0 && trip.status !== 'CANCELED') {
       return true;
     }
     return false;
