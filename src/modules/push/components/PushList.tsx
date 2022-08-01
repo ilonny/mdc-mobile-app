@@ -7,10 +7,11 @@ import { TPush } from '../types';
 
 type TProps = {
   data: TPush[];
+  hideTitle?: boolean;
 };
 
 export const PushList = (props: TProps) => {
-  const { data } = props;
+  const { data, hideTitle } = props;
   if (!data || data?.length === 0) {
     return (
       <Typography.BoldText fontSize={22}>
@@ -27,10 +28,16 @@ export const PushList = (props: TProps) => {
             <Typography.MainText color={colors.secondaryGray} fontSize={14}>
               {moment(push.createdAt).format('MM/DD/YYYY')}
             </Typography.MainText>
-            <Indent height={10} />
-            <Typography.BoldText fontSize={20}>
-              {push.title}
-            </Typography.BoldText>
+            {!hideTitle ? (
+              <>
+                <Indent height={10} />
+                <Typography.BoldText fontSize={20}>
+                  {push.title}
+                </Typography.BoldText>
+              </>
+            ) : (
+              <></>
+            )}
             {push?.description ? (
               <>
                 <Indent height={10} />
