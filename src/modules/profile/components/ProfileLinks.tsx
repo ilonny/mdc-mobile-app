@@ -1,6 +1,9 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { useCallback } from 'react';
+import { reset } from '../../../navigation';
 import { NavigationProps } from '../../../navigation/types';
+import { colors } from '../../../theme';
+import { Storage } from '../../asyncStorage';
 import { usePushList } from '../../push/hooks';
 import { translate } from '../../translation';
 import {
@@ -75,6 +78,21 @@ export const ProfileLinks = () => {
         <Row justifyContent="space-between">
           <Typography.BoldText fontSize={16}>
             {translate('AboutApp')}
+          </Typography.BoldText>
+          <ImageView size={20} source={ImageSource.chevron_forward} />
+        </Row>
+        <Indent height={10} />
+      </TouchableFeedback>
+      <Divider margin={10} />
+      <TouchableFeedback
+        onPress={async () => {
+          await Storage.clear();
+          reset('InitialScreen');
+        }}>
+        <Indent height={10} />
+        <Row justifyContent="space-between">
+          <Typography.BoldText fontSize={16} color={colors.red}>
+            {translate('Logout')}
           </Typography.BoldText>
           <ImageView size={20} source={ImageSource.chevron_forward} />
         </Row>

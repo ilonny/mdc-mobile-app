@@ -29,18 +29,18 @@ export const ProfileMainScreen = () => {
   return (
     <ScreenContainer
       isLoading={userDataLoading}
-      footer={
-        <Button
-          isWhite
-          onPress={async () => {
-            await Storage.clear();
-            reset('InitialScreen');
-          }}>
-          <Typography.ButtonText color={colors.totalBlack}>
-            Logout
-          </Typography.ButtonText>
-        </Button>
-      }
+      // footer={
+      //   <Button
+      //     isWhite
+      //     onPress={async () => {
+      //       await Storage.clear();
+      //       reset('InitialScreen');
+      //     }}>
+      //     <Typography.ButtonText color={colors.totalBlack}>
+      //       Logout
+      //     </Typography.ButtonText>
+      //   </Button>
+      // }
       fullscreen>
       <Indent height={40} />
       <Typography.ScreenTitle>{userData?.name || ''}</Typography.ScreenTitle>

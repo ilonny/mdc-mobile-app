@@ -35,7 +35,7 @@ export const UserSecurityStatus = (props: TProps) => {
       return 'checkcircle';
     }
     return 'arrowscounterclockwise';
-  }, []);
+  }, [statusConfirmed]);
 
   return (
     <Row justifyContent="space-between">

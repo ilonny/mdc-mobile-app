@@ -23,7 +23,7 @@ export const StoriesFirst = () => {
         <View style={styles.bottomImageWrapper}>
           <ImageView
             style={styles.bottomImage}
-            source={ImageSource.onboarding_1}
+            source={ImageSource.onboarding_1_en}
             resizeMode="contain"
           />
         </View>

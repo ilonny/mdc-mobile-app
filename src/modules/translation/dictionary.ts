@@ -685,7 +685,7 @@ export default {
   },
   secutiryCheckStatusOk: {
     ru: 'Проверка пройдена',
-    en: 'Check have been succesfull',
+    en: 'Verification passed',
   },
   secutiryCheckStatusNotOk: {
     ru: 'На проверке',
@@ -803,4 +803,8 @@ export default {
     ru: 'Moscow Raceway',
     en: 'Moscow Raceway',
   },
+  Logout: {
+    ru: 'Выйти из аккаунта',
+    en: 'Log-out'
+  }
 };
