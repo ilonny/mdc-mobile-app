@@ -58,7 +58,17 @@ export const CarDetailScreen = () => {
   return (
     <ScreenContainer
       headerProps={{ backButton: true }}
-      isLoading={loading || userDataLoading}>
+      isLoading={loading || userDataLoading}
+      footer={
+        <Button
+          isWhite
+          onPress={onPressBook}
+          disabled={userData?.security_check !== '1'}>
+          <Typography.BoldText color={colors.totalBlack}>
+            {translate('bookBtn')}
+          </Typography.BoldText>
+        </Button>
+      }>
       <Typography.ScreenTitle>{carData?.title || ''}</Typography.ScreenTitle>
       <Indent height={30} />
       <FavButton vehicle_id={Number(vehicle_id)} inCarCard />
@@ -70,15 +80,6 @@ export const CarDetailScreen = () => {
       <CarTariffs tariffs={carData?.tariffs || []} />
       <Indent height={30} />
       <CarInsuranceDeposit amount={carData?.insurance_deposit || '0'} />
-      <Indent height={30} />
-      <Button
-        isWhite
-        onPress={onPressBook}
-        disabled={userData?.security_check !== '1'}>
-        <Typography.BoldText color={colors.totalBlack}>
-          {translate('bookBtn')}
-        </Typography.BoldText>
-      </Button>
 
       {carData ? (
         <>
