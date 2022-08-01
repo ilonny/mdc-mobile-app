@@ -18,7 +18,7 @@ export const PromoblockSwiper = () => {
   return (
     <View style={styles.wrapper}>
       <Swiper
-        showsButtons
+        showsButtons={promoblockList?.length > 1}
         showsPagination={false}
         nextButton={<ImageView source={ImageSource.next_button} size={26} />}
         prevButton={<ImageView source={ImageSource.prev_button} size={26} />}>

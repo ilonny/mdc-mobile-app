@@ -14,7 +14,8 @@ export const usePromoblockList = () => {
     res = res?.map(r => {
       return {
         ...r,
-        image: `${API_URL}/${r.image}`,
+        image: r.image && r.image !== 'null' ? `${API_URL}/${r.image}` : null,
+        video: r.video && r.video !== 'null' ? `${API_URL}/${r.video}` : null,
       };
     });
     setPromoblockListLoading(false);

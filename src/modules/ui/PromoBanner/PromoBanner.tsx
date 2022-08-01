@@ -1,5 +1,6 @@
+import React, { useCallback, useMemo } from 'react';
 import { useNavigation } from '@react-navigation/native';
-import React, { useCallback } from 'react';
+import Video from 'react-native-video';
 import { Linking, View } from 'react-native';
 import { NavigationProps } from '../../../navigation/types';
 import { TPromoblock } from '../../promoblock/types';
@@ -29,9 +30,28 @@ export const PromoBanner = (props: TProps) => {
     }
   }, [data, navigation]);
 
+  const mediaComp = useMemo(() => {
+    if (data?.image) {
+      return <ImageView style={styles.image} href source={data.image} />;
+    }
+    if (data?.video) {
+      console.log('data?.video', data?.video);
+      return (
+        <Video
+          style={styles.image}
+          muted
+          source={{ uri: data?.video }}
+          resizeMode="cover"
+          repeat
+        />
+      );
+    }
+    return <></>;
+  }, [data]);
+
   return (
     <TouchableFeedback style={styles.wrapper} onPress={onPress}>
-      <ImageView style={styles.image} href source={data.image} />
+      {mediaComp}
       <View style={styles.text}>
         <Typography.MainText>{data.text || ''}</Typography.MainText>
       </View>
