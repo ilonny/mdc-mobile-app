@@ -25,6 +25,7 @@ export const styles = StyleSheet.create({
   },
   wrapperTransparent: {
     backgroundColor: 'transparent',
+    borderColor: 'transparent',
   },
   border: {
     borderWidth: 2,

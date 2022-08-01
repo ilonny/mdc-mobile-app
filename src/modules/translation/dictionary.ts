@@ -805,6 +805,30 @@ export default {
   },
   Logout: {
     ru: 'Выйти из аккаунта',
-    en: 'Log-out'
-  }
+    en: 'Log-out',
+  },
+  yourDeposit: {
+    ru: 'Ваш депозит',
+    en: 'Your deposit',
+  },
+  topUp: {
+    ru: 'Пополнить',
+    en: 'Top up',
+  },
+  more: {
+    ru: 'Подробнее',
+    en: 'More',
+  },
+  depositPanelDesc: {
+    ru: 'С помощью депозита вы сможете оплачивать штрафы и бронировать автомобили.',
+    en: 'You will be able to pay fines and book cars by your deposit.',
+  },
+  depositPanelZero: {
+    ru: `Сейчас у вас нет бонусов на депозите`,
+    en: `You don't have any deposit bonuses right now`,
+  },
+  payedSuccessfully: {
+    ru: 'Депозит успешно пополнен',
+    en: 'Payed successfully',
+  },
 };

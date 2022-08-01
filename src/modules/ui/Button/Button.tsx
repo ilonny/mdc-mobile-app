@@ -40,9 +40,9 @@ export const Button = (props: TProps) => {
           isBlack && styles.wrapperBlack,
           isWhite && styles.wrapperWhite,
           isBlue && styles.wrapperBlue,
-          isTransparent && styles.wrapperTransparent,
           border && styles.border,
           smallHeight && styles.smallHeightWrapper,
+          isTransparent && styles.wrapperTransparent,
         ]}>
         {isLoading ? <ActivityIndicator /> : children}
       </View>

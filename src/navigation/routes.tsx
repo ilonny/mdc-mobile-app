@@ -16,7 +16,10 @@ import {
   TripDetailsScreen,
   TripSuccessScreen,
 } from '../modules/trip/screens';
-import { PaymentScreen } from '../modules/payment/screens';
+import {
+  PaymentScreen,
+  PaymentSuccessScreen,
+} from '../modules/payment/screens';
 import { AchievmentListScreen } from '../modules/bonus/screens';
 import { ProfileNotificationsScreen } from '../modules/profile/screens';
 import {
@@ -103,6 +106,10 @@ export const Routes: React.FC<{
         <Stack.Screen
           name="ArticleDetailScreen"
           component={ArticleDetailScreen}
+        />
+        <Stack.Screen
+          name="PaymentSuccessScreen"
+          component={PaymentSuccessScreen}
         />
         <Stack.Screen name="TabScreen" component={TabScreen} />
       </Stack.Navigator>

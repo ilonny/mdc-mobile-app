@@ -34,10 +34,11 @@ type TProps = {
   isVisible: boolean;
   setIsVisible: (arg: boolean) => void;
   tripData: Record<any, any>;
+  justTopUp?: boolean;
 };
 
 export const PaymentDepositModal = (props: TProps) => {
-  const { isVisible, setIsVisible, tripData } = props;
+  const { isVisible, setIsVisible, tripData, justTopUp } = props;
 
   const navigation = useNavigation<NavigationProps>();
 
@@ -45,6 +46,12 @@ export const PaymentDepositModal = (props: TProps) => {
   const [returnTime, setReturnTime] = useState(0);
 
   const { userData, getUserDataReq } = useUserData(true);
+
+  useEffect(() => {
+    if (isVisible) {
+      getUserDataReq();
+    }
+  }, [isVisible]);
 
   const sumOfDeposit = useMemo(() => {
     return BOOKING_DEPOSIT_AMOUNT - Number(userData?.deposit_balance || 0);
@@ -65,7 +72,7 @@ export const PaymentDepositModal = (props: TProps) => {
         sumOfDeposit,
       });
     }, 10);
-  }, [navigation]);
+  }, [navigation, sumOfDeposit]);
 
   useEffect(() => {
     //проверим, если баланса депозита не хватает, попросим доплатить, иначе сразу заброним тачку
@@ -77,19 +84,24 @@ export const PaymentDepositModal = (props: TProps) => {
       // }
       if (isVisible) {
         if (sumOfDeposit <= 0) {
-          //book without payemnt
           setLoading(true);
-          const user_id = await Storage.getItem('user_id');
-          const data = { ...tripData, returnTime, user_id,  };
-          const createdTrip = await createTrip(data);
-          setTimeout(() => {
-            setLoading(false);
-          }, 500);
-          if (!!createdTrip) {
+          if (justTopUp) {
             setIsVisible(false);
-            navigation.navigate('TripSuccessScreen', { data });
+            navigation.navigate('PaymentSuccessScreen');
+          } else {
+            //book without payemnt
+            const user_id = await Storage.getItem('user_id');
+            const data = { ...tripData, returnTime, user_id };
+            const createdTrip = await createTrip(data);
+            setTimeout(() => {
+              setLoading(false);
+            }, 500);
+            if (!!createdTrip) {
+              setIsVisible(false);
+              navigation.navigate('TripSuccessScreen', { data });
+            }
+            console.log('without now', createdTrip);
           }
-          console.log('without now', createdTrip);
         } else {
           setLoading(false);
         }
@@ -99,6 +111,7 @@ export const PaymentDepositModal = (props: TProps) => {
   }, [sumOfDeposit, isVisible, tripData, returnTime, navigation]);
 
   // console.log('userData', userData);
+  console.log('sumOfDeposit', sumOfDeposit, userData?.deposit_balance);
   return (
     <>
       <Modal style={styles.wrapper} isVisible={isVisible}>

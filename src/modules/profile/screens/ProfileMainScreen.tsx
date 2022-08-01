@@ -9,7 +9,7 @@ import { useUserData } from '../../user/hooks';
 import { UserSecurityStatus } from '../../user/components';
 import { ProfileBonusPanel } from '../../bonus/components';
 import { SupportBlock } from '../../support/components';
-import { ProfileLinks } from '../components';
+import { ProfileDepositPanel, ProfileLinks } from '../components';
 
 export const ProfileMainScreen = () => {
   const navigation = useNavigation<NavigationProps>();
@@ -48,10 +48,14 @@ export const ProfileMainScreen = () => {
       <UserSecurityStatus status={userData?.security_check || null} />
       <Indent height={20} />
       {userData?.user_id ? (
-        <ProfileBonusPanel
-          userId={userData.user_id}
-          bonusValue={userData?.balance}
-        />
+        <>
+          <ProfileDepositPanel deposit={userData?.deposit_balance || 0} />
+          <Indent height={20} />
+          <ProfileBonusPanel
+            userId={userData.user_id}
+            bonusValue={userData?.balance}
+          />
+        </>
       ) : (
         <></>
       )}

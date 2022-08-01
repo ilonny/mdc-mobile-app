@@ -43,6 +43,7 @@ export type RootStackParamList = {
   ArticleDetailScreen: {
     id: number;
   };
+  PaymentSuccessScreen: undefined;
 };
 
 export type CarStackParamList = {
