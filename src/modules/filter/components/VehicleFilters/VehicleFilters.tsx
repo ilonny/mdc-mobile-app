@@ -76,11 +76,19 @@ export const VehicleFilters = () => {
           id: number;
         }): TOption => {
           const val: keyof typeof colorTransition = color.label;
-          return {
-            value: colorTransition[val][lang] || '',
-            label: colorTransition[val][lang] || '',
-            extraData: color.id.toString(),
-          };
+          try {
+            return {
+              value: colorTransition[val][lang] || '',
+              label: colorTransition[val][lang] || '',
+              extraData: color.id.toString(),
+            };
+          } catch (e) {
+            return {
+              value: val || '',
+              label: val || '',
+              extraData: color.id.toString(),
+            };
+          }
         },
       ) || []
     );
