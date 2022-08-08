@@ -37,10 +37,10 @@ export const VehicleTypeList = () => {
       </Row>
     );
   }
-
   return (
     <Row flexWrap="wrap" marginHorizontal={-2.5}>
       {vehicleTypeList?.map((type: TVehicleType) => {
+        // console.log('type', type);
         return (
           <TouchableFeedback
             style={styles.itemWrap}

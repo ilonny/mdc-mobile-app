@@ -30,4 +30,28 @@ export const mapData: TData = {
     label: translate('vehicleTypeBike'),
     icon: 'vehicle_type_bike',
   },
+  SUV: {
+    label: translate('vehicleTypeOffroad'),
+    icon: 'vehicle_type_offroad',
+  },
+  Cabriolet: {
+    label: translate('vehicleTypeCabrio'),
+    icon: 'vehicle_type_cabrio',
+  },
+  'Sports Cars': {
+    label: translate('vehicleTypeSport'),
+    icon: 'vehicle_type_sport',
+  },
+  Coupe: {
+    label: translate('vehicleTypeCoupe'),
+    icon: 'vehicle_type_coupe',
+  },
+  Premium: {
+    label: translate('vehicleTypePremium'),
+    icon: 'vehicle_type_premium',
+  },
+  Motorcycles: {
+    label: translate('vehicleTypeBike'),
+    icon: 'vehicle_type_bike',
+  },
 };
