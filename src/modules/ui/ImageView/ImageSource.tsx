@@ -13,6 +13,7 @@ export const ImageSource = {
   onboarding_3_en: require(imageSrc + 'onboarding_3_en.png'),
   onboarding_hearts: require(imageSrc + 'onboarding_hearts.png'),
   onboarding_push: require(imageSrc + 'onboarding_push.png'),
+  onboarding_push_en: require(imageSrc + 'onboarding_push_en.png'),
   onboarding_gradient_mask: require(imageSrc + 'onboarding_gradient_mask.png'),
   calendar: require(imageSrc + 'calendar.png'),
   chevron_back: require(imageSrc + 'chevron-back.png'),
@@ -73,6 +74,7 @@ export const ImageSource = {
   houseline: require(imageSrc + 'houseline.png'),
   bed: require(imageSrc + 'bed.png'),
   mrw: require(imageSrc + 'mrw.png'),
+  clock: require(imageSrc + 'clock.png'),
 };
 
 export type TImageSource = keyof typeof ImageSource;

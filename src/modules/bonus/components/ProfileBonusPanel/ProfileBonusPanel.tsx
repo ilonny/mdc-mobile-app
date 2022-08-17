@@ -45,6 +45,7 @@ export const ProfileBonusPanel = (props: TProps) => {
       </>
     );
   }
+  console.log('nextStatus', nextStatus, bonusValue);
   if (userPromoStatus) {
     return (
       <Panel>

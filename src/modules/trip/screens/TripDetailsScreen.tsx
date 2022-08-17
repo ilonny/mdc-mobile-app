@@ -26,6 +26,7 @@ import moment from 'moment';
 import { TPush } from '../../push/types';
 import { request } from '../../httpClient';
 import { PushList } from '../../push/components';
+import { mapTripStatus } from '../helpers';
 
 export const TripDetailsScreen = () => {
   const route = useRoute<RootRouteProps<'TripDetailsScreen'>>();
@@ -197,6 +198,27 @@ export const TripDetailsScreen = () => {
             </Row>
             <Indent height={6} />
           </Panel>
+          <Indent height={20} />
+          {!!tripData?.status &&
+          tripData?.status !== 'undefined' &&
+          tripData?.status !== 'null' ? (
+            <>
+              <Panel fullWidth>
+                <Indent height={6} />
+                <Row justifyContent="space-between">
+                  <Typography.BoldText fontSize={20}>
+                    {translate('rentStatus')}
+                  </Typography.BoldText>
+                  <Typography.BoldText fontSize={20}>
+                    {mapTripStatus(tripData?.status || '')}
+                  </Typography.BoldText>
+                </Row>
+                <Indent height={6} />
+              </Panel>
+            </>
+          ) : (
+            <></>
+          )}
           {tripData?.agreement_link && tripData?.agreement_link !== 'null' ? (
             <>
               <Indent height={20} />

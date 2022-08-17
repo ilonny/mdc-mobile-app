@@ -1,6 +1,7 @@
 import { Text, View } from 'react-native';
 import React, { useCallback, useMemo } from 'react';
 import {
+  ImageSource,
   ImageView,
   Indent,
   Row,
@@ -35,9 +36,14 @@ export const ArticleCard = (props: TProps) => {
         </View>
         <View style={styles.contentWrapper}>
           <Typography.BoldText fontSize={17}>{data.title}</Typography.BoldText>
-          <Typography.MainText color={colors.secondaryGray}>
-            {data.reading_time}
-          </Typography.MainText>
+          <Indent height={5} />
+          <Row>
+            <ImageView source={ImageSource.clock} size={18} />
+            <Indent width={5} />
+            <Typography.MainText color={colors.secondaryGray}>
+              {data.reading_time}
+            </Typography.MainText>
+          </Row>
         </View>
       </View>
     </TouchableFeedback>

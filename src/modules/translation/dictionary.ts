@@ -831,4 +831,28 @@ export default {
     ru: 'Депозит успешно пополнен',
     en: 'Payed successfully',
   },
+  rentStatus: {
+    ru: 'Статус поездки',
+    en: 'Rent status',
+  },
+  trip_CREATED: {
+    ru: 'Новая',
+    en: 'New',
+  },
+  trip_CONFIRMED: {
+    ru: 'Подтверждена',
+    en: 'Confirmed',
+  },
+  trip_INPROGRESS: {
+    ru: 'В ходе выполнения',
+    en: 'In progress',
+  },
+  trip_COMPLETED: {
+    ru: 'Завершена',
+    en: 'Completed',
+  },
+  trip_CANCELED: {
+    ru: 'Отменена',
+    en: 'Canceled',
+  },
 };

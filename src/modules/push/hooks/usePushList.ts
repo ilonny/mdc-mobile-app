@@ -10,7 +10,7 @@ export const usePushList = () => {
     setPushListLoading(true);
     const res = await getPushList();
     setPushListLoading(false);
-    setPushList(res);
+    setPushList(res?.reverse());
   }, []);
 
   useEffect(() => {

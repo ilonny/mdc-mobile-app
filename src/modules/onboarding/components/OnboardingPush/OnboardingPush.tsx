@@ -37,7 +37,7 @@ export const OnboardingPush = () => {
         <View style={styles.bottomImageWrapper}>
           <ImageView
             style={styles.onboarding_push}
-            source={ImageSource.onboarding_push}
+            source={ImageSource.onboarding_push_en}
             resizeMode="contain"
           />
           {/* <Indent height={30} /> */}

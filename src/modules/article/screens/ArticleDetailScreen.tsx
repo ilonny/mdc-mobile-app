@@ -41,10 +41,10 @@ export const ArticleDetailScreen = () => {
       headerProps={{ backButton: true }}
       isLoading={articleDataLoading || carListLoading || webViewHeight === 0}>
       <Indent height={60} />
-      <Typography.ScreenTitle small>
+      {/* <Typography.ScreenTitle small>
         {articleData?.title || ''}
       </Typography.ScreenTitle>
-      <Indent height={20} />
+      <Indent height={20} /> */}
       <Row marginHorizontal={-16}>
         <WebView
           injectedJavaScript={`

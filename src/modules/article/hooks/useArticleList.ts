@@ -17,7 +17,7 @@ export const useArticleList = () => {
       };
     });
     setArticleListLoading(false);
-    setArticleList(res);
+    setArticleList(res?.reverse());
     return res;
   }, []);
 

@@ -18,7 +18,7 @@ type TProps = {
 
 export const CarVideoLink = (props: TProps) => {
   const { videoLink, isBig } = props;
-  if (!videoLink) {
+  if (!videoLink || videoLink === 'null' || videoLink === 'undefined') {
     return <></>;
   }
 
