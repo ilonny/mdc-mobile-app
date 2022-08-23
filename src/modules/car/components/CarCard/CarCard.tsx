@@ -32,7 +32,7 @@ export const CarCard = (props: TProps) => {
   }, [data]);
 
   return (
-    <TouchableFeedback onPress={onPress}>
+    <TouchableFeedback onPress={onPress} style={{ alignSelf: 'stretch' }}>
       <View style={isBig ? styles.wrapperBig : styles.wrapper}>
         <View style={styles.imageWrapper}>
           <ImageView style={styles.image} href source={data.main_image} />

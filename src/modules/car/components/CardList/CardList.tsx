@@ -52,7 +52,7 @@ export const CardList = (props: TProps) => {
       {!!otherCards && (
         <>
           <Indent height={20} />
-          <Row flexWrap="wrap" marginHorizontal={-2.5} alignItems="flex-start">
+          <Row flexWrap="wrap" marginHorizontal={-2.5} alignItems="stretch" flex={1}>
             {otherCards?.map(car => {
               return <CarCard key={car.id} data={car} />;
             })}

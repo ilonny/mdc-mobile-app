@@ -40,7 +40,7 @@ export const ProfileLinks = () => {
         <Indent height={10} />
       </TouchableFeedback>
       <Divider margin={10} />
-      <TouchableFeedback>
+      {/* <TouchableFeedback>
         <Indent height={10} />
         <Row justifyContent="space-between">
           <Typography.BoldText fontSize={16}>
@@ -50,7 +50,7 @@ export const ProfileLinks = () => {
         </Row>
         <Indent height={10} />
       </TouchableFeedback>
-      <Divider margin={10} />
+      <Divider margin={10} /> */}
       <TouchableFeedback>
         <Indent height={10} />
         <Row justifyContent="space-between">
@@ -62,7 +62,7 @@ export const ProfileLinks = () => {
         <Indent height={10} />
       </TouchableFeedback>
       <Divider margin={10} />
-      <TouchableFeedback>
+      {/* <TouchableFeedback>
         <Indent height={10} />
         <Row justifyContent="space-between">
           <Typography.BoldText fontSize={16}>
@@ -72,14 +72,14 @@ export const ProfileLinks = () => {
         </Row>
         <Indent height={10} />
       </TouchableFeedback>
-      <Divider margin={10} />
+      <Divider margin={10} /> */}
       <TouchableFeedback>
         <Indent height={10} />
         <Row justifyContent="space-between">
           <Typography.BoldText fontSize={16}>
             {translate('AboutApp')}
           </Typography.BoldText>
-          <ImageView size={20} source={ImageSource.chevron_forward} />
+          <Typography.BoldText fontSize={16}>1.0</Typography.BoldText>
         </Row>
         <Indent height={10} />
       </TouchableFeedback>

@@ -6,7 +6,7 @@ export const styles = StyleSheet.create({
   },
   content: {
     paddingHorizontal: 20,
-    paddingTop: 50,
+    paddingTop: 70,
     flex: 1,
     justifyContent: 'space-between',
   },

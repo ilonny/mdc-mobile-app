@@ -6,6 +6,7 @@ export const styles = StyleSheet.create({
   wrapper: {
     width: deviceWidth / 2,
     padding: 2.5,
+    flex: 1,
   },
   wrapperBig: {
     width: '100%',
@@ -21,6 +22,8 @@ export const styles = StyleSheet.create({
   contentWrapper: {
     padding: 20,
     backgroundColor: colors.mainGray,
+    alignSelf: 'stretch',
+    flex: 1,
   },
   badge: {
     flex: 0,

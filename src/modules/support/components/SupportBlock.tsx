@@ -1,5 +1,5 @@
 import React from 'react';
-import { View } from 'react-native';
+import { View, Linking } from 'react-native';
 import { colors } from '../../../theme';
 import { translate } from '../../translation';
 import {
@@ -25,21 +25,25 @@ export const SupportBlock = () => {
         </Typography.BoldText>
       </Button>
       <Indent height={20} />
-      <Button border>
+      <Button
+        border
+        onPress={() => Linking.openURL('whatsapp://send?phone=+971585907875')}>
         <Row flex={1} justifyContent="space-between" paddingHorizontal={16}>
           <Typography.BoldText>{translate('writeInWA')}</Typography.BoldText>
           <ImageView size={27} source={ImageSource.whatsapp} />
         </Row>
       </Button>
       <Indent height={20} />
-      <Button border>
+      <Button
+        border
+        onPress={() => Linking.openURL('http://t.me/DubaiDreamCars')}>
         <Row flex={1} justifyContent="space-between" paddingHorizontal={16}>
           <Typography.BoldText>{translate('writeInTG')}</Typography.BoldText>
           <ImageView size={27} source={ImageSource.telegram} />
         </Row>
       </Button>
       <Indent height={20} />
-      <TouchableFeedback>
+      <TouchableFeedback onPress={() => Linking.openURL('tel:+971585907875')}>
         <Row justifyContent="center">
           <ImageView size={200} source={ImageSource.sos} />
         </Row>

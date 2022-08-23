@@ -49,8 +49,8 @@ export const ProfileMainScreen = () => {
       <Indent height={20} />
       {userData?.user_id ? (
         <>
-          <ProfileDepositPanel deposit={userData?.deposit_balance || 0} />
-          <Indent height={20} />
+          {/* <ProfileDepositPanel deposit={userData?.deposit_balance || 0} />
+          <Indent height={20} /> */}
           <ProfileBonusPanel
             userId={userData.user_id}
             bonusValue={userData?.balance}

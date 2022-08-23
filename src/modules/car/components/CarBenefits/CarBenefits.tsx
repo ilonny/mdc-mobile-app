@@ -48,7 +48,7 @@ export const CarBenefits = () => {
           </View>
         </Row>
       </View>
-      <View style={styles.line} />
+      {/* <View style={styles.line} />
       <View style={styles.row}>
         <Row>
           <View style={styles.imageWrapper}>
@@ -61,7 +61,7 @@ export const CarBenefits = () => {
             <Typography.BoldText>{translate('ben_4')}</Typography.BoldText>
           </View>
         </Row>
-      </View>
+      </View> */}
       <View style={styles.line} />
       <View style={styles.row}>
         <Row>

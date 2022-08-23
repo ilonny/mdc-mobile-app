@@ -29,7 +29,8 @@ export const TripSuccessScreen = () => {
   const { userData } = useUserData(true);
 
   const onPressMyTrips = useCallback(() => {
-    navigation.navigate('TripMainScreen')
+    //@ts-ignore
+    navigation.navigate(translate('MyTrips'));
   }, [navigation]);
 
   return (

@@ -20,7 +20,7 @@ import {
   Typography,
 } from '../../../ui';
 import { styles } from './styles';
-import { translate } from '../../../translation';
+import { lang, translate } from '../../../translation';
 import { colors } from '../../../../theme';
 import { useUserData } from '../../../user/hooks';
 import { BOOKING_DEPOSIT_AMOUNT } from '../../../core/constants';
@@ -77,12 +77,23 @@ export const PaymentDepositModal = (props: TProps) => {
   useEffect(() => {
     //проверим, если баланса депозита не хватает, попросим доплатить, иначе сразу заброним тачку
     const checkWhatToDo = async () => {
-      // if (isVisible) {
-      //   setLoading(true);
-      // } else {
-      //   setLoading(false);
-      // }
       if (isVisible) {
+        if (lang === 'en') {
+          setLoading(true);
+          //book without payemnt
+          const user_id = await Storage.getItem('user_id');
+          const data = { ...tripData, returnTime, user_id };
+          const createdTrip = await createTrip(data);
+          setTimeout(() => {
+            setLoading(false);
+          }, 500);
+          setLoading(true);
+          if (!!createdTrip) {
+            setIsVisible(false);
+            navigation.navigate('TripSuccessScreen', { data });
+          }
+          return false;
+        }
         if (sumOfDeposit <= 0) {
           setLoading(true);
           if (justTopUp) {
@@ -100,7 +111,7 @@ export const PaymentDepositModal = (props: TProps) => {
               setIsVisible(false);
               navigation.navigate('TripSuccessScreen', { data });
             }
-            console.log('without now', createdTrip);
+            // console.log('without now', createdTrip);
           }
         } else {
           setLoading(false);
@@ -111,7 +122,7 @@ export const PaymentDepositModal = (props: TProps) => {
   }, [sumOfDeposit, isVisible, tripData, returnTime, navigation]);
 
   // console.log('userData', userData);
-  console.log('sumOfDeposit', sumOfDeposit, userData?.deposit_balance);
+  // console.log('sumOfDeposit', sumOfDeposit, userData?.deposit_balance);
   return (
     <>
       <Modal style={styles.wrapper} isVisible={isVisible}>

@@ -381,7 +381,7 @@ export default {
   },
   ben_3: {
     ru: 'Страхование КАСКО и ОСАГО включено',
-    en: 'CASCO and OSAGO insurance is included',
+    en: 'Insurance without a deductible for each car',
   },
   ben_4: {
     ru: '50+ уникальных авто в аренду из нашего автопарка',

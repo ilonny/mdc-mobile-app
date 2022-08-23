@@ -3,7 +3,7 @@ import React from 'react';
 import { RootRouteProps } from '../../../navigation/types';
 import { CarBookingDeposit } from '../../car/components';
 import { BOOKING_DEPOSIT_AMOUNT } from '../../core/constants';
-import { translate } from '../../translation';
+import { lang, translate } from '../../translation';
 import { Indent, ScreenContainer, Typography } from '../../ui';
 import { TripCreateForm } from '../components';
 
@@ -16,8 +16,14 @@ export const TripCreateScreen = () => {
         {translate('BookingTitle')}
       </Typography.ScreenTitle>
       <Indent height={30} />
-      {/* <CarBookingDeposit amount={BOOKING_DEPOSIT_AMOUNT.toString()} />
-      <Indent height={30} /> */}
+      {lang !== 'en' ? (
+        <>
+          <CarBookingDeposit amount={BOOKING_DEPOSIT_AMOUNT.toString()} />
+          <Indent height={30} />
+        </>
+      ) : (
+        <></>
+      )}
       <TripCreateForm vehicle_id={vehicle_id} />
     </ScreenContainer>
   );
