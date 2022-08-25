@@ -5,6 +5,7 @@ export {
   getCarIsFavorite,
   addCarFavorite,
   deleteCarFavorite,
+  getCarFavoriteList,
 } from './carFavorite';
 export { getCarList } from './getCarList';
 export { getStockCarList } from './getStockCarList';

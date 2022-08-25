@@ -4,3 +4,4 @@ export { useCarFavorite } from './useCarFavorite';
 export { useCarList } from './useCarList';
 export { useCarData } from './useCarData';
 export { useGetNewCarList } from './useGetNewCarList';
+export { useCarFavoriteList } from './useCarFavoriteList';

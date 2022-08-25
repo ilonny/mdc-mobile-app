@@ -35,7 +35,6 @@ export const PromoBanner = (props: TProps) => {
       return <ImageView style={styles.image} href source={data.image} />;
     }
     if (data?.video) {
-      console.log('data?.video', data?.video);
       return (
         <Video
           style={styles.image}

@@ -44,6 +44,7 @@ export type RootStackParamList = {
     id: number;
   };
   PaymentSuccessScreen: undefined;
+  CarFavoriteListScreen: undefined;
 };
 
 export type CarStackParamList = {

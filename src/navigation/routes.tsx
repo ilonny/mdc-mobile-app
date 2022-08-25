@@ -26,6 +26,7 @@ import {
   ArticleDetailScreen,
   ArticleListScreen,
 } from '../modules/article/screens';
+import { CarFavoriteListScreen } from '../modules/car/screens';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
@@ -110,6 +111,10 @@ export const Routes: React.FC<{
         <Stack.Screen
           name="PaymentSuccessScreen"
           component={PaymentSuccessScreen}
+        />
+        <Stack.Screen
+          name="CarFavoriteListScreen"
+          component={CarFavoriteListScreen}
         />
         <Stack.Screen name="TabScreen" component={TabScreen} />
       </Stack.Navigator>

@@ -24,8 +24,23 @@ export const ProfileLinks = () => {
     navigation.navigate('ProfileNotificationsScreen');
   }, [navigation]);
 
+  const onPressFav = useCallback(() => {
+    navigation.navigate('CarFavoriteListScreen');
+  }, [navigation]);
+
   return (
     <>
+      <Divider margin={10} />
+      <TouchableFeedback onPress={onPressFav}>
+        <Indent height={10} />
+        <Row justifyContent="space-between">
+          <Typography.BoldText fontSize={16}>
+            {translate('favCars')}
+          </Typography.BoldText>
+          <ImageView size={20} source={ImageSource.chevron_forward} />
+        </Row>
+        <Indent height={10} />
+      </TouchableFeedback>
       <Divider margin={10} />
       <TouchableFeedback onPress={onPressNotificationsLink}>
         <Indent height={10} />

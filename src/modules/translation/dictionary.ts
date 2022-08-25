@@ -863,4 +863,8 @@ export default {
     ru: 'Акции',
     en: 'Stock',
   },
+  favCars: {
+    ru: 'Избранные автомобили',
+    en: 'Favorite cars',
+  },
 };

@@ -17,6 +17,15 @@ export const getCarIsFavorite = async (
   // return !!res?.data?.length;
 };
 
+export const getCarFavoriteList = async (): Promise<string[]> => {
+  const user_id = await Storage.getItem('user_id');
+  const res = await request({
+    path: `${CAR_FAVORITE_PATH}/list?user_id=${user_id}`,
+  });
+  //@ts-ignore
+  return res?.data;
+};
+
 export const addCarFavorite = async (vehicle_id: number) => {
   const user_id = await Storage.getItem('user_id');
   const res = await request({
