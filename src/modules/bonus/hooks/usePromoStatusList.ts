@@ -1,6 +1,7 @@
 import _ from 'lodash';
 import React, { useCallback, useEffect, useState } from 'react';
 import { Storage } from '../../asyncStorage';
+import { API_URL } from '../../httpClient/constants';
 import { getPromoStatusList } from '../network';
 import { TBonusStatus } from '../types';
 
@@ -22,7 +23,14 @@ export const usePromoStatusList = (
   const getPromoStatusListReq = useCallback(async () => {
     setPromoStatusListLoading(true);
     const res = await getPromoStatusList();
-    setPromoStatusList(res);
+    setPromoStatusList(
+      res?.map((el: TBonusStatus) => {
+        return {
+          ...el,
+          image: `${API_URL}/${el.image}`,
+        };
+      }),
+    );
     setPromoStatusListLoading(false);
     return res;
   }, []);

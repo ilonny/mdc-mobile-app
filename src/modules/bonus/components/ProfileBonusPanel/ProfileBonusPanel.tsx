@@ -4,13 +4,7 @@ import { ActivityIndicator, Text, View } from 'react-native';
 import { NavigationProps } from '../../../../navigation/types';
 import { colors } from '../../../../theme';
 import { translate } from '../../../translation';
-import {
-  Button,
-  Divider,
-  Indent,
-  TouchableFeedback,
-  Typography,
-} from '../../../ui';
+import { Button, Divider, ImageView, Indent, Typography } from '../../../ui';
 import { Panel } from '../../../ui/Panel';
 import { Row } from '../../../ui/Row';
 import { useAchievmentList, usePromoStatusList } from '../../hooks';
@@ -45,17 +39,29 @@ export const ProfileBonusPanel = (props: TProps) => {
       </>
     );
   }
+
+  console.log('userPromoStatus', userPromoStatus);
+
   console.log('nextStatus', nextStatus, bonusValue);
   if (userPromoStatus) {
     return (
       <Panel>
-        <Typography.BoldText fontSize={14} color={colors.secondaryGray}>
-          {translate('yourStatus')}
-        </Typography.BoldText>
-        <Indent height={10} />
-        <Typography.BoldText fontSize={20}>
-          {userPromoStatus?.title || ''}
-        </Typography.BoldText>
+        <Row justifyContent="space-between">
+          <View>
+            <Typography.BoldText fontSize={14} color={colors.secondaryGray}>
+              {translate('yourStatus')}
+            </Typography.BoldText>
+            <Indent height={10} />
+            <Typography.BoldText fontSize={20}>
+              {userPromoStatus?.title || ''}
+            </Typography.BoldText>
+          </View>
+          {userPromoStatus.image ? (
+            <ImageView href size={47} source={userPromoStatus.image} />
+          ) : (
+            <></>
+          )}
+        </Row>
         {!!nextStatus ? (
           <>
             <Indent height={20} />

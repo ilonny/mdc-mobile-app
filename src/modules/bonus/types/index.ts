@@ -4,6 +4,7 @@ export type TBonusStatus = {
   bonus_cost: string | null;
   description: string | null;
   other: string | null;
+  image?: string;
 };
 
 export type TAchievment = {
