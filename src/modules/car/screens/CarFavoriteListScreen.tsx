@@ -1,16 +1,11 @@
-import React, { useContext, useMemo } from 'react';
-import { VehicleFilters, VehicleTypeFilter } from '../../filter/components';
-import { FilterContext } from '../../filter/context';
+import React from 'react';
 import { translate } from '../../translation';
 import { Indent, ScreenContainer, Typography } from '../../ui';
 import { CardList } from '../components';
-import { filterCarList } from '../helpers';
-import { useCarFavoriteList, useCarList } from '../hooks';
+import { useCarFavoriteList } from '../hooks';
 
 export const CarFavoriteListScreen = () => {
   const { carFavoriteList, carFavoriteListLoading } = useCarFavoriteList();
-  console.log('carFavoriteList', carFavoriteList);
-  console.log('carFavoriteListLoading', carFavoriteListLoading);
   return (
     <ScreenContainer
       headerProps={{ backButton: true }}
