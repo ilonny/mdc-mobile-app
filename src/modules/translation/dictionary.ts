@@ -855,4 +855,12 @@ export default {
     ru: 'Отменена',
     en: 'Canceled',
   },
+  newListTitle: {
+    ru: 'Новые автомобили',
+    en: 'New cars',
+  },
+  stockListTitle: {
+    ru: 'Акции',
+    en: 'Stock',
+  },
 };

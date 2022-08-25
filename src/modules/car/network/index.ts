@@ -7,3 +7,5 @@ export {
   deleteCarFavorite,
 } from './carFavorite';
 export { getCarList } from './getCarList';
+export { getStockCarList } from './getStockCarList';
+export { getNewCarList } from './getNewCarList';

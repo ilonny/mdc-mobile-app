@@ -1,4 +1,6 @@
 export const GET_POPULAR_CAR_LIST_PATH = 'vehicle-popular/list';
+export const GET_STOCK_CAR_LIST_PATH = 'vehicle-stock/list';
+export const GET_NEW_CAR_LIST_PATH = 'vehicle-new/list';
 export const GET_CAR_DATA_PATH = 'vehicle/get-data';
 export const GET_CAR_TARIFF_PATH = 'vehicle-tariff/list';
 export const GET_CAR_GALLERY_PATH = 'vehicle-gallery/list';

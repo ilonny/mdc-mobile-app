@@ -9,13 +9,12 @@ import { translate } from '../../translation';
 import {
   Button,
   Indent,
-  PromoBanner,
   Row,
   ScreenContainer,
   Typography,
 } from '../../ui';
 import { VehicleTypeList } from '../../vehicleType/components';
-import { PopularList } from '../components';
+import { NewList, PopularList, StockList } from '../components';
 
 export const CarMainScreen = () => {
   const navigation = useNavigation<NavigationProps>();
@@ -47,6 +46,13 @@ export const CarMainScreen = () => {
       <Indent height={20} />
       <View style={{ paddingHorizontal: 16 }}>
         <PopularList />
+      </View>
+      <Indent height={20} />
+      <View style={{ paddingHorizontal: 16 }}>
+        <StockList />
+      </View>
+      <View style={{ paddingHorizontal: 16 }}>
+        <NewList />
       </View>
       <Indent height={80} />
     </ScreenContainer>
