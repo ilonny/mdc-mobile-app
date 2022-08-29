@@ -6,6 +6,7 @@ import { FilterProvider } from './modules/filter/context';
 import { OnboardingProvider } from './modules/onboarding/context';
 import { notificationHandler } from './modules/push/helpers';
 import { Navigation } from './navigation';
+import { SupportProvider } from './modules/support/context';
 
 const App = () => {
   useEffect(() => {
@@ -28,7 +29,9 @@ const App = () => {
       <StatusBar translucent barStyle="light-content" />
       <OnboardingProvider>
         <FilterProvider>
-          <Navigation />
+          <SupportProvider>
+            <Navigation />
+          </SupportProvider>
         </FilterProvider>
       </OnboardingProvider>
     </>

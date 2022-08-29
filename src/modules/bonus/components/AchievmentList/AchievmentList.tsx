@@ -1,7 +1,8 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useContext, useState } from 'react';
 import { View } from 'react-native';
 import Modal from 'react-native-modal';
 import { colors } from '../../../../theme';
+import { SupportContext } from '../../../support/context';
 import { translate } from '../../../translation';
 import {
   Button,
@@ -23,7 +24,7 @@ type TProps = {
 export const AchievmentList = (props: TProps) => {
   const [modalIsVisible, setModalIsVisible] = useState(false);
   const { achievmentList } = props;
-
+  const { setChatModalVisible } = useContext(SupportContext);
   const getColorTop = useCallback((a: TAchievment) => {
     if (a.available) {
       return colors.lightGreen;
@@ -97,7 +98,14 @@ export const AchievmentList = (props: TProps) => {
               {translate('getRewardsText')}
             </Typography.BoldText>
             <Indent height={20} />
-            <Button isBlack>
+            <Button
+              isBlack
+              onPress={() => {
+                setModalIsVisible(false);
+                setTimeout(() => {
+                  setChatModalVisible(true);
+                }, 300);
+              }}>
               <Typography.BoldText>
                 {translate('writeInChat')}
               </Typography.BoldText>

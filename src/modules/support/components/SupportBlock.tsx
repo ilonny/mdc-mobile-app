@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { View, Linking } from 'react-native';
 import { colors } from '../../../theme';
 import { translate } from '../../translation';
@@ -11,15 +11,17 @@ import {
   TouchableFeedback,
   Typography,
 } from '../../ui';
+import { SupportContext } from '../context';
 
 export const SupportBlock = () => {
+  const { setChatModalVisible } = useContext(SupportContext);
   return (
     <View>
       <Typography.BoldText fontSize={20}>
         {translate('haveQ')}
       </Typography.BoldText>
       <Indent height={20} />
-      <Button isWhite>
+      <Button isWhite onPress={() => setChatModalVisible(true)}>
         <Typography.BoldText color={colors.totalBlack}>
           {translate('writeInChat')}
         </Typography.BoldText>

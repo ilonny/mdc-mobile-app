@@ -4,6 +4,7 @@ import { createNavigationContainerRef } from '@react-navigation/native';
 import { FullScreenLoader } from '../modules/ui';
 import { Routes } from './routes';
 import { RootStackParamList } from './types';
+import { ChatModal } from '../modules/support/components';
 
 export const navigationRef = createNavigationContainerRef();
 
@@ -35,6 +36,7 @@ export const Navigation = () => {
       ) : (
         <FullScreenLoader />
       )}
+      <ChatModal />
     </NavigationContainer>
   );
 };
