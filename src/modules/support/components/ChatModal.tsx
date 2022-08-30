@@ -20,12 +20,13 @@ export const ChatModal = () => {
       </SafeAreaView>
       <Indent height={20} />
       <WebView
+        originWhitelist={['*']}
         automaticallyAdjustContentInsets={false}
         style={{
           width: '100%',
           flex: 1,
         }}
-        source={chatPage}
+        source={{ uri: 'https://dubaidreamcars.ae/jivoapp' }}
       />
       <SafeAreaView />
     </Modal>
