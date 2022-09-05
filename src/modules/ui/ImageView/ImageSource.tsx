@@ -75,6 +75,8 @@ export const ImageSource = {
   bed: require(imageSrc + 'bed.png'),
   mrw: require(imageSrc + 'mrw.png'),
   clock: require(imageSrc + 'clock.png'),
+  radio: require(imageSrc + 'radio.png'),
+  radio_checked: require(imageSrc + 'radio_checked.png'),
 };
 
 export type TImageSource = keyof typeof ImageSource;

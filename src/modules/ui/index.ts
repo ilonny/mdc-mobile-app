@@ -23,3 +23,4 @@ export { Panel } from './Panel';
 export { Divider } from './Divider';
 export { Tabs } from './Tabs';
 export { Badge } from './Badge';
+export { Radio } from './Radio';

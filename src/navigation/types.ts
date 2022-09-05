@@ -45,6 +45,10 @@ export type RootStackParamList = {
   };
   PaymentSuccessScreen: undefined;
   CarFavoriteListScreen: undefined;
+  PollMainScreen: undefined;
+  PollResultScreen: {
+    answers: Record<any, any>;
+  };
 };
 
 export type CarStackParamList = {

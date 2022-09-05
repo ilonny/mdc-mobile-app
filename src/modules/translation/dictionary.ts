@@ -867,4 +867,12 @@ export default {
     ru: 'Избранные автомобили',
     en: 'Favorite cars',
   },
+  testNextQuestion: {
+    ru: 'Следующий вопрос',
+    en: 'Next question',
+  },
+  testPrevQuestion: {
+    ru: 'Предыдущий вопрос',
+    en: 'Previous question',
+  },
 };

@@ -13,6 +13,7 @@ import {
   Panel,
   Row,
   ScreenContainer,
+  TouchableFeedback,
   Typography,
 } from '../../ui';
 import { PartnersOptions } from '../components/PartnersOptions';
@@ -62,14 +63,16 @@ export const ServiceMainScreen = () => {
         <></>
       )}
       <Indent height={20} />
-      <Panel>
-        <Row justifyContent="space-between" alignItems="center">
-          <Typography.BoldText fontSize={16}>
-            {translate('Tests')}
-          </Typography.BoldText>
-          <ImageView size={90} source={ImageSource.service_1} />
-        </Row>
-      </Panel>
+      <TouchableFeedback onPress={() => navigation.navigate('PollMainScreen')}>
+        <Panel>
+          <Row justifyContent="space-between" alignItems="center">
+            <Typography.BoldText fontSize={16}>
+              {translate('Tests')}
+            </Typography.BoldText>
+            <ImageView size={90} source={ImageSource.service_1} />
+          </Row>
+        </Panel>
+      </TouchableFeedback>
       <Indent height={20} />
       <Typography.BoldText fontSize={20}>
         {translate('Partners')}

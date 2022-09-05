@@ -27,6 +27,7 @@ import {
   ArticleListScreen,
 } from '../modules/article/screens';
 import { CarFavoriteListScreen } from '../modules/car/screens';
+import { PollMainScreen, PollResultScreen } from '../modules/poll/screens';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
@@ -116,6 +117,8 @@ export const Routes: React.FC<{
           name="CarFavoriteListScreen"
           component={CarFavoriteListScreen}
         />
+        <Stack.Screen name="PollMainScreen" component={PollMainScreen} />
+        <Stack.Screen name="PollResultScreen" component={PollResultScreen} />
         <Stack.Screen name="TabScreen" component={TabScreen} />
       </Stack.Navigator>
     </>
