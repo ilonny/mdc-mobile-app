@@ -23,7 +23,7 @@ export const StockList = () => {
           </Typography.ScreenTitle>
         </Row>
         <Indent height={20} />
-        <CardList items={stockCarList} />
+        <CardList items={stockCarList} allSmall />
       </View>
     );
   }

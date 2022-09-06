@@ -23,7 +23,7 @@ export const NewList = () => {
           </Typography.ScreenTitle>
         </Row>
         <Indent height={20} />
-        <CardList items={newCarList} />
+        <CardList items={newCarList} allBig />
       </View>
     );
   }

@@ -6,13 +6,7 @@ import { colors } from '../../../theme';
 import { FilterContext } from '../../filter/context';
 import { PromoblockSwiper } from '../../promoblock/components';
 import { translate } from '../../translation';
-import {
-  Button,
-  Indent,
-  Row,
-  ScreenContainer,
-  Typography,
-} from '../../ui';
+import { Button, Indent, Row, ScreenContainer, Typography } from '../../ui';
 import { VehicleTypeList } from '../../vehicleType/components';
 import { NewList, PopularList, StockList } from '../components';
 
@@ -51,6 +45,7 @@ export const CarMainScreen = () => {
       <View style={{ paddingHorizontal: 16 }}>
         <StockList />
       </View>
+      <Indent height={20} />
       <View style={{ paddingHorizontal: 16 }}>
         <NewList />
       </View>

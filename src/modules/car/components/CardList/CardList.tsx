@@ -8,10 +8,12 @@ import { styles } from './styles';
 
 type TProps = {
   items: Array<TCar>;
+  allSmall?: boolean;
+  allBig?: boolean;
 };
 
 export const CardList = (props: TProps) => {
-  const { items } = props;
+  const { items, allSmall, allBig } = props;
 
   const firstCard = useMemo(() => {
     if (items.length) {
@@ -46,13 +48,41 @@ export const CardList = (props: TProps) => {
     );
   }
 
+  if (allSmall) {
+    return (
+      <View style={styles.wrapper}>
+        <Row
+          flexWrap="wrap"
+          marginHorizontal={-2.5}
+          alignItems="stretch"
+          flex={1}>
+          {[firstCard].concat(otherCards)?.map(car => {
+            return <CarCard key={car.id} data={car} />;
+          })}
+        </Row>
+      </View>
+    );
+  }
+
+  if (allBig) {
+    <View style={styles.wrapper}>
+      {[firstCard].concat(otherCards)?.map(car => {
+        return <CarCard key={car.id} data={car} isBig />;
+      })}
+    </View>;
+  }
+
   return (
     <View style={styles.wrapper}>
       {!!firstCard && <CarCard data={firstCard} isBig />}
       {!!otherCards && (
         <>
           <Indent height={20} />
-          <Row flexWrap="wrap" marginHorizontal={-2.5} alignItems="stretch" flex={1}>
+          <Row
+            flexWrap="wrap"
+            marginHorizontal={-2.5}
+            alignItems="stretch"
+            flex={1}>
             {otherCards?.map(car => {
               return <CarCard key={car.id} data={car} />;
             })}
