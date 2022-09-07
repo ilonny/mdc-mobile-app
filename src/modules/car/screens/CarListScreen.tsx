@@ -1,6 +1,7 @@
 import React, { useContext, useMemo } from 'react';
 import { VehicleFilters, VehicleTypeFilter } from '../../filter/components';
 import { FilterContext } from '../../filter/context';
+import { PollBlockMainScreen } from '../../poll/components';
 import { Indent, ScreenContainer, Typography } from '../../ui';
 import { CardList } from '../components';
 import { filterCarList } from '../helpers';
@@ -53,7 +54,10 @@ export const CarListScreen = () => {
       <Indent height={15} />
       <VehicleFilters />
       <Indent height={30} />
-      <CardList items={carListFiltered} />
+      <CardList items={carListFiltered} allSmall />
+      <Indent height={20} />
+      <PollBlockMainScreen />
+      <Indent height={80} />
     </ScreenContainer>
   );
 };

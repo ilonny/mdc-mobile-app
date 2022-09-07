@@ -4,6 +4,7 @@ import { View } from 'react-native';
 import { NavigationProps } from '../../../navigation/types';
 import { colors } from '../../../theme';
 import { FilterContext } from '../../filter/context';
+import { PollBlockMainScreen } from '../../poll/components';
 import { PromoblockSwiper } from '../../promoblock/components';
 import { translate } from '../../translation';
 import { Button, Indent, Row, ScreenContainer, Typography } from '../../ui';
@@ -49,6 +50,8 @@ export const CarMainScreen = () => {
       <View style={{ paddingHorizontal: 16 }}>
         <NewList />
       </View>
+      <Indent height={20} />
+      <PollBlockMainScreen />
       <Indent height={80} />
     </ScreenContainer>
   );

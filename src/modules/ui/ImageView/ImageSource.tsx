@@ -77,6 +77,7 @@ export const ImageSource = {
   clock: require(imageSrc + 'clock.png'),
   radio: require(imageSrc + 'radio.png'),
   radio_checked: require(imageSrc + 'radio_checked.png'),
+  poll_block_pic: require(imageSrc + 'poll_block_pic.png'),
 };
 
 export type TImageSource = keyof typeof ImageSource;
