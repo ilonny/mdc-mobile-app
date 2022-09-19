@@ -48,9 +48,14 @@ export const ArticleDetailScreen = () => {
       <Row marginHorizontal={-16}>
         <WebView
           injectedJavaScript={`
-        document.getElementById('t-header').remove();
-        document.getElementById('t-footer').remove();
-          window.ReactNativeWebView.postMessage(document.body.scrollHeight)
+          window.addEventListener('load', () => {
+            const footerHeight = document.getElementById('t-footer').scrollHeight;
+            document.getElementById('t-header').remove();
+            document.getElementById('t-footer').remove();
+            const bodyHeight = document.body.scrollHeight;
+            window.ReactNativeWebView.postMessage(bodyHeight);
+            // window.ReactNativeWebView.postMessage(bodyHeight - footerHeight);
+          })
         `}
           scrollEnabled={false}
           onMessage={event => {
