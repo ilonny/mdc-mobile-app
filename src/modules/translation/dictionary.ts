@@ -807,6 +807,18 @@ export default {
     ru: 'Выйти из аккаунта',
     en: 'Log-out',
   },
+  DeleteAccount: {
+    ru: 'Удалить аккаунт',
+    en: 'Delete account',
+  },
+  DeleteAccountTextConfirm: {
+    ru: 'Вы действительно хотите удалить аккаунт?',
+    en: 'Are you sure you want to delete your account?',
+  },
+  DeleteAccountText: {
+    ru: 'Все данные о вас, включая баланс бонусной системы, будут удалены, отменить это действие невозможно',
+    en: 'All data about you, including the balance of the bonus system, will be deleted, it is impossible to cancel this action',
+  },
   yourDeposit: {
     ru: 'Ваш депозит',
     en: 'Your deposit',

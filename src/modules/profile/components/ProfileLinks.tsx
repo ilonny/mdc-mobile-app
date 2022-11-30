@@ -1,5 +1,6 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { useCallback } from 'react';
+import { Alert } from 'react-native';
 import { reset } from '../../../navigation';
 import { NavigationProps } from '../../../navigation/types';
 import { colors } from '../../../theme';
@@ -108,6 +109,37 @@ export const ProfileLinks = () => {
         <Row justifyContent="space-between">
           <Typography.BoldText fontSize={16} color={colors.red}>
             {translate('Logout')}
+          </Typography.BoldText>
+          <ImageView size={20} source={ImageSource.chevron_forward} />
+        </Row>
+        <Indent height={10} />
+      </TouchableFeedback>
+      <Divider margin={10} />
+      <TouchableFeedback
+        onPress={async () => {
+          Alert.alert(
+            translate('DeleteAccountTextConfirm'),
+            translate('DeleteAccountText'),
+            [
+              {
+                text: 'Cancel',
+                onPress: () => console.log('Cancel Pressed'),
+                style: 'cancel',
+              },
+              {
+                text: 'OK',
+                onPress: async () => {
+                  await Storage.clear();
+                  reset('InitialScreen');
+                },
+              },
+            ],
+          );
+        }}>
+        <Indent height={10} />
+        <Row justifyContent="space-between">
+          <Typography.BoldText fontSize={16} color={colors.red}>
+            {translate('DeleteAccount')}
           </Typography.BoldText>
           <ImageView size={20} source={ImageSource.chevron_forward} />
         </Row>

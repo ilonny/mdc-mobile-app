@@ -104,7 +104,7 @@ export const AchievmentList = (props: TProps) => {
                 setModalIsVisible(false);
                 setTimeout(() => {
                   setChatModalVisible(true);
-                }, 300);
+                }, 1000);
               }}>
               <Typography.BoldText>
                 {translate('writeInChat')}
