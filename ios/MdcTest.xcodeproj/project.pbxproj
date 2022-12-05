@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* MdcTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* MdcTestTests.m */; };
 		0197E8D75ECF47D69EB4BBDE /* Inter-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 633DB029095E4537BA97989F /* Inter-ExtraBold.ttf */; };
-		0A1FC5602857BA2800A288C1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0A1FC55F2857BA2700A288C1 /* GoogleService-Info.plist */; };
 		0AB97830ABC641AD972D16BE /* Inter-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 710947245DFB4268AC9B83F9 /* Inter-SemiBold.ttf */; };
+		0ADB2FF4293E663E00D4E9D2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0ADB2FF3293E663E00D4E9D2 /* GoogleService-Info.plist */; };
 		0C80B921A6F3F58F76C31292 /* libPods-MdcTest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DCACB8F33CDC322A6C60F78 /* libPods-MdcTest.a */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
@@ -40,8 +40,8 @@
 		00E356EE1AD99517003FC87E /* MdcTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MdcTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* MdcTestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MdcTestTests.m; sourceTree = "<group>"; };
-		0A1FC55F2857BA2700A288C1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0A1FC5612857BAD600A288C1 /* MdcTest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = MdcTest.entitlements; path = MdcTest/MdcTest.entitlements; sourceTree = "<group>"; };
+		0ADB2FF3293E663E00D4E9D2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* MdcTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MdcTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = MdcTest/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = MdcTest/AppDelegate.mm; sourceTree = "<group>"; };
@@ -111,10 +111,10 @@
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.mm */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
+				0ADB2FF3293E663E00D4E9D2 /* GoogleService-Info.plist */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
-				0A1FC55F2857BA2700A288C1 /* GoogleService-Info.plist */,
 			);
 			name = MdcTest;
 			sourceTree = "<group>";
@@ -288,7 +288,7 @@
 				32397870868E44BD9B9C6026 /* Inter-Black.ttf in Resources */,
 				F570238FD8CF4C6BBA286C88 /* Inter-Bold.ttf in Resources */,
 				0197E8D75ECF47D69EB4BBDE /* Inter-ExtraBold.ttf in Resources */,
-				0A1FC5602857BA2800A288C1 /* GoogleService-Info.plist in Resources */,
+				0ADB2FF4293E663E00D4E9D2 /* GoogleService-Info.plist in Resources */,
 				BA6DBADFB0E14C5DBA42633E /* Inter-ExtraLight.ttf in Resources */,
 				6A59CFA90F0B4092B773AF18 /* Inter-Light.ttf in Resources */,
 				38F0F0EE7006407AB3813937 /* Inter-Medium.ttf in Resources */,

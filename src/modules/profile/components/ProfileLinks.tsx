@@ -138,7 +138,7 @@ export const ProfileLinks = () => {
         }}>
         <Indent height={10} />
         <Row justifyContent="space-between">
-          <Typography.BoldText fontSize={16} color={colors.red}>
+          <Typography.BoldText fontSize={16} color={colors.secondaryGray}>
             {translate('DeleteAccount')}
           </Typography.BoldText>
           <ImageView size={20} source={ImageSource.chevron_forward} />
