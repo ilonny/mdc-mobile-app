@@ -47,31 +47,33 @@ export const AchievmentList = (props: TProps) => {
             style={styles.rowWrapper}
             onPress={() => onPressAchievment(a)}>
             <Indent height={10} />
-            <Row fullWidth justifyContent="space-between">
-              <View>
-                <Typography.BoldText
-                  color={getColorTop(a)}
-                  textDecorationLine={a.received ? 'line-through' : 'none'}>
-                  {a.bonus_cost || ''} {translate('points')}
-                </Typography.BoldText>
-                <Indent height={10} />
-                <Typography.BoldText fontSize={16}>
-                  {a.title || ''}
-                </Typography.BoldText>
-              </View>
-              <View>
-                {a.received ? (
-                  <ImageView source={ImageSource.reward_recieved} size={38} />
-                ) : (
-                  <></>
-                )}
-                {a.available ? (
-                  <ImageView source={ImageSource.gift} size={38} />
-                ) : (
-                  <></>
-                )}
-              </View>
-            </Row>
+            <View style={{ flex: 1, maxWidth: '100%' }}>
+              <Row fullWidth justifyContent="space-between" flex={1}>
+                <View style={{flex: 1}}>
+                  <Typography.BoldText
+                    color={getColorTop(a)}
+                    textDecorationLine={a.received ? 'line-through' : 'none'}>
+                    {a.bonus_cost || ''} {translate('points')}
+                  </Typography.BoldText>
+                  <Indent height={10} />
+                  <Typography.BoldText fontSize={16}>
+                    {a.title || ''}
+                  </Typography.BoldText>
+                </View>
+                <View>
+                  {a.received ? (
+                    <ImageView source={ImageSource.reward_recieved} size={38} />
+                  ) : (
+                    <></>
+                  )}
+                  {a.available ? (
+                    <ImageView source={ImageSource.gift} size={38} />
+                  ) : (
+                    <></>
+                  )}
+                </View>
+              </Row>
+            </View>
             <Indent height={10} />
             <Divider margin={10} />
           </TouchableFeedback>

@@ -179,7 +179,9 @@ export const TripCreateForm = (props: TProps) => {
                   {translate('rentCost')}
                 </Typography.BoldText>
                 <Typography.BoldText fontSize={20}>
-                  {printPrice(rentPrice.toString())}
+                  {rentPrice !== 0
+                    ? printPrice(rentPrice.toString())
+                    : 'Discuss'}
                 </Typography.BoldText>
               </Row>
               <Indent height={20} />

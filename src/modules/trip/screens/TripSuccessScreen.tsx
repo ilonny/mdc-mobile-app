@@ -44,15 +44,21 @@ export const TripSuccessScreen = () => {
         {translate('bookedSuccessfully')}
       </Typography.ScreenTitle>
       <Indent height={50} />
-      <Row justifyContent="space-between">
-        <Typography.MainText fontSize={16}>
-          {translate('currentBalance')}
-        </Typography.MainText>
-        <Typography.MainText fontSize={16}>
-          {printPrice(userData?.deposit_balance || 0)}
-        </Typography.MainText>
-      </Row>
-      <Divider margin={20} />
+      {userData?.deposit_balance ? (
+        <>
+          <Row justifyContent="space-between">
+            <Typography.MainText fontSize={16}>
+              {translate('currentBalance')}
+            </Typography.MainText>
+            <Typography.MainText fontSize={16}>
+              {printPrice(userData?.deposit_balance || '0')}
+            </Typography.MainText>
+          </Row>
+          <Divider margin={20} />
+        </>
+      ) : (
+        <></>
+      )}
       {/* <Row justifyContent="space-between">
         <Typography.MainText fontSize={16}>
           {translate('returnPeriod')}
@@ -73,15 +79,21 @@ export const TripSuccessScreen = () => {
           {data.date_start} → {data.date_end}
         </Typography.MainText>
       </Row>
-      <Divider margin={20} />
-      <Row justifyContent="space-between">
-        <Typography.MainText fontSize={16}>
-          {translate('rentCost')}
-        </Typography.MainText>
-        <Typography.MainText fontSize={16}>
-          {printPrice(data.price)}
-        </Typography.MainText>
-      </Row>
+      {data.price ? (
+        <>
+          <Divider margin={20} />
+          <Row justifyContent="space-between">
+            <Typography.MainText fontSize={16}>
+              {translate('rentCost')}
+            </Typography.MainText>
+            <Typography.MainText fontSize={16}>
+              {printPrice(data.price)}
+            </Typography.MainText>
+          </Row>
+        </>
+      ) : (
+        <></>
+      )}
       <Divider margin={20} />
       <Row justifyContent="space-between">
         <Typography.MainText fontSize={16}>
