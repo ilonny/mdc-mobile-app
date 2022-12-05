@@ -541,7 +541,7 @@ export default {
   },
   currentBalance: {
     ru: 'Сейчас на счете:',
-    en: 'Now on the account::',
+    en: 'Now on the account:',
   },
   returnPeriod: {
     ru: 'Срок возврата',

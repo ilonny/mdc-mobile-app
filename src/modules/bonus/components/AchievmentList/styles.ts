@@ -4,6 +4,8 @@ import { StyleSheet } from 'react-native';
 export const styles = StyleSheet.create({
   rowWrapper: {
     width: '100%',
+    maxWidth: '100%',
+    flex: 1,
   },
   modal: {
     margin: 0,

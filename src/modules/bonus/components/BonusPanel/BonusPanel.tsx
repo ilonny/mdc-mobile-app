@@ -18,9 +18,9 @@ export const BonusPanel = (props: TProps) => {
           <Typography.BoldText fontSize={16}>
             {(price * BONUS_EARN_RATE).toString()} {translate('points')}
           </Typography.BoldText>
-          <Typography.BoldText fontSize={14}>
+          {/* <Typography.BoldText fontSize={14}>
             {translate('whatIsThis')}
-          </Typography.BoldText>
+          </Typography.BoldText> */}
         </Row>
         <Indent height={20} />
         <Typography.BoldText fontSize={14}>
