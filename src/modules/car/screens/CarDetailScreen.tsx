@@ -61,7 +61,7 @@ export const CarDetailScreen = () => {
       });
     } else {
       Alert.alert(
-        "You can't rent car, while your security check status isn't approved",
+        "Вы не можете забронировать авто, пока не пройдете проверку службы безопасности",
       );
     }
     console.log('userData', userData);
