@@ -30,7 +30,7 @@ export const PollBlockMainScreen = () => {
       </Row>
       <Indent height={20} />
       <Typography.ScreenTitle textAlign="center">
-        Don't know what{'\n'}to choose?
+        Не знаете какой автомобиль выбрать?
       </Typography.ScreenTitle>
       <Indent height={20} />
       <Row justifyContent="center">
@@ -39,19 +39,19 @@ export const PollBlockMainScreen = () => {
             textAlign="center"
             color={colors.secondaryText}
             fontSize={16}>
-            We have an interactive test that will help you to make a choice!
+            У нас есть интерактивный тест, который поможет определиться с выбором!
           </Typography.BoldText>
         </View>
       </Row>
       <Indent height={60} />
       <Button isWhite onPress={onPressTakeTest}>
         <Typography.BoldText color={colors.totalBlack}>
-          Take the test
+          Пройти тест
         </Typography.BoldText>
       </Button>
       <Indent height={20} />
       <Typography.MainText fontSize={14} textAlign="center">
-        It takes 30 seconds
+        Займет 30 секунд
       </Typography.MainText>
     </View>
   );

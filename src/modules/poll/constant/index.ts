@@ -1,9 +1,9 @@
 export const carTestQuestions = [
   {
-    title: 'How many people will there be?',
+    title: 'Сколько будет людей?',
     options: [
       {
-        label: 'Only me',
+        label: 'Только я',
         value: 1,
       },
       {
@@ -11,62 +11,58 @@ export const carTestQuestions = [
         value: 2,
       },
       {
-        label: 'Up to 5 people',
+        label: 'До 5 человек',
         value: 5,
       },
       {
-        label: 'Up to 8 people',
+        label: 'До 8 человек',
         value: 8,
       },
     ],
   },
   {
-    title: 'What are your plans for the trip?',
+    title: 'Какие планы на поездку?',
     options: [
       {
-        label: 'Around the city',
+        label: 'Поездка по городу',
         value: 0,
       },
       {
-        label: 'Event / Wedding',
+        label: 'Мероприятие',
         value: 1,
       },
       {
-        label: 'Out of town',
+        label: 'Поездка за город',
         value: 2,
       },
       {
-        label: 'Long trip',
+        label: 'Долгое путешествие',
         value: 3,
-      },
-      {
-        label: 'Just get high',
-        value: 4,
       },
     ],
   },
   {
-    title: 'Do you like the attention of others?',
+    title: 'Нравится ли вам внимание окружающих?',
     options: [
       {
-        label: 'Yes',
+        label: 'Дат',
         value: 1,
       },
       {
-        label: 'Not really',
+        label: 'Не совсем',
         value: 0,
       },
     ],
   },
   {
-    title: 'Do you like the powerful sound of the motor?',
+    title: 'Нравится ли вам мощный звук мотора?',
     options: [
       {
-        label: 'For sure',
+        label: 'Конечно',
         value: 1,
       },
       {
-        label: 'No, I need a quiet car',
+        label: 'Нет, мне нужна тихая машина',
         value: 0,
       },
     ],

@@ -123,7 +123,7 @@ export const UserFilesForm = (props: TProps) => {
                     <TouchableFeedback
                       style={{ marginTop: -2.5 }}
                       onPress={() =>
-                        Linking.openURL('https://www.google.com/')
+                        Linking.openURL('https://moscowdreamcars.ru/privacy')
                       }>
                       <Typography.BoldText textDecorationLine="underline">
                         {translate('dataProcessing')}
@@ -142,7 +142,7 @@ export const UserFilesForm = (props: TProps) => {
                     <TouchableFeedback
                       style={{ marginTop: -2.5 }}
                       onPress={() =>
-                        Linking.openURL('https://www.google.com/')
+                        Linking.openURL('https://moscowdreamcars.ru/privacy')
                       }>
                       <Typography.BoldText textDecorationLine="underline">
                         {translate('offer')}

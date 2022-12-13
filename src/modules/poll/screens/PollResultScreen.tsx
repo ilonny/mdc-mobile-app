@@ -34,10 +34,10 @@ export const PollResultScreen = () => {
     <ScreenContainer
       headerProps={{ backButton: true }}
       isLoading={carListLoading}>
-      <Typography.ScreenTitle>Result</Typography.ScreenTitle>
+      <Typography.ScreenTitle>Результат</Typography.ScreenTitle>
       <Indent height={20} />
       <Typography.BoldText fontSize={22}>
-        We think these options will suit you perfectly:
+        Мы думаем, эти варианты вам идеально подойдут:
       </Typography.BoldText>
       <Indent height={20} />
       <CardList items={carListFiltered} />

@@ -33,7 +33,7 @@ export const PollMainScreen = () => {
             isWhite
             onPress={() => {
               if (answers[currentStep] === undefined) {
-                Alert.alert('Please, choose an answer');
+                Alert.alert('Пожалуйста, выберите ответ');
                 return false;
               }
               setCurrentStep(currentStep + 1);
@@ -54,7 +54,7 @@ export const PollMainScreen = () => {
         </>
       }>
       <Typography.BoldText color={colors.secondaryText}>
-        TEST: Which car will suit you?
+        ТЕСТ: Какой автомобиль вам подойдет?
       </Typography.BoldText>
       <Indent height={15} />
       <CarPoll
