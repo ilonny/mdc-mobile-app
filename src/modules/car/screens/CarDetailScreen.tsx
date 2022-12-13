@@ -1,10 +1,13 @@
 import { useNavigation, useRoute } from '@react-navigation/native';
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
+import { Alert } from 'react-native';
 import { NavigationProps, RootRouteProps } from '../../../navigation/types';
 import { colors } from '../../../theme';
+import { Storage } from '../../asyncStorage';
 import { translate } from '../../translation';
 import { Button, Indent, Row, ScreenContainer, Typography } from '../../ui';
 import { useUserData } from '../../user/hooks';
+import { getUserData } from '../../user/network';
 import {
   CarBenefits,
   CarChars,
@@ -48,11 +51,20 @@ export const CarDetailScreen = () => {
       .finally(() => setLoading(false));
   }, [vehicle_id]);
 
-  const onPressBook = useCallback(() => {
-    navigation.navigate('TripCreateScreen', {
-      vehicle_id,
-      title: carData?.title || '',
-    });
+  const onPressBook = useCallback(async () => {
+    const user_id = await Storage.getItem('user_id');
+    const userData = await getUserData(user_id || '');
+    if (userData.security_check === '1') {
+      navigation.navigate('TripCreateScreen', {
+        vehicle_id,
+        title: carData?.title || '',
+      });
+    } else {
+      Alert.alert(
+        "You can't rent car, while your security check status isn't approved",
+      );
+    }
+    console.log('userData', userData);
   }, [vehicle_id, navigation, carData?.title]);
 
   return (
