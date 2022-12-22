@@ -11,7 +11,7 @@ export const PhoneInput = (props: TProps) => {
   const { onChange } = props;
   return (
     <View style={styles.wrapper}>
-      <Typography.BoldText fontSize={34}>+</Typography.BoldText>
+      <Typography.BoldText fontSize={34}>+7</Typography.BoldText>
       <TextInput
         autoFocus
         onChangeText={onChange}

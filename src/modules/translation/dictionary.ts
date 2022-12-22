@@ -339,6 +339,10 @@ export default {
     ru: 'По умолчанию стоимость залога рассчитывается менеджером исходя из ваших данных профиля и привелегий. Точную сумму уточняйте у менеджера.',
     en: 'By default, the value of the deposit is calculated by the manager based on your profile data and privileges. Specify the exact amount with the manager.',
   },
+  CarTariffs: {
+    ru: 'Тарифы',
+    en: 'Tariffs',
+  },
   bookBtn: {
     ru: 'Забронировать',
     en: 'Rent',

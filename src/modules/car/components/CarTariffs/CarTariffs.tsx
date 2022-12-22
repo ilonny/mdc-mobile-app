@@ -21,7 +21,7 @@ export const CarTariffs = (props: TProps) => {
   return (
     <View>
       <Row justifyContent="space-between" alignItems="flex-end">
-        <Typography.ScreenTitle>CarTariffs</Typography.ScreenTitle>
+        <Typography.ScreenTitle>{translate('CarTariffs')}</Typography.ScreenTitle>
         <View style={styles.perDayWrapper}>
           <Typography.BoldText color={colors.secondaryText}>
             {translate('tariffsPerDay')}
