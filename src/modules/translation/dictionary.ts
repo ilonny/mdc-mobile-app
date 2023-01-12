@@ -96,12 +96,12 @@ export default {
     en: 'Done',
   },
   enterCode: {
-    ru: 'Введите код',
-    en: 'Enter the code',
+    ru: 'Введите последние 4 цифры входящего звонка',
+    en: 'Enter the last 4 digits of the incoming call',
   },
   resendCode: {
-    ru: 'запросить код повторно',
-    en: 'request the code again',
+    ru: 'запросить звонок повторно',
+    en: 'request the call again',
   },
   resendCodeTime1: {
     ru: 'через',

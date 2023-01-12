@@ -79,7 +79,7 @@ export const AuthScreen = () => {
         <Indent height={30} />
         <ImageView source={ImageSource.logo} style={styles.logo} />
         <Indent height={50} />
-        <Typography.BoldText textAlign="center" fontSize={32}>
+        <Typography.BoldText textAlign="center" fontSize={17}>
           {!!requestCodeResult
             ? translate('enterCode')
             : translate('enterPhone')}
@@ -119,6 +119,11 @@ export const AuthScreen = () => {
             </Typography.BoldText>
             <Indent height={30} />
             <PhoneInput onChange={setPhone} />
+            <Indent height={30} />
+            <Typography.BoldText textAlign="center" fontSize={17}>
+              This number will receive an automatic call with a verification
+              code.
+            </Typography.BoldText>
             <Indent height={60} />
           </>
         )}
