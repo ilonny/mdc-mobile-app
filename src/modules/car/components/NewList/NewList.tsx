@@ -7,13 +7,6 @@ import { CardList } from '../CardList';
 
 export const NewList = () => {
   const { newCarList, newCarListLoading } = useGetNewCarList();
-  if (newCarListLoading) {
-    return (
-      <Row alignItems="center" justifyContent="center">
-        <ActivityIndicator />
-      </Row>
-    );
-  }
   if (newCarList?.length) {
     return (
       <View>

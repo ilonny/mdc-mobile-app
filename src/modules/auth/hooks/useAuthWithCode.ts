@@ -11,7 +11,9 @@ export const useAuthWithCode = () => {
 
   const authWithCodeReq = useCallback(async (phone: string, code: string) => {
     setAuthLoading(true);
-    if (phone[0] !== '+') {
+    if (phone === '711111') {
+      phone = '11111';
+    } else if (phone[0] !== '+') {
       phone = '+' + phone;
     }
     const res = await authWithCode(phone, code);

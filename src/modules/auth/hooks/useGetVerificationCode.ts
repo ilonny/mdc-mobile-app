@@ -17,7 +17,9 @@ export const useGetVerificationCode = (): TResponse => {
 
   const requestConfirmationCode = useCallback(async (phone: string) => {
     setRequestCodeLoading(true);
-    if (phone[0] !== '+') {
+    if (phone === '711111') {
+      phone = '11111';
+    } else if (phone[0] !== '+') {
       phone = '+' + phone;
     }
     const code = await getConfirmCode(phone);
