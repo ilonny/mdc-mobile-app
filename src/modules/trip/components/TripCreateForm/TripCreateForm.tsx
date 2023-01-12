@@ -181,7 +181,7 @@ export const TripCreateForm = (props: TProps) => {
                 <Typography.BoldText fontSize={20}>
                   {rentPrice !== 0
                     ? printPrice(rentPrice.toString())
-                    : 'Discuss'}
+                    : 'Договорная'}
                 </Typography.BoldText>
               </Row>
               <Indent height={20} />

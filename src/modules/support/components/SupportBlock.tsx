@@ -29,7 +29,7 @@ export const SupportBlock = () => {
       <Indent height={20} />
       <Button
         border
-        onPress={() => Linking.openURL('whatsapp://send?phone=+971585907875')}>
+        onPress={() => Linking.openURL('whatsapp://send?phone=+79296553493')}>
         <Row flex={1} justifyContent="space-between" paddingHorizontal={16}>
           <Typography.BoldText>{translate('writeInWA')}</Typography.BoldText>
           <ImageView size={27} source={ImageSource.whatsapp} />
@@ -38,14 +38,14 @@ export const SupportBlock = () => {
       <Indent height={20} />
       <Button
         border
-        onPress={() => Linking.openURL('http://t.me/DubaiDreamCars')}>
+        onPress={() => Linking.openURL('http://t.me/ekaterina_erdes')}>
         <Row flex={1} justifyContent="space-between" paddingHorizontal={16}>
           <Typography.BoldText>{translate('writeInTG')}</Typography.BoldText>
           <ImageView size={27} source={ImageSource.telegram} />
         </Row>
       </Button>
       <Indent height={20} />
-      <TouchableFeedback onPress={() => Linking.openURL('tel:+971585907875')}>
+      <TouchableFeedback onPress={() => Linking.openURL('tel:+79296553493')}>
         <Row justifyContent="center">
           <ImageView size={200} source={ImageSource.sos} />
         </Row>
