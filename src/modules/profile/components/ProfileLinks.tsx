@@ -1,6 +1,6 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { useCallback } from 'react';
-import { Alert } from 'react-native';
+import { Alert, Linking } from 'react-native';
 import { reset } from '../../../navigation';
 import { NavigationProps } from '../../../navigation/types';
 import { colors } from '../../../theme';
@@ -67,7 +67,7 @@ export const ProfileLinks = () => {
         <Indent height={10} />
       </TouchableFeedback>
       <Divider margin={10} /> */}
-      <TouchableFeedback>
+      <TouchableFeedback onPress={() => Linking.openURL('https://moscowdreamcars.ru/privacy')}>
         <Indent height={10} />
         <Row justifyContent="space-between">
           <Typography.BoldText fontSize={16}>
