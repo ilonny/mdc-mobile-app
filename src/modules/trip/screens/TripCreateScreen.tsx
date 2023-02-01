@@ -16,14 +16,14 @@ export const TripCreateScreen = () => {
         {translate('BookingTitle')}
       </Typography.ScreenTitle>
       <Indent height={30} />
-      {lang !== 'en' ? (
+      {/* {lang !== 'en' ? (
         <>
           <CarBookingDeposit amount={BOOKING_DEPOSIT_AMOUNT.toString()} />
           <Indent height={30} />
         </>
       ) : (
         <></>
-      )}
+      )} */}
       <TripCreateForm vehicle_id={vehicle_id} />
     </ScreenContainer>
   );
