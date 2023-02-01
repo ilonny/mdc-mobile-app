@@ -46,8 +46,11 @@ export const TripCreateForm = (props: TProps) => {
       const mStart = moment(dateStart);
       const mEnd = moment(dateEnd);
       const diff = mEnd.diff(mStart, 'days');
+      if (diff == 0) {
+        return 1;
+      }
       if (diff >= 0) {
-        return diff + 1;
+        return diff;
       }
       return 0;
     }
