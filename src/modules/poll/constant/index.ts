@@ -45,7 +45,7 @@ export const carTestQuestions = [
     title: 'Нравится ли вам внимание окружающих?',
     options: [
       {
-        label: 'Дат',
+        label: 'Да',
         value: 1,
       },
       {

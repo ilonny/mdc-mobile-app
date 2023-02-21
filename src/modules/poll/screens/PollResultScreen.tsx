@@ -14,17 +14,27 @@ export const PollResultScreen = () => {
     let res = [...carList];
     if (answers[0] === 5) {
       res = res.filter(c => {
-        return c.id !== 95 && c.id !== 96;
+        return (
+          c.id !== 4 &&
+          c.id !== 7 &&
+          c.id !== 6 &&
+          c.id !== 9 &&
+          c.id !== 25 &&
+          c.id !== 13 &&
+          c.id !== 23 &&
+          c.id !== 33 &&
+          c.id !== 36
+        );
       });
     }
     if (answers[0] === 8) {
       res = res.filter(c => {
-        return c.id === 102;
+        return c.id === 30 || c.id === 38;
       });
     }
     if (answers[3] === 1) {
       res = res.filter(c => {
-        return c.id !== 91;
+        return c.id !== 15;
       });
     }
     return res;
