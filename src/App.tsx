@@ -7,6 +7,7 @@ import { OnboardingProvider } from './modules/onboarding/context';
 import { notificationHandler } from './modules/push/helpers';
 import { Navigation } from './navigation';
 import { SupportProvider } from './modules/support/context';
+// import { Storage } from './modules/asyncStorage';
 
 const App = () => {
   useEffect(() => {

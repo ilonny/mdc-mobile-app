@@ -5,7 +5,7 @@ import {
   useBlurOnFulfill,
   useClearByFocusCell,
 } from 'react-native-confirmation-code-field';
-import { Text, View } from 'react-native';
+import { Linking, Text, View } from 'react-native';
 import { colors } from '../../../theme';
 import { translate } from '../../translation';
 import {
@@ -18,7 +18,11 @@ import {
   Typography,
 } from '../../ui';
 import { ImageSource, ImageView } from '../../ui/ImageView';
-import { useAuthWithCode, useGetVerificationCode } from '../hooks';
+import {
+  useAuthWithCall,
+  useAuthWithCode,
+  useGetVerificationCode,
+} from '../hooks';
 import { styles } from './styles';
 
 const CELL_COUNT = 4;
@@ -35,6 +39,7 @@ export const AuthScreen = () => {
   const { requestCodeResult, requestConfirmationCode, requestCodeLoading } =
     useGetVerificationCode();
   const { authResult, authLoading, authWithCodeReq } = useAuthWithCode();
+  const { number, request_id, getNumber, checkStatus } = useAuthWithCall();
   const [secondsToResend, setSecondsToResend] = useState(59);
 
   useEffect(() => {
@@ -57,6 +62,16 @@ export const AuthScreen = () => {
       authWithCodeReq(phone, value);
     }
   }, [value, phone, authWithCodeReq]);
+
+  useEffect(() => {
+    if (secondsToResend === 0) {
+      console.log('request phone');
+      getNumber(phone);
+    }
+  }, [secondsToResend, phone]);
+
+  console.log('number', number);
+  console.log('request_id', request_id);
 
   return (
     <ScreenContainer
@@ -121,7 +136,8 @@ export const AuthScreen = () => {
             <PhoneInput onChange={setPhone} />
             <Indent height={30} />
             <Typography.BoldText textAlign="center" fontSize={17}>
-              На этот номер будет осуществлен автоматический звонок с кодом подтверждения
+              На этот номер будет осуществлен автоматический звонок с кодом
+              подтверждения
             </Typography.BoldText>
             <Indent height={60} />
           </>
@@ -145,10 +161,37 @@ export const AuthScreen = () => {
             <Indent height={10} />
             <TouchableFeedback
               onPress={() => secondsToResend <= 0 && requestCode()}>
-              <Typography.BoldText textAlign="center">
+              <Typography.BoldText textAlign="center" textDecorationLine='underline'>
                 {translate('resendCode')}
               </Typography.BoldText>
             </TouchableFeedback>
+
+            {secondsToResend <= 0 ? (
+              <>
+                <Indent height={20} />
+                <Typography.BoldText textAlign="center">
+                  Или, позвоните по номеру, чтобы авторизоваться
+                </Typography.BoldText>
+                <Indent height={20} />
+                <TouchableFeedback
+                  onPress={() => Linking.openURL(`tel:${number}`)}>
+                  <Typography.BoldText textAlign="center" fontSize={20} textDecorationLine='underline'>
+                    {number}
+                  </Typography.BoldText>
+                </TouchableFeedback>
+                <Indent height={20} />
+                <Button
+                  isWhite
+                  disabled={phone?.length < 5 ? true : false}
+                  onPress={() => checkStatus(phone, request_id)}>
+                  <Typography.ButtonText color={colors.totalBlack}>
+                    Я позвонил, авторизоваться
+                  </Typography.ButtonText>
+                </Button>
+              </>
+            ) : (
+              <></>
+            )}
           </View>
         ) : (
           <></>
