@@ -16,11 +16,13 @@ export const getCarData = async (ids: string[]): Promise<TCar[]> => {
   dataArr = await Promise.all(
     dataArr.map(async res => {
       const data = res?.data;
-      data.main_image = `${API_URL}/${res?.data?.main_image}`;
-      data.tariffs = await getCarTariff(data.id);
-      data.gallery = await getCarGallery(data.id);
+      if (data) {
+        data.main_image = `${API_URL}/${res?.data?.main_image}`;
+        data.tariffs = await getCarTariff(data.id);
+        data.gallery = await getCarGallery(data.id);
+      }
       return data;
     }),
   );
-  return dataArr;
+  return dataArr?.filter(Boolean);
 };

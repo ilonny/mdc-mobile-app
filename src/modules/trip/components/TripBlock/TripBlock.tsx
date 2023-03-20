@@ -70,8 +70,8 @@ export const TripBlock = (props: TProps) => {
         <Indent height={10} />
         <Row justifyContent="space-between">
           <Typography.BoldText fontSize={16}>
-            {moment(tripData.date_start).format('MM.DD.YY')} →{' '}
-            {moment(tripData.date_end).format('MM.DD.YY')}
+            {moment(tripData.date_start).format('DD.MM.YY')} →{' '}
+            {moment(tripData.date_end).format('DD.MM.YY')}
           </Typography.BoldText>
           <Typography.BoldText fontSize={16}>
             {printPrice(tripData?.price || '')}

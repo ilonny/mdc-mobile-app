@@ -10,6 +10,7 @@ export const useGetNewCarList = () => {
     const res = await getNewCarList();
     const ids = res?.map(i => i.vehicle_id);
     const dataArr = await getCarData(ids);
+    console.log('getNewCarListReq dataArr', dataArr);
     setNewCarList(dataArr);
     setNewCarListLoading(false);
     return dataArr;

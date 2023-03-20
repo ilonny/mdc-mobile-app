@@ -65,11 +65,13 @@ export const CardList = (props: TProps) => {
   }
 
   if (allBig) {
-    <View style={styles.wrapper}>
-      {[firstCard].concat(otherCards)?.map(car => {
-        return <CarCard key={car.id} data={car} isBig />;
-      })}
-    </View>;
+    return (
+      <View style={styles.wrapper}>
+        {[firstCard].concat(otherCards)?.map(car => {
+          return <CarCard key={car.id} data={car} isBig />;
+        })}
+      </View>
+    );
   }
 
   return (

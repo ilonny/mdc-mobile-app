@@ -26,7 +26,7 @@ export const PushList = (props: TProps) => {
           <View>
             {index !== 0 ? <Divider margin={20} /> : <></>}
             <Typography.MainText color={colors.secondaryGray} fontSize={14}>
-              {moment(push.createdAt).format('MM/DD/YYYY')}
+              {moment(push.createdAt).format('DD/MM/YYYY')}
             </Typography.MainText>
             {!hideTitle ? (
               <>

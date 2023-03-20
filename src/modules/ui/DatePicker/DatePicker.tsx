@@ -57,7 +57,7 @@ export const DatePicker = (props: TProps) => {
   }, []);
   const doneCallback = useCallback(() => {
     if (selectedDate) {
-      const dateFormatted = selectedDate.format('MM/DD/YYYY');
+      const dateFormatted = selectedDate.format('DD/MM/YYYY');
       if (typeof onDateChange === 'function') {
         onDateChange(dateFormatted);
       }
@@ -72,9 +72,9 @@ export const DatePicker = (props: TProps) => {
     (val: string) => {
       if (val.length === 10) {
         console.log('onChangeInput', val);
-        const m = moment(val, 'MM/DD/YYYY');
+        const m = moment(val, 'DD/MM/YYYY');
         if (m.isValid()) {
-          const dateFormatted = m.format('MM/DD/YYYY');
+          const dateFormatted = m.format('DD/MM/YYYY');
           if (dateFormatted?.length === 10) {
             if (typeof onDateChange === 'function') {
               onDateChange(dateFormatted);
@@ -96,7 +96,7 @@ export const DatePicker = (props: TProps) => {
           <View>
             <TextInput
               ref={inputRef}
-              mask={Masks.DATE_MMDDYYYY}
+              mask={Masks.DATE_DDMMYYYY}
               keyboardType="numeric"
               placeholder={placeholder}
               onChangeText={arg => {

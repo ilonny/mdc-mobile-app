@@ -128,8 +128,8 @@ export default {
     en: 'Your name *',
   },
   birthdayInput: {
-    ru: 'Дата рождения (mm/dd/yyyy) *',
-    en: 'Birth date (mm/dd/yyyy) *',
+    ru: 'Дата рождения (dd/mm/yyyy) *',
+    en: 'Birth date (dd/mm/yyyy) *',
   },
   expInput: {
     ru: 'Стаж вождения *',
@@ -188,7 +188,7 @@ export default {
     en: 'Profile',
   },
   MyTrips: {
-    ru: 'Мои поздки',
+    ru: 'Мои поездки',
     en: 'My trips',
   },
   Services: {
@@ -416,12 +416,12 @@ export default {
     en: 'Enter your rental dates to calculate the cost of your booking',
   },
   dateStart: {
-    ru: 'Дата начала (MM/DD/YYYY)',
-    en: 'Start date (MM/DD/YYYY)',
+    ru: 'Дата начала (DD/MM/YYYY)',
+    en: 'Start date (DD/MM/YYYY)',
   },
   dateEnd: {
-    ru: 'Дата окончания аренды (MM/DD/YYYY)',
-    en: 'End date (MM/DD/YYYY)',
+    ru: 'Дата окончания аренды (DD/MM/YYYY)',
+    en: 'End date (DD/MM/YYYY)',
   },
   Additionally: {
     ru: 'Дополнительно',

@@ -78,7 +78,7 @@ export const PaymentDepositModal = (props: TProps) => {
     //проверим, если баланса депозита не хватает, попросим доплатить, иначе сразу заброним тачку
     const checkWhatToDo = async () => {
       if (isVisible) {
-        if (lang === 'en') {
+        if (lang === 'ru') {
           setLoading(true);
           //book without payemnt
           const user_id = await Storage.getItem('user_id');
@@ -146,11 +146,11 @@ export const PaymentDepositModal = (props: TProps) => {
                 <Typography.MainText color={colors.secondaryText} fontSize={14}>
                   {translate('depositFillText')}
                 </Typography.MainText>
-                <Indent height={20} />
+                {/* <Indent height={20} />
                 <Typography.BoldText fontSize={16}>
                   {translate('currentDeposit')}{' '}
                   {printPrice(userData?.deposit_balance || '0')}
-                </Typography.BoldText>
+                </Typography.BoldText> */}
                 <Divider margin={20} />
                 <Typography.BoldText fontSize={16}>
                   {translate('depositToPay')}

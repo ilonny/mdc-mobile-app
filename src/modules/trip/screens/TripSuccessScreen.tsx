@@ -44,7 +44,7 @@ export const TripSuccessScreen = () => {
         {translate('bookedSuccessfully')}
       </Typography.ScreenTitle>
       <Indent height={50} />
-      {userData?.deposit_balance ? (
+      {/* {userData?.deposit_balance ? (
         <>
           <Row justifyContent="space-between">
             <Typography.MainText fontSize={16}>
@@ -58,7 +58,7 @@ export const TripSuccessScreen = () => {
         </>
       ) : (
         <></>
-      )}
+      )} */}
       {/* <Row justifyContent="space-between">
         <Typography.MainText fontSize={16}>
           {translate('returnPeriod')}

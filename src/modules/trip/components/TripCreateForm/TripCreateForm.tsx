@@ -43,8 +43,8 @@ export const TripCreateForm = (props: TProps) => {
 
   const dayDiff = useMemo(() => {
     if (dateStart && dateEnd) {
-      const mStart = moment(dateStart);
-      const mEnd = moment(dateEnd);
+      const mStart = moment(dateStart, 'DD/MM/YYYY');
+      const mEnd = moment(dateEnd, 'DD/MM/YYYY');
       const diff = mEnd.diff(mStart, 'days');
       if (diff == 0) {
         return 1;
