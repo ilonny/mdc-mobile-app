@@ -18,7 +18,7 @@ export const ArticleListScreen = () => {
       <Indent height={20} />
       {articleList?.length ? (
         <>
-          <ArticleList items={articleList} />
+          <ArticleList items={articleList} allSmall />
         </>
       ) : (
         <></>

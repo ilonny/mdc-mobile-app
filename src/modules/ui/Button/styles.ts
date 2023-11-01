@@ -37,4 +37,8 @@ export const styles = StyleSheet.create({
     borderRadius: 8,
     borderWidth: 1,
   },
+  isSmallDarkGray: {
+    backgroundColor: colors.mainGray,
+    borderColor: 'transparent',
+  }
 });

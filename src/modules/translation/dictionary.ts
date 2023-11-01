@@ -764,11 +764,11 @@ export default {
     en: 'To get a reward, please contact your manager or support',
   },
   Articles: {
-    ru: 'Статьи',
+    ru: 'Досуг',
     en: 'Articles',
   },
   articlesViewAllBtn: {
-    ru: 'Смотреть все статьи',
+    ru: 'Показать еще',
     en: 'View all articles',
   },
   Tests: {

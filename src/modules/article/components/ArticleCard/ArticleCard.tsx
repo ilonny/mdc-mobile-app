@@ -36,14 +36,14 @@ export const ArticleCard = (props: TProps) => {
         </View>
         <View style={styles.contentWrapper}>
           <Typography.BoldText fontSize={17}>{data.title}</Typography.BoldText>
-          <Indent height={5} />
+          {/* <Indent height={5} />
           <Row>
             <ImageView source={ImageSource.clock} size={18} />
             <Indent width={5} />
             <Typography.MainText color={colors.secondaryGray}>
               {data.reading_time}
             </Typography.MainText>
-          </Row>
+          </Row> */}
         </View>
       </View>
     </TouchableFeedback>

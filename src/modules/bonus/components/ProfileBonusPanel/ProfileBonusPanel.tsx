@@ -67,7 +67,7 @@ export const ProfileBonusPanel = (props: TProps) => {
               {nextStatus?.title || ' '}
               {translate('nextLevelText2')}{' '}
               {(
-                Number(nextStatus?.bonus_cost || 0) - Number(bonusValue || 0)
+                Number(nextStatus?.bonus_cost || 0) || 0 - Number(bonusValue || 0)
               ).toString()}
             </Typography.MainText>
             <Indent height={20} />
@@ -78,7 +78,7 @@ export const ProfileBonusPanel = (props: TProps) => {
                   styles.bonusLineActive,
                   {
                     width:
-                      (Number(bonusValue || 0) /
+                      ((Number(bonusValue || 0) || 0) /
                         Number(nextStatus?.bonus_cost || 0)) *
                         100 +
                       '%',
@@ -89,7 +89,7 @@ export const ProfileBonusPanel = (props: TProps) => {
             <Indent height={5} />
             <Row justifyContent="space-between">
               <Typography.BoldText color={colors.secondaryGray}>
-                {Number(bonusValue || 0).toString()}
+                {(Number(bonusValue || 0) || 0).toString()}
               </Typography.BoldText>
               <Typography.BoldText color={colors.secondaryGray}>
                 {Number(nextStatus?.bonus_cost || 0).toString()}

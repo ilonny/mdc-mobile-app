@@ -12,6 +12,7 @@ type TProps = {
   smallHeight?: boolean;
   isBlue?: boolean;
   border?: boolean;
+  isSmallDarkGray?: boolean;
 } & TouchableOpacityProps;
 
 export const Button = (props: TProps) => {
@@ -26,6 +27,7 @@ export const Button = (props: TProps) => {
     smallHeight,
     isBlue,
     border,
+    isSmallDarkGray,
   } = props;
   if (disabled) {
     return (
@@ -37,6 +39,7 @@ export const Button = (props: TProps) => {
       <View
         style={[
           styles.wrapper,
+          isSmallDarkGray && styles.isSmallDarkGray,
           isBlack && styles.wrapperBlack,
           isWhite && styles.wrapperWhite,
           isBlue && styles.wrapperBlue,

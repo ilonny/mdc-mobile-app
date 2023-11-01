@@ -6,6 +6,7 @@ import { ImageSource, ImageView, Indent, Row, Typography } from '../../../ui';
 import { styles } from './styles';
 
 export const CarOptions = () => {
+  return <></>;
   return (
     <>
       <Row alignItems="flex-start" justifyContent="center">
