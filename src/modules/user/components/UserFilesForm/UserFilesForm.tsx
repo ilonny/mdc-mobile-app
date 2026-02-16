@@ -133,7 +133,7 @@ export const UserFilesForm = (props: TProps) => {
                 </Row>
               </FormCheckBox>
               <Indent height={20} />
-              <FormCheckBox name="agree_with_offer" validate={required}>
+              {/* <FormCheckBox name="agree_with_offer" validate={required}>
                 <Row>
                   <Text>
                     <Typography.BoldText color="#fff">
@@ -150,7 +150,7 @@ export const UserFilesForm = (props: TProps) => {
                     </TouchableFeedback>
                   </Text>
                 </Row>
-              </FormCheckBox>
+              </FormCheckBox> */}
               <Indent height={20} />
               <Button isWhite onPress={handleSubmit}>
                 <Typography.ButtonText color={colors.totalBlack}>
