@@ -584,7 +584,7 @@ export default {
     en: 'You dont have any trips',
   },
   trip: {
-    ru: 'Поздека',
+    ru: 'Поездка',
     en: 'Trip',
   },
   tripNotPayed: {

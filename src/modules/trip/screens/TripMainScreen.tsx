@@ -27,6 +27,10 @@ export const TripMainScreen = () => {
     return getPastTrips(tripList);
   }, [tripList]);
 
+  console.log('tripList', tripList)
+  console.log('futureTrips?', futureTrips)
+  console.log('pastTrips?', pastTrips)
+
   return (
     <ScreenContainer fullscreen isLoading={tripListLoading} disableScroll>
       <Indent height={40} />

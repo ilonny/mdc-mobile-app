@@ -15,6 +15,7 @@ export const registerToken = async () => {
   await messaging().registerDeviceForRemoteMessages();
   const token = await messaging().getToken();
   const user_id = await Storage.getItem('user_id');
+  console.log('token??', token)
   if (token && user_id) {
     saveToken(token, user_id);
   }

@@ -29,7 +29,8 @@ export const VehicleTypeFilter = () => {
     return (
       vehicleTypeList
         ?.map((type: { label: string; id: number }) => {
-          const val = mapData[type.label].label;
+          console.log('label?', label, mapData);
+          const val = mapData[type.label]?.label;
           return {
             value: val,
             label: val,
@@ -38,12 +39,15 @@ export const VehicleTypeFilter = () => {
         })
         .concat({ label: translate('allCars'), value: '', extraData: '' }) || []
     );
-  }, [vehicleTypeList]);
+  }, [label, vehicleTypeList]);
 
-  const onChange = useCallback((val: string, extraId?: any) => {
-    setVehicleType(val);
-    setVehicleTypeId(extraId);
-  }, []);
+  const onChange = useCallback(
+    (val: string, extraId?: any) => {
+      setVehicleType(val);
+      setVehicleTypeId(extraId);
+    },
+    [setVehicleType, setVehicleTypeId],
+  );
 
   if (vehicleTypeListLoading) {
     return (
@@ -52,7 +56,7 @@ export const VehicleTypeFilter = () => {
       </Row>
     );
   }
-
+  console.log('options?', options);
   return (
     <View>
       <Select options={options} onChange={onChange}>

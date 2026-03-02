@@ -4,7 +4,7 @@ import { TTrip } from './../types/index';
 export const getPastTrips = (list: TTrip[]) => {
   return list?.filter(trip => {
     const today = moment();
-    const dateEnd = moment(trip.date_end);
+    const dateEnd = moment(trip.date_end, 'DD.MM.YYYY', true);
     if (dateEnd.diff(today, 'days') < 0 || trip.status === 'CANCELED') {
       return true;
     }

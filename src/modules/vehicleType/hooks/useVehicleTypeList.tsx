@@ -11,6 +11,7 @@ export const useVehicleTypeList = () => {
     const res = await getVehicleTypeList();
     setVehicleTypeListLoading(false);
     setVehicleTypeList(res);
+    console.log('res?', res)
     return res;
   }, []);
 

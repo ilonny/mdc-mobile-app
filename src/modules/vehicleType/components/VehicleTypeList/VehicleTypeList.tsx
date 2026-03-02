@@ -50,11 +50,11 @@ export const VehicleTypeList = () => {
               <View style={styles.iconWrap}>
                 <ImageView
                   style={styles.icon}
-                  source={ImageSource[mapData[type.label].icon]}
+                  source={ImageSource[mapData[type.label]?.icon]}
                 />
               </View>
               <Typography.BoldText>
-                {mapData[type.label].label}
+                {mapData[type.label]?.label}
               </Typography.BoldText>
             </View>
           </TouchableFeedback>
